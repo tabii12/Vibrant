@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #004c59;
+    font-family: "Arial", sans-serif;
+    overflow: auto;
+    position: static;
+  }
+  
+  header {
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 1000; /* Ensures it stays above other content */
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    height: 100px;
+   
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #004C59;
+    font-size: 1rem;
+  }
+  nav ul li a:hover {
+    color: #F15E2C ;
+  }
+  .search-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .search-box {
+    position: relative;
+  }
+  .search-box input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 200px;
+    background-color: #ffffff;
+  }
+  .search-box button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .icons a {
+    margin: 10px;
+    font-size: 26px;
+    color:#004C59;
+  }
+  .icons a:hover {
+    color: #F15E2C;
+  }
+  .mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+  }
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 80px; 
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-menu ul li {
+    border-bottom: 1px solid #eaeaea;
+  }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color:  #004C59;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+ 
+  #scrollTopBtn {
+    display: none; /* Ẩn nút khi mới vào trang */
+    position: fixed; /* Cố định vị trí khi cuộn */
+    bottom: 20px; /* Cách đáy 20px */
+    right: 20px; /* Cách phải 20px */
+    padding: 10px 15px; /* Kích thước nút */
+    background-color:  #004C59; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    border: none; /* Xóa viền */
+    border-radius: 5px; /* Bo tròn góc */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+    font-size: 16px;
+    z-index: 1000; 
+  }
+
+/* Responsive Styles */
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .search-box input {
+        width: 160px;
+    }
+}
+
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+    header {
+        height: 80px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .search-box {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .icons a {
+        font-size: 20px;
+        margin: 5px;
+    }
+}
+
+/* Small Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 30px;
+    }
+
+    .icons a {
+        font-size: 18px;
+        margin: 3px;
+    }
+}

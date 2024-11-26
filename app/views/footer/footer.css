@@ -1,0 +1,124 @@
+.footer {
+    background: #fff;
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+  }
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  .footer-logo img {
+    max-width: 160px;
+    margin-bottom: 20px;
+  }
+  .footer-title {
+    color: #006064;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    list-style: none;
+  }
+  .footer-links li {
+  
+    margin-bottom: 12px;
+  }
+  .footer-links li  a {
+  color:#004C59;
+  text-decoration: none;
+  }
+  .footer .social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 15px;
+  }
+  .footer .social-icons .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    text-decoration: none;
+  }
+  .footer .social-icons .social-icon a i{
+    width: 100px;
+  }
+  .footer .social-icons .social-icon:hover {
+    transform: scale(1.1);
+  }
+  .footer .newsletter {
+    margin-top: 10px;
+  }
+  .footer .newsletter-text {
+    color: #006064;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  .footer .newsletter-form {
+    display: flex;
+    gap: 10px;
+  }
+  .footer .newsletter-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .footer .newsletter-button {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .footer .map-container {
+    margin-top: 15px;
+  }
+  .footer .map-container iframe {
+    width: 100%;
+    height: 150px;
+    border-radius: 4px;
+  }
+  @media screen and (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .footer .social-icons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer .newsletter-form {
+        flex-direction: column;
+    }
+    .footer .newsletter-button {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .footer-title {
+        font-size: 16px;
+    }
+    .footer .social-icons .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
