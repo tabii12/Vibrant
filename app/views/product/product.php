@@ -140,28 +140,4 @@
     </div>
 
 <script src="views/product/product.js"></script>
-<script>
-    let products = <?php echo json_encode($products); ?>;
-    
-    const filterByPrice = (products, priceRange) => {
-    switch (priceRange) {
-        case 'under500':
-        return products.filter(product => product.price < 500000);
-        case '500to1mil':
-        return products.filter(product => product.price >= 500000 && product.price <= 1000000);
-        case '1to2mil':
-        return products.filter(product => product.price >= 1000000 && product.price <= 2000000);
-        case '2to3mil':
-        return products.filter(product => product.price >= 2000000 && product.price <= 3000000);
-        case 'above3mil':
-        return products.filter(product => product.price > 3000000);
-        default:
-        return products;
-    }
-    };
-    
-</script>
 
-<pre>
-    <?php print_r($data['BCTT']) ?>
-</pre>

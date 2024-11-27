@@ -130,108 +130,29 @@
 <section class="love-product">
 <h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
-        <!-- Product 1 -->
-        <div class="new">
-            <div class="img">
-                <img src="img/air-jordan-9-olive-hv4794-030.jpg" alt="Áo Hoodie Yellow D">
-                <button class="btn">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>
-        <div class="new">
-            <div class="img">
-                <img src="img/air-jordan-9-olive-hv4794-030.jpg" alt="Áo Hoodie Yellow D">
-                <button class="btn">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>  <div class="new">
-            <div class="img">
-                <img src="img/air-jordan-9-olive-hv4794-030.jpg" alt="Áo Hoodie Yellow D">
-                <button class="btn">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>
-        
+    <?php
+                    foreach ($data['BCTT'] as $BCTT){
+                        echo '
+                            <div class="new">
+                                <div class="img">
+                                    <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
+                                    <button class="btn">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">'.$BCTT['ten_san_pham'].'</h3>
+                                    <p class="cate">Thời Trang Nam</p>
+                                    <br>
+                                    <p class="price">'.$BCTT['gia'].'đ</p>
+                                </div>
+                            </div>
+                        ';
 
-        <!-- Product 2 -->
-        <div class="new">
-            <div class="img">
-                <img src="img/air-jordan-9-olive-hv4794-030.jpg" alt="Áo Hoodie Yellow D">
-                <button class="btn">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="new">
-            <div class="img">
-                <img src="img/air-jordan-9-olive-hv4794-030.jpg" alt="Áo Hoodie Yellow D">
-                <button  class="btn">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>
-        <!-- Product 4 -->
-        <div class="new">
-            <div class="img">
-                <img src="img/air-jordan-9-olive-hv4794-030.jpg" alt="Áo Hoodie Yellow D">
-                <button class="btn">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>
+                    }
+                ?>
     </div>
 </section>
 <section class="brand"> 

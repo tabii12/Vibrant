@@ -15,6 +15,7 @@
 
         public function homePage() {
             $this->data['product'] = $this->product->getProduct();
+            $this->data['BCTT'] = $this->product->getBCTT();
             $this->renderPage($this->data, 'home');
         }
 
