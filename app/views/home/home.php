@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="views/home/home.css">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 <section class="banner" >
-        <img src="views/home/home_img/Banner.png" alt="">
+        <img src="views/home/home_img/banner.png" alt="">
     </section>
     <section class="service">
         <div class="info-box">
@@ -17,7 +18,7 @@
         </div>
     </section>
     <section class="new-product">
-    <h2 class="section-title">Có thể bạn sẽ thích</h2>
+    <h2><div class="section-title" style="color: #004C59;">Bộ sưu tập </div> <div class="section-title" style="color: #F15E2C;" >giới hạn</div></h2>
     
     <div class="product-new">
         <!-- Product 1 -->
@@ -125,9 +126,9 @@
         </div>
     </div>
 </section>
+
 <section class="love-product">
-    <h2 class="section-title">Có thể bạn sẽ thích</h2>
-    
+<h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
         <!-- Product 1 -->
         <div class="new">
@@ -233,12 +234,7 @@
         </div>
     </div>
 </section>
-<section class="bannerdoc">
-    <div class="banner1"><img src="img/bannerdoc1.png" alt=""></div>
-<div class="banner2"><img src="img/bannerdoc2.png" alt=""></div>
-
-</section>
 <section class="brand"> 
     <h2>Những hãng hợp tác</h2>
-    <img src="img/Brand.png" alt="">
+    <img src="views/home/home_img/brand.png" alt="">
 </section>

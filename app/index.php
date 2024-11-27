@@ -3,10 +3,12 @@
     session_start();
 
     require_once 'controllers/HomeController.php';
+    require_once 'controllers/Product_detail_controller.php';
 
     require_once 'models/Database.php';
     require_once 'models/ProductModel.php';
     require_once 'models/UserModel.php';
+    require_once 'models/detailModel.php';
 
 
     require_once 'views/header/header.php';
@@ -23,9 +25,15 @@
                 $home = new HomeController();
                 $home->loginPage();
                 break;
+<<<<<<< HEAD
             case 'product':
                 $home = new HomeController();
                 $home->productPage();
+=======
+            case 'detail';
+                $detail = new DetailController();
+                $detail->detail();
+>>>>>>> refs/remotes/origin/main
                 break;
             default:
                 $home = new HomeController();
@@ -38,3 +46,4 @@
 
     require_once 'views/footer/footer.php';
     ob_end_flush();
+    
