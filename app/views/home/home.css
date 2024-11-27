@@ -1,5 +1,5 @@
 .banner {
-    width: 100vw; /* Đảm bảo section rộng toàn màn hình */
+    width: 100%; /* Đảm bảo section rộng toàn màn hình */
    overflow: hidden;
 }
 

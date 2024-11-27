@@ -89,7 +89,6 @@ $data_product = $data['product'];
 <section class="love-product">
 <h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
-<<<<<<< HEAD
     <?php
                     foreach ($data['BCTT'] as $BCTT){
                         echo '
@@ -139,17 +138,10 @@ $data_product = $data['product'];
             $count++;
      }
          ?>
->>>>>>> bb9da18a2d8c4c3556faa26bfd9f73bb4c39e37e
+
     </div>
 </section>
 <section class="brand"> 
     <h2>Những hãng hợp tác</h2>
     <img src="views/home/home_img/brand.png" alt="">
 </section>
-
-<?php 
-$data_produc = $data['product'];
-print_r($data_product[0]);
-
-
-?>
