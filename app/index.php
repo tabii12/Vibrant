@@ -25,10 +25,14 @@
                 $home = new HomeController();
                 $home->loginPage();
                 break;
+            case 'logout':
+                require_once 'views/logout.php';
+                break;
             case 'product':
                 $home = new HomeController();
                 $home->productPage();
                 break;
+            
             default:
                 $home = new HomeController();
                 $home->homePage();
