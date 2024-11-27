@@ -25,15 +25,9 @@
                 $home = new HomeController();
                 $home->loginPage();
                 break;
-<<<<<<< HEAD
             case 'product':
                 $home = new HomeController();
                 $home->productPage();
-=======
-            case 'detail';
-                $detail = new DetailController();
-                $detail->detail();
->>>>>>> refs/remotes/origin/main
                 break;
             default:
                 $home = new HomeController();

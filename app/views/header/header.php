@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,10 +43,10 @@
 
                 <?php 
                     if(isset($_SESSION['user'])){
-                        echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-solid fa-right-to-bracket"></i></a>';
+                        echo '<a href="index.php" aria-label="Tài khoản người dùng"><i class="fa-solid fa-right-to-bracket"></i></a>';
                     }else{
                         echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-regular fa-user"></i></a>';
-                        echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-regular fa-user"></i></a>';
+                        echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-solid fa-right-from-bracket"></i></a>';
                     }
                 
                 ?>
@@ -114,4 +116,3 @@
         }
      </script>
 
-      
