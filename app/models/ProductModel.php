@@ -26,4 +26,41 @@
             return $this->db->getAll(sql: $sql);
         }
 
+        public function getProduct1Anh(){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id;
+
+            ";
+            return $this->db->getAll($sql);
+        }
+
+        public function getBrand(){
+            $sql = 'SELECT * FROM thuonghieu';
+            return $this->db->getAll($sql);
+        }
+
+        public function getBCTT(){
+            $sql = '
+            SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+            ORDER BY RAND()
+            LIMIT 7;
+            
+            ';
+            return $this->db->getAll($sql);
+        }
+
     }

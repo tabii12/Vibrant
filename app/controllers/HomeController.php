@@ -50,7 +50,6 @@
             require_once 'views/register/register.php';
         }
         
-        
         public function loginPage(){
 
             $error_message = '';
@@ -82,6 +81,14 @@
             } 
             
             require_once 'views/login/login.php';
+        }
+
+        public function productPage(){
+            $this->data['products'] = $this->product->getProduct1Anh();
+            $this->data['brands'] = $this->product->getBrand();
+            $this->data['BCTT'] = $this->product->getBCTT();
+
+            $this->renderPage($this->data, "product");
         }
     }
     

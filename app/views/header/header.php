@@ -17,10 +17,10 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Giày nam</a></li>
-                    <li><a href="#">Giày nữ</a></li>
-                    <li><a href="#">Giày thể thao</a></li>
-                    <li><a href="#">Đặc biệt</a></li>
+                    <li><a href="index.php?page=product">Giày nam</a></li>
+                    <li><a href="index.php?page=product">Giày nữ</a></li>
+                    <li><a href="index.php?page=product">Giày thể thao</a></li>
+                    <li><a href="index.php?page=product">Đặc biệt</a></li>
                 </ul>
             </nav>
             
@@ -34,7 +34,17 @@
             </div>
             <div class="icons" style="display: flex;">
                 <a href="#" aria-label="Giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-regular fa-user"></i></a>
+
+                <?php 
+                    if(isset($_SESSION['user'])){
+                        echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-solid fa-right-to-bracket"></i></a>';
+                    }else{
+                        echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-regular fa-user"></i></a>';
+                        echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-regular fa-user"></i></a>';
+                    }
+                
+                ?>
+                
                 <button class="mobile-menu-btn" style="font-size: 18px; color: #004C59;" aria-label="Toggle menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>

@@ -8,7 +8,9 @@
     require_once 'models/ProductModel.php';
     require_once 'models/UserModel.php';
 
+
     require_once 'views/header/header.php';
+
     
     if(isset($_GET['page'])){
         $page = $_GET['page'];
@@ -20,6 +22,10 @@
             case 'login';
                 $home = new HomeController();
                 $home->loginPage();
+                break;
+            case 'product':
+                $home = new HomeController();
+                $home->productPage();
                 break;
             default:
                 $home = new HomeController();
