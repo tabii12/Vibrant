@@ -112,7 +112,7 @@ $data_product = $data['product'];
 
                     }
                 ?>
-=======
+
     <?php 
            $count = 0;
            foreach ($data_product as $product) {
