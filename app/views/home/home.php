@@ -93,6 +93,7 @@ $data_product = $data['product'];
                     foreach ($data['BCTT'] as $BCTT){
                         echo '
                             <div class="new">
+                            <a href="index.php?page=detail&id_san_pham='.$product['id'].'">
                                 <div class="img">
                                     <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
                                     <button class="btn">
@@ -108,6 +109,7 @@ $data_product = $data['product'];
                                     <p class="price">'.$BCTT['gia'].'đ</p>
                                 </div>
                             </div>
+                            </a>
                         ';
 
                     }

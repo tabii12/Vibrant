@@ -17,6 +17,11 @@
     if(isset($_GET['page'])){
         $page = $_GET['page'];
         switch($page){
+
+            case 'detail' : 
+                $detail = new DetailController();
+                $detail->detail();   
+                break;      
             case 'register':
                 $home = new HomeController();
                 $home->registerPage();
