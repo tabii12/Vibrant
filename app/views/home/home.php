@@ -95,6 +95,7 @@ $data_product = $data['product'];
 <h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
     <?php
+<<<<<<< HEAD
                foreach ($data['BCTT'] as $BCTT) {
                 // Định dạng giá
                 $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
@@ -118,6 +119,31 @@ $data_product = $data['product'];
                 ';
             }
             
+=======
+                    foreach ($data['BCTT'] as $BCTT){
+                        echo '
+                            <div class="new">
+                            <a href="index.php?page=detail&id_san_pham='.$product['id'].'">
+                                <div class="img">
+                                    <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
+                                    <button class="btn">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">'.$BCTT['ten_san_pham'].'</h3>
+                                    <p class="cate">Thời Trang Nam</p>
+                                    <br>
+                                    <p class="price">'.$BCTT['gia'].'đ</p>
+                                </div>
+                            </div>
+                            </a>
+                        ';
+
+                    }
+>>>>>>> 1f7342854c3281e52befd75a50e0135486ca6368
                 ?>
     
 

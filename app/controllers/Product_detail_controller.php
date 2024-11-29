@@ -18,7 +18,7 @@
                 
                 $this->data['Detail_product'] = $this->detail->getURL($id_san_pham);  
                 $this->data['Infor'] = $this->detail->GetInfor($id_san_pham); 
-                $this->data['love_product'] = $this->detail-> GetProduct();
+                $this->data['BCTT'] = $this->detail-> GetBCTT();
                 $this->data['comment'] = $this->detail-> GetComment($id_san_pham);
                 $this->renderView($this->data);
             } else {

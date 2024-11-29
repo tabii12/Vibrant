@@ -1,193 +1,216 @@
-<link rel="stylesheet" href="views/chitietsanpham/Chi_Tiet_San_Pham.css">;
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<div class="product-container">
-        <?php 
-        $product_img = $data['Detail_product'];
-        $productInfor = $data['Infor'];
-        $product_love = $data['love_product'];
-        $product_Comment = $data['comment'];
-              
-        if (is_array($product_img)  && is_array($productInfor)) {
-            echo '<div class="product-images">
-                    <div class="main-image">
-                        <img src="../public/image/'.$product_img[0]['url'].'" alt="Main Product Image">
-                    </div>
-                    <div class="thumbnails">
-                    <img  class="select-img" src="../public/image/'.$product_img[0]['url'].'" alt="Thumbnail 1">
-                    <img src="../public/image/'.$product_img[1]['url'].'" alt="Thumbnail 2">
-                    <img src="../public/image/'.$product_img[2]['url'].'" alt="Thumbnail 3">
-                    <img src="../public/image/'.$product_img[3]['url'].'" alt="Thumbnail 4">
-                    </div>
+<?php 
+$data_product = $data['Detail_product'];
+$data_infor = $data['Infor'];
+$data_BCTT = $data['BCTT'];
+$data_comment = $data['comment'];
+?>
 
-                    <div class="description"> 
-                    <p>'.$productInfor[0]['mo_ta'].'</p>
-                   </div>
-                </div>
-                
-                <div class="product-details">
-            <h2>'.$productInfor[0]['ten_san_pham'].'</h2>
-            <p class="category">Áo Nam</p>
-            <p class="price"><span class="current-price">4,366,000₫</span> <span class="old-price">4,568,000₫</span></p>
-            <hr>';
-            };
-        ?>
+<link rel="stylesheet" href="views/chitietsanpham/Chi_Tiet_San_Pham.css">
+<div class="detail-container">
         
-            <div class="size-options">
-                <p>Chọn Theo Size:</p>
-                <div class="sizes">
-                    <span>36</span>
-                    <span>37</span>
-                    <span>38</span>
-                    <span>38,5</span>
-                    <span>39</span>
-                    <span>39,5</span>
-                    <span>40</span>
-                    <span>40,5</span>
-                    <span>41</span>
-                    <span>41,5</span>
-                    <span>42</span>
-                    <span>42,5</span>
-                    <span>43</span>
-                    
-                    
+            <?php 
+            echo'
+            <div class="product-gallery">
+                <img src="../public/image/'.$data_product[0]['url'].'" alt="Nike Air Max 90" class="main-image">
+            
+                <div class="thumbnail-row">
+                    <img src="../public/image/'.$data_product[0]['url'].'" alt="Nike Air Max 90 View 1" class="thumbnail active">
+                    <img src="../public/image/'.$data_product[1]['url'].'" class="thumbnail">
+                    <img src="../public/image/'.$data_product[2]['url'].'" class="thumbnail">
+                    <img src="../public/image/'.$data_product[3]['url'].'" class="thumbnail">
                 </div>
             </div>
             
-            <!-- Buttons -->
-            <div class="buttons">
-                <div class="add-to-cart"><a href="index.php?page=cart.php&id=<?php echo $productInfor[0]['id']; ?>">Thêm Vào Giỏ Hàng</a></div>
-                <div class="buy-now">Mua Ngay</div>
-            </div>
-        </div>
-    </div>
-    <div class="stars-content">
-        
-        <div class="review-section">
-            <div class="rating">
-                <div class="rating-header">Đánh Giá Và Nhận Xét</div>
-                <div class="rating-overall">
-                    5/5
-                    <div class="stars">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-                <div class="rating-bars">
-                    <div class="rating-row">
-                        <span>5</span>
-                        <div class="bar"><div class="fill" style="width: 100%;"></div></div>
-                        <span class="rating-count">2 Đánh Giá</span>
-                    </div>
-                    <div class="rating-row">
-                        <span>4</span>
-                        <div class="bar"></div>
-                        <span class="rating-count">0 Đánh Giá</span>
-                    </div>
-                    <div class="rating-row">
-                        <span>3</span>
-                        <div class="bar"></div>
-                        <span class="rating-count">0 Đánh Giá</span>
-                    </div>
-                    <div class="rating-row">
-                        <span>2</span>
-                        <div class="bar"></div>
-                        <span class="rating-count">0 Đánh Giá</span>
-                    </div>
-                    <div class="rating-row">
-                        <span>1</span>
-                        <div class="bar"></div>
-                        <span class="rating-count">0 Đánh Giá</span>
-                    </div>
-                </div>
-            </div>
-                <!-- phan binh luan -->
-                <div class="comment">
-                <?php 
-
-                   if(isset($product_Comment) && !empty($product_Comment)){
-                    foreach ($product_Comment as $Comment) {
-                        echo '
-                        <div class="comment-name">
-                            <h4>' . $Comment['ten_nguoi_dung'] . '</h4>
-                            <div class="comment-content">
-                                <div class="stars">';
-                        
-                        // Hiển thị sao theo rating
-                        $rating = isset($Comment['rating']) ? $Comment['rating'] : 0; // Mặc định rating là 0 nếu không tồn tại
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $rating) {
-                                echo '<span>★</span>'; // Sao đầy
-                            } else {
-                                echo '<span>☆</span>'; // Sao rỗng
-                            }
-                        }
-
-                        echo '</div>
-                                <p><strong>Nhận Xét:</strong> ' . $Comment['noi_dung'] . '</p>
-                            </div>
-                        </div>';
-                     }}else echo'<div class="thongbao"><h3> chưa có Comment nào </h3></div>' 
-                     ?>
-
-               
-                    
-                </div>
-        
             
-    </div>  
+            <div class="product-info">
+            <h1>'.$data_infor[0]['ten_san_pham'].'</h1>
             
-        
-    
-        <div class="product-watched">
-            <h3>Sản Phẩm Có Thể Thích</h3>
-            <?php
-            foreach($product_love as $product){
-                echo'
-                <div class="product-clone">
-                    <img src="../public/image/'.$product['url'].'" alt="'.$product['ten_san_pham'].'    ">
-                    <div class="product-info">
-                        <h4>'.$product['ten_san_pham'].'</h4>
-                        <div class="price">'.$product['gia'].'đ</div>
-                    </div>
-                </div>
-                ';
-            }
+            
+            <div class="price-container">
+                <span class="price">'.$data_infor[0]['gia'].'₫</span>
+            </div>'
+            ;
+
+            
             ?>
             
-                
-                <!-- <div class="product-clone">
-                    <img src="img/test.jpg" alt="Adidas Stan Smith">
-                    <div class="product-info">
-                        <h4>Adidas Stan Smith</h4>
-                        <div class="price">2,600,000đ</div>
-                    </div> 
-                </div> -->
+        
+          
+        
+
+            <div class="size-section">
+                <div class="size-label">Chọn Size:</div>
+                <div class="size-grid">
+                    <div class="size-box active">38</div>
+                    <div class="size-box">39</div>
+                    <div class="size-box">39.5</div>
+                    <div class="size-box">40</div>
+                    <div class="size-box ">40.5</div>
+                    <div class="size-box">41</div>
+                    <div class="size-box">41.5</div>
+                    <div class="size-box">42</div>
+                    <div class="size-box">42.5</div>
+                    <div class="size-box">43</div>
+                </div>
+            </div>
+
+           <?php
+           echo'
+           <div class="product-description">
+          '.$data_infor[0]['mo_ta'].'
+            </div>
+           ';
+            
+
+        
+           ?>
+
+           
+            <div class="action-buttons">
+                <button class="btn btn-cart">Thêm Vào Giỏ Hàng</button>
+                <button class="btn btn-buy">Mua Ngay</button>
             </div>
         </div>
         
     </div>
-</div>
+    <div class="container1">
+        <!-- Ratings Section -->
+        <div class="ratings-section">
+            <h3>Đánh Giá và Nhận Xét</h3>
+            <div class="ratings-header">
+                <div class="rating-overview">
+                    <div class="rating-score">5/5</div>
+                    <div class="rating-stars">★★★★★</div>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar-container">
+                        <span class="rating-label">5★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="rating-bar-container">
+                        <span class="rating-label">4★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="rating-bar-container">
+                        <span class="rating-label">3★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="rating-bar-container">
+                        <span class="rating-label">2★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="rating-bar-container">
+                        <span class="rating-label">1★</span>
+                        <div class="rating-bar">
+                            <div class="rating-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <button id="scrollTopBtn" onclick="scrollToTop()">Lên đầu trang</button>
-    
-    <script>
-     const mainImage = document.querySelector(".main-image img");
-const thumbnails = document.querySelectorAll(".thumbnails img");
+            <!-- Reviews Section -->
+            <div class="reviews-section">
+            <?php 
+                foreach($data_comment as $comment) {
+                    echo '
+                    <div class="review-item">
+                        <div class="review-header">
+                        '.$comment['ten_nguoi_dung'];
 
-thumbnails.forEach((thumbnail) => {
-    thumbnail.addEventListener("click", function () {
-        mainImage.src = this.src;
+                    // Proper usage of the if statement
+                    if ($comment['rating'] >= 1 && $comment['rating'] <= 5) {   
+                        echo '<div class="review-stars">' . str_repeat('★', $comment['rating']) . '</div>';
+                    }
 
-       
-        thumbnails.forEach((thumb) => thumb.classList.remove("select-img"));
-
-
-        this.classList.add("select-img");
-    });
-});
-
-    </script>
-<?php 
-// print_r($product_Comment);
-//
-
+                    echo '
+                            <div class="review-date">2 tháng trước</div>
+                        </div>
+                        <div class="review-text">
+                        '.$comment['noi_dung'].'
+                        </div>
+                    </div>';
+                }
 ?>
+
+            </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <div class="related-products">
+            <h3>Sản Phẩm Đã Xem</h3>
+            <div class="product-grid">
+            <?php
+                foreach($data_BCTT as $BCTT) 
+                echo'
+                    <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'" class="product-card">
+                        <img src="../public/image/'.$BCTT['url'].'" alt="Nike Air Low Premium">
+                        <div class="product-info">
+                            <h4>'.$BCTT['ten_san_pham'].'</h4>
+                            <div class="product-price">'.$BCTT['gia'].'</div>
+                        </div>
+                    </a>
+                ';
+                ?>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle thumbnail clicks
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                // Remove active class from all thumbnails
+                thumbnails.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked thumbnail
+                this.classList.add('active');
+                // Update main image (in real implementation, would use actual image URLs)
+                mainImage.src = this.src.replace('70/70', '600/400');
+            });
+        });
+
+        // Handle size selection
+        const sizeBoxes = document.querySelectorAll('.size-box');
+        sizeBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                sizeBoxes.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Handle slider buttons
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.thumbnail');
+        
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateMainImage();
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateMainImage();
+        });
+
+        function updateMainImage() {
+            thumbnails.forEach(t => t.classList.remove('active'));
+            images[currentImageIndex].classList.add('active');
+            mainImage.src = images[currentImageIndex].src.replace('70/70', '600/400');
+        }
+    </script>
+</body>
+</html>
+<?php 
+
+?>  
