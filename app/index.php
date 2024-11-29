@@ -1,19 +1,13 @@
 <?php
     ob_start();
     session_start();
-
     require_once 'controllers/HomeController.php';
     require_once 'controllers/Product_detail_controller.php';
-
     require_once 'models/Database.php';
     require_once 'models/ProductModel.php';
     require_once 'models/UserModel.php';
     require_once 'models/detailModel.php';
-
-
     require_once 'views/header/header.php';
-
-    
     if(isset($_GET['page'])){
         $page = $_GET['page'];
         switch($page){

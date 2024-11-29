@@ -67,12 +67,15 @@
     scroll-snap-align: start;
     position: relative;
   }
+  .product-new a {
+    text-decoration: none;
+  }
   
   .product-new .new .img {
     border-radius: 10px;
     position: relative;
     width: 285px;
-    height: 380px;
+    
     overflow: hidden;
     background-color: #f6f6f6;
   }
