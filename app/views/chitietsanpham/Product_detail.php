@@ -24,11 +24,9 @@ $data_comment = $data['comment'];
             
             <div class="product-info">
             <h1>'.$data_infor[0]['ten_san_pham'].'</h1>
-            
-            
-            <div class="price-container">
-                <span class="price">'.$data_infor[0]['gia'].'₫</span>
-            </div>'
+            <Span class=category>'.$data_infor[0]['ten_danh_muc'].'</Span> <br>
+            <span class="price">'.$data_infor[0]['gia'].'₫</span>
+            '
             ;
 
             
@@ -212,5 +210,6 @@ $data_comment = $data['comment'];
 </body>
 </html>
 <?php 
+print_r($data_infor) ;
 
-?>  
+?>
