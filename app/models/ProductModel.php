@@ -89,8 +89,14 @@
                 ON 
                     sanpham.id_danh_muc = danhmuc.id
                 WHERE 
-                    sanpham_img.url LIKE '%_1.png' AND danhmuc.id like 4 ";
-
+                    sanpham_img.url LIKE '%_1.png'  
+                ORDER BY 
+                    sanpham.ngay_up_san_pham ASC
+                LIMIT 4"; 
+        
             return $this->db->getAll($sql);
         }
+        
+        
+        
     }
