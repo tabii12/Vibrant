@@ -2,6 +2,7 @@
 $data_product = $data['Detail_product'];
 $data_infor = $data['Infor'];
 $data_BCTT = $data['BCTT'];
+$data_comment = $data['comment'];
 ?>
 
 <link rel="stylesheet" href="views/chitietsanpham/Chi_Tiet_San_Pham.css">
@@ -40,11 +41,11 @@ $data_BCTT = $data['BCTT'];
             <div class="size-section">
                 <div class="size-label">Chọn Size:</div>
                 <div class="size-grid">
-                    <div class="size-box">38</div>
+                    <div class="size-box active">38</div>
                     <div class="size-box">39</div>
                     <div class="size-box">39.5</div>
                     <div class="size-box">40</div>
-                    <div class="size-box active">40.5</div>
+                    <div class="size-box ">40.5</div>
                     <div class="size-box">41</div>
                     <div class="size-box">41.5</div>
                     <div class="size-box">42</div>
@@ -56,7 +57,7 @@ $data_BCTT = $data['BCTT'];
            <?php
            echo'
            <div class="product-description">
-          '.$data_infor[0]['gia'].'
+          '.$data_infor[0]['mo_ta'].'
             </div>
            ';
             
@@ -117,24 +118,28 @@ $data_BCTT = $data['BCTT'];
 
             <!-- Reviews Section -->
             <div class="reviews-section">
-                <div class="review-item">
-                    <div class="review-header">
-                        <div class="review-stars">★★★★★</div>
-                        <div class="review-date">1 tháng trước</div>
-                    </div>
-                    <div class="review-text">
-                        Giày đẹp lắm ạ!! Em rất thích thiết kế này của nike ạ❤️
-                    </div>
-                </div>
-                <div class="review-item">
-                    <div class="review-header">
-                        <div class="review-stars">★★★★★</div>
-                        <div class="review-date">2 tháng trước</div>
-                    </div>
-                    <div class="review-text">
-                        Chất lượng sản phẩm tuyệt vời, đóng gói cẩn thận, vận chuyển nhanh. Rất hài lòng với sản phẩm này.
-                    </div>
-                </div>
+            <?php 
+                foreach($data_comment as $comment) {
+                    echo '
+                    <div class="review-item">
+                        <div class="review-header">
+                        '.$comment['ten_nguoi_dung'];
+
+                    // Proper usage of the if statement
+                    if ($comment['rating'] >= 1 && $comment['rating'] <= 5) {   
+                        echo '<div class="review-stars">' . str_repeat('★', $comment['rating']) . '</div>';
+                    }
+
+                    echo '
+                            <div class="review-date">2 tháng trước</div>
+                        </div>
+                        <div class="review-text">
+                        '.$comment['noi_dung'].'
+                        </div>
+                    </div>';
+                }
+?>
+
             </div>
         </div>
 
@@ -207,5 +212,5 @@ $data_BCTT = $data['BCTT'];
 </body>
 </html>
 <?php 
-// print_r($data_infor);
+
 ?>  
