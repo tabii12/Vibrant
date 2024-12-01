@@ -18,9 +18,9 @@
     require_once 'models/CommentModel.php';
 
     
-    if(isset($_GET['page'])){
+    if(isset($_GET['page'])) {
         $page = $_GET['page'];
-        switch($page){
+        switch($page) {
             case 'khuyenMai':
                 $admin = new AdminController();
                 $admin->khuyenMaiPage();
@@ -41,20 +41,17 @@
                 $admin = new ProductController();
                 $admin->Product();
                 break;
-<<<<<<< HEAD
             case 'comment':
                 $admin = new CommentController();
                 $admin->Comment();
-=======
-            case 'logout':
-                require_once 'views/logout.php';
->>>>>>> 464b3d231823a85e52e3ad382fd14972ab18a5dd
                 break;
             default:
-            echo "Trang không tồn tại!";
-            break;
+                echo "Trang không tồn tại!";
+                break;
         }
-    }else{
+    } else {
+        echo "Trang chủ";
     }
+    
 
     ob_end_flush();
