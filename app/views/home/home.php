@@ -119,12 +119,7 @@ $data_product = $data['product'];
                 ';
             }
             
-<<<<<<< HEAD
                    ?>
-=======
-                    
-                ?>
->>>>>>> 13a8b324444bbb62492b232d1b7152d4110f4ecb
     
 
     </div>
