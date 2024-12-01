@@ -41,9 +41,14 @@
                 $admin = new ProductController();
                 $admin->Product();
                 break;
+<<<<<<< HEAD
             case 'comment':
                 $admin = new CommentController();
                 $admin->Comment();
+=======
+            case 'logout':
+                require_once 'views/logout.php';
+>>>>>>> 464b3d231823a85e52e3ad382fd14972ab18a5dd
                 break;
             default:
             echo "Trang không tồn tại!";

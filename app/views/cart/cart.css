@@ -95,6 +95,15 @@
       border: 1px solid #ddd;
       border-radius: 5px;
     }
+    .love-product h2{
+      display: flex;
+      gap: 20px;
+    }
+    .section-title{
+      font-family: "Lobster", sans-serif;
+      font-size: 30px;
+        margin-bottom: 20px;
+    }
     
     .delete-item {
       background: none;

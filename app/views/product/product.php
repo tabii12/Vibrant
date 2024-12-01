@@ -59,42 +59,42 @@
             </aside>
 
             <main class="products-section">
-                <div class="sort-bar">
-                    <select class="sort-select">
-                        <option>Thứ tự mặc định</option>
-                        <option>Giá thấp đến cao</option>
-                        <option>Giá cao đến thấp</option>
-                        <option>Mới nhất</option>
-                    </select>
-                </div>
+            <div class="sort-bar">
+                <select class="sort-select" id="sortSelect">
+                    <option value="default">Thứ tự mặc định</option>
+                    <option value="lowToHigh">Giá thấp đến cao</option>
+                    <option value="highToLow">Giá cao đến thấp</option>
+                </select>
+</div>
 
-                <div class="products-grid">
-                    <!-- Product Card Template - Repeat 8 times -->
-                    
-                    
-                    <?php 
-                        foreach ($data['products'] as $product){
-                            echo '
-                                <div class="product-card">
-                                    <div class="img">
-                                    <img src="../public/image/'.$product['url'].'" alt="Áo Khoác nam">
-                                </div>
-                                <button class="btn">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                    </svg>
-                                </button>
-                                    <a href="#" class="product-title">'.$product['ten_san_pham'].'</a>
-                                    <div class="rating">
-                                        <div class="stars">★★★★★</div>
-                                        <span class="review-count">(123)</span>
-                                    </div>
-                                    <div class="product-price">'.$product['gia'].'₫</div>
-                                </div>
-                            ';
-                        }
-                        $products = $data['products'];
-                    ?>
+<div class="products-grid" id="productsGrid">
+<?php 
+    foreach ($data['products'] as $product) {
+        
+        $formatted_price = number_format($product['gia'], 0, ',', '.');
+        
+        echo '
+            <div class="product-card" data-price="'.$product['gia'].'">
+                <div class="img">
+                <img src="../public/image/'.$product['url'].'" alt="Áo Khoác nam">
+                </div>
+                <button class="btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0000 6.364L12 20.364l7.682-7.682a4.5 4.5 0000-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0000-6.364 0z"/>
+                    </svg>
+                </button>
+                <a href="#" class="product-title">'.$product['ten_san_pham'].'</a>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                    <span class="review-count">(123)</span>
+                </div>
+                <div class="product-price">'.$formatted_price.'₫</div>
+            </div>
+        ';
+    }
+?>
+
+
                   
                 </div>
 

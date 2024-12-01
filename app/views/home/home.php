@@ -95,7 +95,6 @@ $data_product = $data['product'];
 <h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
     <?php
-
                foreach ($data['BCTT'] as $BCTT) {
                 // Định dạng giá
                 $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
@@ -117,11 +116,11 @@ $data_product = $data['product'];
                             <p class="price">'.$formatted_price.'đ</p>
                         </div>
                     </div>
+                    </a>
                 ';
             }
             
-                    
-                ?>
+                   ?>
     
 
     </div>

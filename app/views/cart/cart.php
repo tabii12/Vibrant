@@ -33,7 +33,8 @@
                                 <p class="price">'.number_format($product['gia'], 0, '', ',').'đ</p>
                                 
                                 <form action="index.php?page=cart" method="post">
-                                    <button class="delete-item" name="delProduct" value="'.$product['id'].'"><i class="fa-regular fa-trash-can"></i></button>
+                                    <input type="hidden" name="product_id" value="'.$product['id'].'"></input>
+                                    <button type="submit" class="delete-item" name="delProduct" ><i class="fa-regular fa-trash-can"></i></butotn>
                                 </form>
                             </div>
                         </div>      
@@ -98,123 +99,41 @@
         </div> -->
     </div>
 </div>
-  <section class="love-product">
-    <div class="title-love-product">
-      <h2 style="font-family: 'Lobster', cursive;">Có thể <span style="font-family: 'Lobster', cursive;">bạn sẽ thích</span></h2>
-      <div class="vector_arrow">
-        <i class="fa-solid fa-share"></i>
-      </div>
-    </div>
-    
+<section class="love-product">
+<h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
-        <!-- Product 1 -->
-        <div class="new">
-            <div class="img">
-                <img src="image/product/Hoodie_Yellow.png" alt="Áo Hoodie Yellow D">
-                <button class="btn">
-                    <i class="fa-regular fa-heart"></i>
-                </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Hoodie Yellow D</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,366,000đ</p>
-            </div>
-        </div>
-        <div class="new">
-            <div class="img">
-                <img src="image/product/TayDai_H&M.png" alt="Áo Tay Dài H&M">
-                <button class="btn">
-                  <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Áo Tay Dài H&M</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">4,699,000đ</p>
-            </div>
-        </div>  <div class="new">
-            <div class="img">
-                <img src="image/product/Nike_OngRong.png" alt="Quần Nike Ống Rộng">
-                <button class="btn">
-                  <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
-            <div class="info">
-                <h3 class="name">Quần Nike Ống Rộng</h3>
-                <p class="cate">Thời Trang Nam</p>
-                <br>
-                <p class="price">450,000đ</p>
-            </div>
-        </div>
-        
+    <?php
 
-        <!-- Product 2 -->
-        <div class="new">
-          <div class="img">
-              <img src="image/product/Adidas_Green.png" alt="Áo Adidas Green">
-              <button class="btn">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="info">
-              <h3 class="name">Áo Adidas Green</h3>
-              <p class="cate">Thời Trang Nam</p>
-              <br>
-              <p class="price">500,000đ</p>
-          </div>
-      </div>
+               foreach ($data['BCTT'] as $BCTT) {
+                // Định dạng giá
+                $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
+                echo '
+                <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">
+                    <div class="new">
+                        <div class="img">
+                            <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
+                            <button class="btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="info">
+                            <h3 class="name">'.$BCTT['ten_san_pham'].'</h3>
+                            <p class="cate">Thời Trang Nam</p>
+                            <br>
+                            <p class="price">'.$formatted_price.'đ</p>
+                        </div>
+                    </div>
+                ';
+            }
+            
+                    
+                ?>
+    
 
-      <!-- Product 3 -->
-      <div class="new">
-          <div class="img">
-              <img src="image/product/Nike_Revolution.png" alt="Nike Revolution 7">
-              <button class="btn">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="info">
-              <h3 class="name">Nike Revolution 7</h3>
-              <p class="cate">Giày</p>
-              <br>
-              <p class="price">1,431,000đ</p>
-          </div>
-      </div>
-      <!-- Product 4 -->
-      <div class="new">
-          <div class="img">
-              <img src="image/product/Ao_Phao_Kieu.png" alt="Áo Phao Kiểu">
-              <button class="btn">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="info">
-              <h3 class="name">Áo Phao Kiểu</h3>
-              <p class="cate">Thời Trang Nam</p>
-              <br>
-              <p class="price">1,644,000đ</p>
-          </div>
-      </div>
-      <!-- Product 5 -->
-
-      <div class="new">
-        <div class="img">
-            <img src="image/product/TuiDa_Puma.png" alt="Túi Da Puma">
-            <button class="btn">
-              <i class="fa-regular fa-heart"></i>
-          </button>
-        </div>
-        <div class="info">
-            <h3 class="name">Túi Da Puma</h3>
-            <p class="cate">Phụ Kiện</p>
-            <br>
-            <p class="price">2,600,000đ</p>
-        </div>
     </div>
-  </div>
-
+</section>
   <?php
     echo "<pre>";
     // print_r($_SESSION['cart']);

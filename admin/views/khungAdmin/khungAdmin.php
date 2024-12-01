@@ -15,41 +15,41 @@
         </div>
         
         <div class="menu">
-            <a class="menu-item">
+            <a href="index.php?page=" class="menu-item">
                 <span>Bảng điều khiển</span>
             </a>
             
-            <a class="menu-item">
+            <a href="index.php?page=" class="menu-item">
                 <span>Danh mục</span>
             </a>
             
-            <a class="menu-item">
+            <a href="index.php?page=product" class="menu-item">
                 <span>Sản phẩm</span>
             </a>
-            
-            <a class="menu-item">
+
+            <a href="index.php?page=" class="menu-item">
                 <span>Danh sách oder</span>
             </a>
             
-            <a class="menu-item">
+            <a href="index.php?page=" class="menu-item">
                 <span>Tin nhắn</span>
             </a>
             
-            <a class="menu-item">
+            <a href="index.php?page=" class="menu-item">
                 <span>Bình luận</span>
             </a>
             
-            <a class="menu-item">
+            <a href="index.php?page=" class="menu-item">
                 <span>Khách hàng</span>
             </a>
 
-            <div class="divider"></div>
+            
             
             <a href="index.php?page=user" class="menu-item active">
                 <span>Admin</span>
             </a>
             
-            <a class="menu-item">
+            <a href="index.php?page=logout" class="menu-item">
                 <span>Đăng xuất</span>
             </a>
         </div>

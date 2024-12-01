@@ -55,7 +55,7 @@ class DetailModel{
                 ) si_min ON sp.id = si_min.id_san_pham
                 JOIN sanpham_img si ON si.id = si_min.min_id
             ORDER BY RAND()
-            LIMIT 9;";
+            LIMIT 4;";
         return $this->product->getAll($sql); 
        }
 

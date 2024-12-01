@@ -104,3 +104,29 @@ function setupPagination() {
 let currentPage = 1; // Trang mặc định là trang đầu tiên
 displayPage(currentPage); // Hiển thị sản phẩm trang đầu tiên
 setupPagination(); // Tạo các nút phân trang
+
+    document.getElementById('sortSelect').addEventListener('change', function() {
+        var productsGrid = document.getElementById('productsGrid');
+        var products = Array.from(productsGrid.getElementsByClassName('product-card'));
+        var sortBy = this.value;
+
+        products.sort(function(a, b) {
+            if (sortBy === 'lowToHigh') {
+                return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
+            }
+            if (sortBy === 'highToLow') {
+                return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
+            }
+            if (sortBy === 'newest') {
+                return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+            }
+            return 0; // Default (no sort)
+        });
+
+        // Reattach sorted products to the grid
+        products.forEach(function(product) {
+            productsGrid.appendChild(product);
+        });
+    });
+
+
