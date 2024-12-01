@@ -94,6 +94,7 @@
         }
 
         public function cartPage(){
+            $this->data['BCTT'] = $this->product->getBCTT();
             if(isset($_POST['submit'])){
                 $product_id = $_POST['product_id'];
                 $this->data['product'] = $this->product->get1Product1Anh($product_id);
@@ -105,7 +106,6 @@
 
                 if (isset($_SESSION['cart'][$product_id])) {
                     // Nếu tồn tại, tăng số lượng
-                    $_SESSION['cart'][$product_id]['quantity']++;
                 } else {
                     // Nếu chưa, thêm sản phẩm mới
                     $_SESSION['cart'][$product_id] = [
@@ -116,11 +116,13 @@
                         'quantity' => 1
                     ];
                 }
-
-                
-
             }
-            require_once 'views/cart/cart.php';
+            if(isset($_POST['delProduct'])){
+                $product_id = $_POST['product_id'];
+                
+                unset($_SESSION['cart'][$product_id]);
+            }
+            $this->renderPage($this->data, "cart");
         }
     }
     
