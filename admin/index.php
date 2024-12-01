@@ -39,6 +39,9 @@
                 $admin = new ProductController();
                 $admin->Product();
                 break;
+            case 'logout':
+                require_once 'views/logout.php';
+                break;
             default:
             echo "Trang không tồn tại!";
             break;
