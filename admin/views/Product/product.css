@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 80px;
+    margin-left: 250px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+thead th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+/* 
+.color-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.black {
+    background-color: black;
+}
+
+.dot.pink {
+    background-color: pink;
+}
+
+.dot.grey {
+    background-color: grey;
+}
+.dot.blue {
+    background-color: blue;
+}
+.dot.lightblue{
+    background-color: lightblue;
+}
+.dot.yellow{
+    background-color: yellow;
+}
+.dot.maroon{
+    background-color:maroon;
+}
+.dot.darkslateblue{
+    background-color: darkslateblue;
+} */
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.edit-btn i{
+    color: #6b6b6b;
+}
+
+.delete-btn i{
+    color: #dc3545;
+}

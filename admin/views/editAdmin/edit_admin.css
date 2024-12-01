@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f8fc;
+    margin: 0;
+    padding: 20px;
+}
+.title_container{
+    width: 1240px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin: 80px 0px 0px 250px;
+
+}
+.title_container h1{
+    color: #004C59;
+    font-size: 35px;
+}
+.form-container {
+    max-width: 1240px;
+    height: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0px 0px 230px;
+}
+form{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.photo-upload {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+}
+
+.change-photo {
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.change-photo:hover {
+    text-decoration: underline;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+}
+.submit_container{
+    width: 250px;
+    margin: 0 auto;
+}
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #004C59;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.submit-btn:hover {
+    background-color: #003038;
+
+}
+@media (min-width: 1800px) {
+    .form-container{
+        max-width: 1540px;
+    }
+    form{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

@@ -74,5 +74,5 @@
     
 
     <pre>
-        <?php print_r($data['khuyenMai']) ?>
+        <?php #print_r($data['khuyenMai']) ?>
     </pre>
