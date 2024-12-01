@@ -72,5 +72,9 @@ class DataBase {
         $this->query($sql, $param);
         return $this->conn->lastInsertId();
     }
+
+    public function getConnection() {
+        return $this->conn;
+    }
 }
 ?>
