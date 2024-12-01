@@ -99,6 +99,7 @@ $data_product = $data['product'];
                 // Định dạng giá
                 $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
                 echo '
+                <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">
                     <div class="new">
                         <div class="img">
                             <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
@@ -118,7 +119,12 @@ $data_product = $data['product'];
                 ';
             }
             
+<<<<<<< HEAD
                    ?>
+=======
+                    
+                ?>
+>>>>>>> 13a8b324444bbb62492b232d1b7152d4110f4ecb
     
 
     </div>

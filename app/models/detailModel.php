@@ -13,7 +13,19 @@ class DetailModel{
        } 
 
        public function GetInfor($id_san_pham){
-        $sql ="SELECT ten_san_pham, mo_ta,id,gia FROM sanpham WHERE id = $id_san_pham ";
+        $sql ="SELECT 
+                    sp.ten_san_pham, 
+                    sp.mo_ta,
+                    sp.id, 
+                    sp.gia, 
+                    sp.id_danh_muc,
+                    dm.ten_danh_muc
+                FROM 
+                    sanpham sp
+                JOIN 
+                    danhmuc dm ON sp.id_danh_muc = dm.id
+                WHERE 
+                    sp.id = $id_san_pham; ";
         return $this->product->getAll($sql);
        }
 
