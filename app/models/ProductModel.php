@@ -14,7 +14,7 @@
                     sanpham.mo_ta, 
                     sanpham.gia, 
                     sanpham.so_luong, 
-                    sanpham_img.url AS img_url, 
+                    sanpham_img.url AS url, 
                     danhmuc.ten_danh_muc
                 FROM 
                     sanpham
@@ -44,6 +44,21 @@
 
             ";
             return $this->db->getAll($sql);
+        }
+        public function get1Product1Anh($id){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+                WHERE sp.id like $id;
+
+            ";
+            return $this->db->getOne($sql);
         }
 
         public function getBrand(){

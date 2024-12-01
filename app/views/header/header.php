@@ -39,7 +39,7 @@
               
             </div>
             <div class="icons" style="display: flex;">
-                <a href="#" aria-label="Giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="index.php?page=cart" aria-label="Giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a>
 
                 <?php 
                     if (isset($_SESSION['user'])) { 

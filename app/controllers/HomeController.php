@@ -92,5 +92,35 @@
 
             $this->renderPage($this->data, "product");
         }
+
+        public function cartPage(){
+            if(isset($_POST['submit'])){
+                $product_id = $_POST['product_id'];
+                $this->data['product'] = $this->product->get1Product1Anh($product_id);
+
+                $product_name = $this->data['product']['ten_san_pham'];
+                $product_price = $this->data['product']['gia'];
+                $product_url = $this->data['product']['url'];
+
+
+                if (isset($_SESSION['cart'][$product_id])) {
+                    // Nếu tồn tại, tăng số lượng
+                    $_SESSION['cart'][$product_id]['quantity']++;
+                } else {
+                    // Nếu chưa, thêm sản phẩm mới
+                    $_SESSION['cart'][$product_id] = [
+                        'id' => $product_id,
+                        'ten_san_pham' => $product_name,
+                        'gia' => $product_price,
+                        'url' => $product_url,
+                        'quantity' => 1
+                    ];
+                }
+
+                
+
+            }
+            require_once 'views/cart/cart.php';
+        }
     }
     
