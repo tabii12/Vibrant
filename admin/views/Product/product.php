@@ -2,6 +2,10 @@
     <link rel="stylesheet" href="views/Product/product.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <body>
+<div class="title_container">
+    <h1>SẢN PHẨM</h1>
+    <a href="index.php?page=addproduct">Thêm Sản Phẩm +</a>
+    </div>
     <div class="table-container">
         <table>
             <thead>

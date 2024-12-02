@@ -117,9 +117,6 @@
             position: relative;
             cursor: pointer;
         }
-        .notification img {
-          width: 40px;
-        }
 
         .notification-badge {
             position: absolute;

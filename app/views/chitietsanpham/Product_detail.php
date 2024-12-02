@@ -11,21 +11,23 @@ $data_comment = $data['comment'];
             <?php 
             echo'
             <div class="product-gallery">
-                <img src="../public/image/'.$data_product[0]['url'].'" alt="Nike Air Max 90" class="main-image">
-            
-                <div class="thumbnail-row">
-                    <img src="../public/image/'.$data_product[0]['url'].'" alt="Nike Air Max 90 View 1" class="thumbnail active">
-                    <img src="../public/image/'.$data_product[1]['url'].'" class="thumbnail">
-                    <img src="../public/image/'.$data_product[2]['url'].'" class="thumbnail">
-                    <img src="../public/image/'.$data_product[3]['url'].'" class="thumbnail">
-                </div>
-            </div>
-            
-            
-            <div class="product-info">
-            <h1>'.$data_infor[0]['ten_san_pham'].'</h1>
-            <Span class=category>'.$data_infor[0]['ten_danh_muc'].'</span> </br>
-            <span class="price">'.$data_infor[0]['gia'].'₫</span>
+    <img src="../public/image/'.$data_product[0]['url'].'" alt="Nike Air Max 90" class="main-image">
+    
+    <div class="thumbnail-row">
+        <img src="../public/image/'.$data_product[0]['url'].'" alt="Nike Air Max 90 View 1" class="thumbnail active">
+        <img src="../public/image/'.$data_product[1]['url'].'" class="thumbnail">
+        <img src="../public/image/'.$data_product[2]['url'].'" class="thumbnail">
+        <img src="../public/image/'.$data_product[3]['url'].'" class="thumbnail">
+    </div>
+</div>
+
+<div class="product-info">
+    <h1>'.$data_infor[0]['ten_san_pham'].'</h1>
+    <span class="category">'.$data_infor[0]['ten_danh_muc'].'</span></br>
+    <br>
+    <span class="price">'.number_format($data_infor[0]['gia'], 0, ',', '.').'₫</span>
+
+
             '
             ;
 
@@ -162,9 +164,10 @@ $data_comment = $data['comment'];
                         <img src="../public/image/'.$BCTT['url'].'" alt="Nike Air Low Premium">
                         <div class="product-info">
                             <h4>'.$BCTT['ten_san_pham'].'</h4>
-                            <div class="product-price">'.$BCTT['gia'].'</div>
+                            <div class="product-price">'.number_format($BCTT['gia'], 0, ',', '.').'₫</div>
                         </div>
                     </a>
+
                 ';
                 ?>
                 

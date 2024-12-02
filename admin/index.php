@@ -7,6 +7,7 @@
     require_once 'controllers/AddAdminController.php';
     require_once 'controllers/EditAdminController.php';
     require_once "controllers/UserController.php";
+    require_once 'controllers/CommentController.php';
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -14,11 +15,12 @@
     require_once 'models/EditAdminModels.php';
     require_once 'models/AddAdminModels.php';
     require_once 'models/ProductModel.php';
+    require_once 'models/CommentModel.php';
 
     
-    if(isset($_GET['page'])){
+    if(isset($_GET['page'])) {
         $page = $_GET['page'];
-        switch($page){
+        switch($page) {
             case 'khuyenMai':
                 $admin = new AdminController();
                 $admin->khuyenMaiPage();
@@ -39,14 +41,17 @@
                 $admin = new ProductController();
                 $admin->Product();
                 break;
-            case 'logout':
-                require_once 'views/logout.php';
+            case 'comment':
+                $admin = new CommentController();
+                $admin->Comment();
                 break;
             default:
-            echo "Trang không tồn tại!";
-            break;
+                echo "Trang không tồn tại!";
+                break;
         }
-    }else{
+    } else {
+        echo "Trang chủ";
     }
+    
 
     ob_end_flush();

@@ -63,7 +63,7 @@ body {
 .product-info h1 {
     font-size: 24px;
     margin-bottom: 5px;
-    color: #000;
+
 }
 
 .product-code {
@@ -81,7 +81,7 @@ body {
 
 .price {
     font-size: 20px;
-    font-weight: 600;
+    
 }
 
 .original-price {
@@ -299,7 +299,7 @@ height: 105%;
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -330,6 +330,9 @@ height: 105%;
     font-size: 14px;
     margin-bottom: 5px;
     color: #333;
+}
+.product-info .category{
+    color:#666 ;
 }
 
 .product-price {
