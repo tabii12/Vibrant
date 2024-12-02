@@ -17,23 +17,15 @@
                         <h2 class="filter-title">Chọn mức giá</h2>
                         <form action="index.php?page=product&danh_muc=<?php echo $danh_muc ?>" method="post">
                             <label class="price-option">
-                                <input type="submit" name="filter" value="Giá dưới 500.000đ" id="filter">
-                                <!-- <span>Giá dưới 500.000đ</span> -->
-                            </label>
-                            <label class="price-option">
-                                <input type="submit" name="filter" value="Giá  500.000đ - 1 triệu" id="filter">
-                                <!-- <span>500.000đ - 1 triệu</span> -->
-                            </label>
-                            <label class="price-option">
-                                <input type="submit" name="filter" value="Giá  1 - 2 triệu" id="filter">
+                                <input type="submit" name="filter1" value="Giá  1 - 2 triệu" id="filter">
                                 <!-- <span>1 - 2 triệu</span> -->
                             </label>
                             <label class="price-option">
-                                <input type="submit" name="filter" value="Giá  2 - 3 triệu" id="filter">
+                                <input type="submit" name="filter2" value="Giá  2 - 3 triệu" id="filter">
                                 <!-- <span>2 - 3 triệu</span> -->
                             </label>
                             <label class="price-option">
-                                <input type="submit" name="filter" value="Giá trên 3 triệu" id="filter">
+                                <input type="submit" name="filter3" value="Giá trên 3 triệu" id="filter">
                                 <!-- <span>Giá trên 3 triệu</span> -->
                             </label>
                         </form>
@@ -89,7 +81,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0000 6.364L12 20.364l7.682-7.682a4.5 4.5 0000-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0000-6.364 0z"/>
                     </svg>
                 </button>
-                <a href="#" class="product-title">'.$product['ten_san_pham'].'</a>
+                <a href="index.php?page=detail&id_san_pham='.$product['id'].'" class="product-title">'.$product['ten_san_pham'].'</a>
                 <div class="rating">
                     <div class="stars">★★★★★</div>
                     <span class="review-count">(123)</span>
@@ -99,38 +91,9 @@
         ';
     }
 ?>
+</div>
 
-
-                <div class="products-grid">
-                    <!-- Product Card Template - Repeat 8 times -->
-                    
-                    
-                    <?php 
-                        foreach ($data['products'] as $product){
-                            echo '
-                                <div class="product-card">
-                                    <div class="img">
-                                    <img src="../public/image/'.$product['url'].'" alt="Áo Khoác nam">
-                                </div>
-                                <button class="btn">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                    </svg>
-                                </button>
-                                    <a style="text-decoration: none; color: #005e5d;" href="index.php?page=detail&id_san_pham='.$product['id'].'" class="product-title">'.$product['ten_san_pham'].'</a>
-                                    <div class="rating">
-                                        <div class="stars">★★★★★</div>
-                                        <span class="review-count">(123)</span>
-                                    </div>
-                                    <div class="product-price">'.$product['gia'].'₫</div>
-                                </div>
-                            
-                            ';
-                        }
-                        $products = $data['products'];
-                    ?>
-                  
-                </div>
+                
 
                 <div class="pagination">
                     <div class="page-item">←</div>
