@@ -116,6 +116,7 @@ $data_product = $data['product'];
                             <p class="price">'.$formatted_price.'đ</p>
                         </div>
                     </div>
+                </a>
                 ';
             }
             

@@ -84,13 +84,14 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                                     </svg>
                                 </button>
-                                    <a href="#" class="product-title">'.$product['ten_san_pham'].'</a>
+                                    <a style="text-decoration: none; color: #005e5d;" href="index.php?page=detail&id_san_pham='.$product['id'].'" class="product-title">'.$product['ten_san_pham'].'</a>
                                     <div class="rating">
                                         <div class="stars">★★★★★</div>
                                         <span class="review-count">(123)</span>
                                     </div>
                                     <div class="product-price">'.$product['gia'].'₫</div>
                                 </div>
+                            
                             ';
                         }
                         $products = $data['products'];
@@ -109,35 +110,39 @@
                 </div>
             </main>
         </div>
-        <section class="love-product">
-            <h2 class="section-title">Có thể bạn sẽ thích</h2>
-            <div class="product-love">
-                <?php
-                    foreach ($data['BCTT'] as $BCTT){
-                        echo '
-                            <div class="new">
-                                <div class="img">
-                                    <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
-                                    <button class="btn">
-                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="info">
-                                    <h3 class="name">'.$BCTT['ten_san_pham'].'</h3>
-                                    <p class="cate">Thời Trang Nam</p>
-                                    <br>
-                                    <p class="price">'.$product['gia'].'đ</p>
-                                </div>
-                            </div>
-                        ';
-
-                    }
-                ?>
-            </div>
-        </section>
+</div>
+<section class="love-product">
+    <h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
+    <div class="product-love">
+    <?php
+               foreach ($data['BCTT'] as $BCTT) {
+                // Định dạng giá
+                $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
+                echo '
+                <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">
+                    <div class="new">
+                        <div class="img">
+                            <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
+                            <button class="btn">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="info">
+                            <h3 class="name">'.$BCTT['ten_san_pham'].'</h3>
+                            <p class="cate">Thời Trang Nam</p>
+                            <br>
+                            <p class="price">'.$formatted_price.'đ</p>
+                        </div>
+                    </div>
+                </a>
+                ';
+            }
+            
+    ?>
     </div>
+</section>
 
 <script src="views/product/product.js"></script>
 
