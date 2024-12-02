@@ -93,6 +93,8 @@
             if(isset($_GET['danh_muc'])){
                 $danh_muc = $_GET['danh_muc'];
 
+                if(!isset($_POST['']))
+
                 switch($danh_muc){
                     case '1':
                         $this->data['products'] = $this->product->getProduct1AnhTheoDanhMuc('1');
@@ -107,6 +109,8 @@
                         $this->data['products'] = $this->product->getProduct1AnhTheoDanhMuc('4');
                         break;
                 }
+
+
             }
 
             $this->renderPage($this->data, "product");

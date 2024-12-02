@@ -1,4 +1,8 @@
-
+<?php
+    if(isset($_GET['danh_muc'])){
+        $danh_muc = $_GET['danh_muc'];
+    }
+?>
 <link rel="stylesheet" href="views/product/product.css">
 <div class="container11">
         <div class="breadcrumb">
@@ -11,26 +15,28 @@
                     <!-- Price Filter -->
                     <div class="filter-section">
                         <h2 class="filter-title">Chọn mức giá</h2>
-                        <label class="price-option">
-                            <input type="radio" name="price" value="under500" id="under500">
-                            <span>Giá dưới 500.000đ</span>
-                        </label>
-                        <label class="price-option">
-                            <input type="radio" name="price" value="500to1mil" id="500to1mil">
-                            <span>500.000đ - 1 triệu</span>
-                        </label>
-                        <label class="price-option">
-                            <input type="radio" name="price" value="1to2mil" id="1to2mil">
-                            <span>1 - 2 triệu</span>
-                        </label>
-                        <label class="price-option">
-                            <input type="radio" name="price" value="2to3mil" id="2to3mil">
-                            <span>2 - 3 triệu</span>
-                        </label>
-                        <label class="price-option">
-                            <input type="radio" name="price" value="above3mil" id="above3mil">
-                            <span>Giá trên 3 triệu</span>
-                        </label>
+                        <form action="index.php?page=product&danh_muc=<?php echo $danh_muc ?>" method="post">
+                            <label class="price-option">
+                                <input type="submit" name="filter" value="Giá dưới 500.000đ" id="filter">
+                                <!-- <span>Giá dưới 500.000đ</span> -->
+                            </label>
+                            <label class="price-option">
+                                <input type="submit" name="filter" value="Giá  500.000đ - 1 triệu" id="filter">
+                                <!-- <span>500.000đ - 1 triệu</span> -->
+                            </label>
+                            <label class="price-option">
+                                <input type="submit" name="filter" value="Giá  1 - 2 triệu" id="filter">
+                                <!-- <span>1 - 2 triệu</span> -->
+                            </label>
+                            <label class="price-option">
+                                <input type="submit" name="filter" value="Giá  2 - 3 triệu" id="filter">
+                                <!-- <span>2 - 3 triệu</span> -->
+                            </label>
+                            <label class="price-option">
+                                <input type="submit" name="filter" value="Giá trên 3 triệu" id="filter">
+                                <!-- <span>Giá trên 3 triệu</span> -->
+                            </label>
+                        </form>
                     </div>
         
                     <div class="divider"></div>
@@ -146,3 +152,6 @@
 
 <script src="views/product/product.js"></script>
 
+<pre>
+    <?php  ?>
+</pre>

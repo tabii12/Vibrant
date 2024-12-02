@@ -466,3 +466,10 @@
   .product-love a{
     text-decoration: none;
   }
+
+  #filter{
+    color: #004C59;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
