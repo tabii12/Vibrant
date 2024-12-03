@@ -17,6 +17,10 @@
             $this->data['product'] = $this->product->getProduct();
             $this->data['BCTT'] = $this->product->getBCTT();
             $this->data['productDB'] = $this->product->getProductDB();
+            $this->data['productNewGN'] = $this->product->getProduct1AnhNewGN();
+            $this->data['productNewGNw'] = $this->product->getProduct1AnhNewGNw();
+            $this->data['productNewTT'] = $this->product->getProduct1AnhNewTT();
+            $this->data['productNewDB'] = $this->product->getProduct1AnhNewDB();
             $this->renderPage($this->data, 'home');
         }
 

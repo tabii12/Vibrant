@@ -1,7 +1,7 @@
 <?php
     ob_start();
     session_start();
-    // require_once 'views/khungAdmin/khungAdmin.php'; 
+    require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
@@ -11,6 +11,7 @@
     require_once 'controllers/AddcateController.php';
     require_once 'controllers/OderlistController.php';
     require_once 'controllers/OderDetailController.php';
+    require_once 'controllers/cateController.php';
 
 
     require_once 'models/Database.php';
@@ -51,8 +52,12 @@
                 $admin = new CommentController();
                 $admin->Comment();
                 break;
+            case 'cate' :
+                $cate = new cateController();
+                $cate->Cate();
+                break;
             case 'addcate':
-                $addcate = new cateController();
+                $addcate = new addcateController();
                 $addcate->addCate();
                 break;
             case 'oder':

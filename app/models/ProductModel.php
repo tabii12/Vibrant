@@ -45,6 +45,78 @@
             ";
             return $this->db->getAll($sql);
         }
+        public function getProduct1AnhNewGN(){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+                JOIN danhmuc dm ON dm.id = sp.id_danh_muc
+                WHERE dm.id = 1
+                ORDER BY sp.ngay_up_san_pham DESC
+                LIMIT 1
+
+            ";
+            return $this->db->getAll($sql);
+        }
+        public function getProduct1AnhNewGNw(){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+                JOIN danhmuc dm ON dm.id = sp.id_danh_muc
+                WHERE dm.id = 2
+                ORDER BY sp.ngay_up_san_pham DESC
+                LIMIT 1
+
+            ";
+            return $this->db->getAll($sql);
+        }
+        public function getProduct1AnhNewTT(){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+                JOIN danhmuc dm ON dm.id = sp.id_danh_muc
+                WHERE dm.id = 3
+                ORDER BY sp.ngay_up_san_pham DESC
+                LIMIT 1
+
+            ";
+            return $this->db->getAll($sql);
+        }
+        public function getProduct1AnhNewDB(){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+                JOIN danhmuc dm ON dm.id = sp.id_danh_muc
+                WHERE dm.id = 4
+                ORDER BY sp.ngay_up_san_pham DESC
+                LIMIT 1
+
+            ";
+            return $this->db->getAll($sql);
+        }
 
         public function getProduct1AnhTheoDanhMuc($danh_muc){
             $sql = "

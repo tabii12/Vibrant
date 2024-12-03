@@ -8,6 +8,11 @@ class cateModel {
         $this->db = new DataBase();
     }
 
+    public function getcate() {
+        $sql = "SELECT * FROM danhmuc"; 
+        return $this->db->getAll($sql);
+    }
+
    
     public function addcate($data_cate) {
         // Kiểm tra dữ liệu đầu vào
@@ -25,4 +30,12 @@ class cateModel {
         // Thực thi truy vấn và trả kết quả
         return $this->db->insert($sql, $params);
     }
+
+    public function deletecate($cateid) {
+        $sql = "DELETE FROM danhmuc WHERE id = ?";
+        $params = [$cateid];
+    
+        return $this->db->query($sql, $params);
+    }
+
 }

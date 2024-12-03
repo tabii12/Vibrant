@@ -1,6 +1,6 @@
 <?php  
 
-class cateController {
+class addcateController {
 
     private $cate;
     private $data = [];
@@ -30,7 +30,7 @@ class cateController {
 
             // Gọi phương thức addcate trong model để thêm dữ liệu
             if ($this->cate->addcate($data_cate)) {
-                echo "Thêm danh mục thành công!";
+                header("Location: index.php?page=cate");
             } else {
                 echo "Lỗi khi thêm danh mục.";
             }
