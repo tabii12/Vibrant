@@ -35,8 +35,8 @@
                 <span>Tin nhắn</span>
             </a>
             
-            <a href="index.php?page=" class="menu-item">
-                <span>Bình luận</span>
+            <a href="index.php?page=khuyenMai" class="menu-item">
+                <span>Khuyễn mãi</span>
             </a>
             
             <a href="index.php?page=" class="menu-item">

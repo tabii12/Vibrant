@@ -108,7 +108,7 @@
                 // Định dạng giá
                 $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
                 echo '
-                <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">
+                <a style="text-decoration: none;" href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">
                     <div class="new">
                         <div class="img">
                             <img src="../public/image/'.$BCTT['url'].'" alt="Áo Hoodie Yellow D">
@@ -125,6 +125,7 @@
                             <p class="price">'.$formatted_price.'đ</p>
                         </div>
                     </div>
+                </a>
                 ';
             }
             

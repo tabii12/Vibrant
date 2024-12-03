@@ -23,10 +23,10 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php?page=product">Giày nam</a></li>
-                    <li><a href="index.php?page=product">Giày nữ</a></li>
-                    <li><a href="index.php?page=product">Giày thể thao</a></li>
-                    <li><a href="index.php?page=product">Đặc biệt</a></li>
+                    <li><a href="index.php?page=product&danh_muc=1">Giày nam</a></li>
+                    <li><a href="index.php?page=product&danh_muc=2">Giày nữ</a></li>
+                    <li><a href="index.php?page=product&danh_muc=3">Giày thể thao</a></li>
+                    <li><a href="index.php?page=product&danh_muc=4">Đặc biệt</a></li>
                 </ul>
             </nav>
             

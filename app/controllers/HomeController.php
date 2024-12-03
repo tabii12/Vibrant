@@ -17,6 +17,10 @@
             $this->data['product'] = $this->product->getProduct();
             $this->data['BCTT'] = $this->product->getBCTT();
             $this->data['productDB'] = $this->product->getProductDB();
+            $this->data['productNewGN'] = $this->product->getProduct1AnhNewGN();
+            $this->data['productNewGNw'] = $this->product->getProduct1AnhNewGNw();
+            $this->data['productNewTT'] = $this->product->getProduct1AnhNewTT();
+            $this->data['productNewDB'] = $this->product->getProduct1AnhNewDB();
             $this->renderPage($this->data, 'home');
         }
 
@@ -89,6 +93,111 @@
             $this->data['products'] = $this->product->getProduct1Anh();
             $this->data['brands'] = $this->product->getBrand();
             $this->data['BCTT'] = $this->product->getBCTT();
+
+            if(isset($_GET['danh_muc'])){
+                $danh_muc = $_GET['danh_muc'];
+
+                switch($danh_muc){
+                    case '1':
+                        $this->data['products'] = $this->product->getProduct1AnhTheoDanhMuc('1');
+                        if(isset($_POST['filter1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('1', '1000000', '2000000');
+                        }
+                        if(isset($_POST['filter2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('1', '2000000', '3000000');
+                        }
+                        if(isset($_POST['filter3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('1', '3000000', '10000000');
+                        }
+                        if(isset($_POST['brand1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('1', '1');
+                        }
+                        if(isset($_POST['brand2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('1', '2');
+                        }
+                        if(isset($_POST['brand3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('1', '3');
+                        }
+                        if(isset($_POST['brand4'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('1', '4');
+                        }
+                        break;
+                    case '2':
+                        $this->data['products'] = $this->product->getProduct1AnhTheoDanhMuc('2');
+                        if(isset($_POST['filter1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('2', '1000000', '2000000');
+                        }
+                        if(isset($_POST['filter2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('2', '2000000', '3000000');
+                        }
+                        if(isset($_POST['filter3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('2', '3000000', '10000000');
+                        }
+                        if(isset($_POST['brand1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('2', '1');
+                        }
+                        if(isset($_POST['brand2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('2', '2');
+                        }
+                        if(isset($_POST['brand3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('2', '3');
+                        }
+                        if(isset($_POST['brand4'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('2', '4');
+                        }
+                        break;
+                    case '3':
+                        $this->data['products'] = $this->product->getProduct1AnhTheoDanhMuc('3');
+                        if(isset($_POST['filter1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('3', '1000000', '2000000');
+                        }
+                        if(isset($_POST['filter2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('3', '2000000', '3000000');
+                        }
+                        if(isset($_POST['filter3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('3', '3000000', '10000000');
+                        }
+                        if(isset($_POST['brand1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('3', '1');
+                        }
+                        if(isset($_POST['brand2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('3', '2');
+                        }
+                        if(isset($_POST['brand3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('3', '3');
+                        }
+                        if(isset($_POST['brand4'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('3', '4');
+                        }
+                        break;
+                    case '4':
+                        $this->data['products'] = $this->product->getProduct1AnhTheoDanhMuc('4');
+                        if(isset($_POST['filter1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('4', '1000000', '2000000');
+                        }
+                        if(isset($_POST['filter2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('4', '2000000', '3000000');
+                        }
+                        if(isset($_POST['filter3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucfilter('4', '3000000', '10000000');
+                        }
+                        if(isset($_POST['brand1'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('4', '1');
+                        }
+                        if(isset($_POST['brand2'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('4', '2');
+                        }
+                        if(isset($_POST['brand3'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('4', '3');
+                        }
+                        if(isset($_POST['brand4'])){
+                            $this->data['products'] = $this->product->getProduct1AnhTheoDanhMucbrand('4', '4');
+                        }
+                        break;
+                }
+
+
+            }
 
             $this->renderPage($this->data, "product");
         }
