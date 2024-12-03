@@ -9,6 +9,7 @@
     require_once "controllers/UserController.php";
     require_once 'controllers/CommentController.php';
     require_once 'controllers/AddcateController.php';
+    require_once 'controllers/OderlistController.php';
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -18,6 +19,7 @@
     require_once 'models/ProductModel.php';
     require_once 'models/CommentModel.php';
     require_once 'models/CateModel.php';
+    require_once 'models/OderlistModel.php';
 
     
     if(isset($_GET['page'])) {
@@ -51,6 +53,11 @@
                 $addcate = new cateController();
                 $addcate->addCate();
                 break;
+            case 'oder':
+                $Oder = new OderController();
+                $Oder->Oder();
+                break;
+
             default:
                 echo "Trang không tồn tại!";
                 break;
