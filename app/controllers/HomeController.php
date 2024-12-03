@@ -2,11 +2,13 @@
     class HomeController {
         private $product;
         private $user;
+        private $checkout;
         private $data = [];
 
         public function __construct() {
             $this->product = new ProductModel();
             $this->user = new UserModel();
+            $this->checkout = new CheckoutModel();
         }
 
         public function renderPage($data, $page) {
@@ -233,5 +235,57 @@
             }
             $this->renderPage($this->data, "cart");
         }
+
+        public function checkoutPage(){
+            $this->data['products'] = $this->product->getProduct1Anh();
+            if(isset($_SESSION['cart']) && isset($_SESSION['user'])){
+                if(isset($_POST['km'])){
+                    $makm = $_POST['ma_nhap'];
+                    $km = $this->product->getKM();
+                    $count = 0;
+                    foreach($km as $ma){
+                        if($ma['ma_nhap'] == $makm){
+                            $discount = $ma['phan_tram_giam'];
+                            $idDiscount = $ma['id'];
+                        }
+                        $count++;
+                    }
+                    if (isset($discount)) {
+                        $true_message = 'Bạn đã được giảm ' . $discount . '%';
+                    } else {
+                        $error_message = "Mã không hợp lệ hoặc đã hết hạng!";
+                    }                  
+                }
+
+                if(isset($_POST['submit'])){
+                    $data = [];
+                    $data['phuong_thuc_thanh_toan'] = $_POST['payment_method'];
+                    $data['nguoi_nhan'] = $_POST['ten_nguoi_nhan'];
+                    $data['dia_chi'] = $_POST['dia_chi'];
+                    $data['sdt'] = $_POST['sdt'];
+                    $data['tong_gia'] = $_POST['tong_gia'];
+                    if (empty($_POST['id_khuyen_mai'])) {
+                        $data['id_khuyen_mai'] = NULL;
+                    } else {
+                        $data['id_khuyen_mai'] = $_POST['id_khuyen_mai'];
+                    }
+
+                    $oderId = $this->checkout->createOrder($data);
+
+                    if ($oderId) {
+                        $products = $_SESSION['cart'];
+                        $this->checkout->addOrderDetails($oderId, $products);
+
+                        unset($_SESSION['cart']);
+
+                        echo '<script>alert("Đơn hàng đã được tạo thành công!");</script>';
+                        header('Location: index.php?page=home');
+                    } else {
+                        echo '<script>alert("Đã xảy ra lỗi khi tạo đơn hàng!");</script>';
+                    }
+                }
+
+                require_once 'views/thanhtoan/thanhtoan.php';
+            }
+        }
     }
-    

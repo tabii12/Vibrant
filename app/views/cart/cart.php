@@ -80,23 +80,11 @@
                     <div class="sumAll">
                         <p>Tổng giá: <span>'.number_format($sum + '100000', 0, '', ',').'đ</span></p>
                     </div>
-                    <button class="checkout-btn">Thanh Toán</button>
-                    <button class="continue-btn">Tiếp tục mua hàng</button>
+                    <a href="index.php?page=checkout&checkout=ok"><button class="checkout-btn" >Thanh Toán</button></a>
+                    <a href="index.php?page=home"><button class="continue-btn">Tiếp tục mua hàng</button></a>
                 </div>
             ';
         ?>
-
-        <!-- <div class="cart-summary">
-            <div class="price_shoe_ship">
-                <p>Tổng giá giày: <span>0đ</span></p>
-                <p>Phí ship: <span>100.000đ</span></p>
-            </div>
-            <div class="sumAll">
-                <p>Tổng giá: <span>0đ</span></p>
-            </div>
-            <button class="checkout-btn">Thanh Toán</button>
-            <button class="continue-btn">Tiếp tục mua hàng</button>
-        </div> -->
     </div>
 </div>
 <section class="love-product">

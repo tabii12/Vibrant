@@ -202,12 +202,12 @@
                     GROUP BY id_san_pham
                 ) si_min ON sp.id = si_min.id_san_pham
                 JOIN sanpham_img si ON si.id = si_min.min_id
-            ORDER BY RAND()
+            ORDER BY sp.so_luong DESC
             LIMIT 7;
-            
             ';
             return $this->db->getAll($sql);
         }
+        
 
         public function getProductDB(){
             $sql = "
@@ -238,6 +238,10 @@
             return $this->db->getAll($sql);
         }
         
-        
-        
+        public function getKM(){
+            $sql = "
+                SELECT * FROM khuyenmai
+            ";
+            return $this->db->getAll($sql);
+        }
     }

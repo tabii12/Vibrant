@@ -20,10 +20,10 @@ $data_product = $data['product'];
             <p><strong>Đổi mới sản phẩm mới</strong><br>nếu sản phẩm lỗi</p>
         </div>
     </section>
-    <section class="new-product">
-    <h2><div class="section-title" style="color: #004C59;">Bộ sưu tập </div> <div class="section-title" style="color: #F15E2C;" >giới hạn</div></h2>
+<section class="new-product">
+     <h2><div class="section-title" style="color: #004C59;">Bộ sưu tập </div> <div class="section-title" style="color: #F15E2C;" >mới ra mắt</div></h2>
     
-    <div class="product-new">
+     <div class="product-new">
         <!-- Product 1 -->
          <?php 
           $count = 0;
@@ -55,11 +55,11 @@ $data_product = $data['product'];
           }
           
          ?>
-    </div>
+     </div>
 </section>
 <section class="new-products">
     <div class="intro">
-        <h2>Sản Phẩm Mới</h2>
+        <h2>Bộ sưu tập giới hạn</h2>
         <p>Những sản phẩm đặc biệt giới hạn bởi những nhà thiết kế</p>
         <button class="shop-button">Mua Sắm</button>
     </div>
@@ -79,28 +79,53 @@ $data_product = $data['product'];
             <p>GIÀY NAM</p>
         </div>
         <div class="product-item">
-            <div class="img">
-                <img src="..\public\image\ADIDAS\MAN\ADIDAS_Gazelle_BLUE_1.png" alt="Thời Trang Nam">
-            </div>
+        <?php 
+                foreach($data['productNewGNw'] as $giay){
+                    echo '
+                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <div class="img">
+                        <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
+                        </div>
+                        </a>
+                    ';
+                }            
+            ?>
             <p>GIÀY NỮ</p>
         </div>
         <div class="product-item">
-            <div class="img">
-                <img src="..\public\image\ADIDAS\MAN\AIDAS_Trainer_CAM_1.png" alt="Thời Trang Nam">
-            </div>
+        <?php 
+                foreach($data['productNewTT'] as $giay){
+                    echo '
+                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <div class="img">
+                        <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
+                        </div>
+                        </a>
+                    ';
+                }            
+            ?>
             <p>GIÀY THỂ THAO</p>
         </div>
         <div class="product-item">
-            <div class="img">
-                <img src="..\public\image\ADIDAS\MAN\adidas_Superstar_1.png" alt="Thời Trang Nam">
-            </div>
+        <?php 
+
+                foreach($data['productNewDB'] as $giay){
+                    echo '
+                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <div class="img">
+                        <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
+                        </div>
+                        </a>
+                    ';
+                }            
+            ?>
             <p>ĐẶC BIỆT</p>
         </div>
     </div>
 </section>
 
 <section class="love-product">
-<h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
+<h2><div class="section-title" style="color: #004C59;">Sản phẩm  </div> <div class="section-title" style="color: #F15E2C;" >Giảm giá </div></h2>
     <div class="product-love">
     <?php
                foreach ($data['BCTT'] as $BCTT) {
