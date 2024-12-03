@@ -8,17 +8,9 @@
     require_once 'controllers/EditAdminController.php';
     require_once "controllers/UserController.php";
     require_once 'controllers/CommentController.php';
-<<<<<<< HEAD
     require_once 'controllers/KhachHangController.php';
     require_once 'controllers/AddProductController.php';
     require_once 'controllers/EditProductController.php';
-=======
-    require_once 'controllers/AddcateController.php';
-    require_once 'controllers/OderlistController.php';
-    require_once 'controllers/OderDetailController.php';
-    require_once 'controllers/cateController.php';
-
->>>>>>> dc37fac53d8084025cf6b82e6d9314837f256439
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -27,14 +19,9 @@
     require_once 'models/AddAdminModels.php';
     require_once 'models/ProductModel.php';
     require_once 'models/CommentModel.php';
-<<<<<<< HEAD
     require_once 'models/KhachHangModel.php';
     require_once 'models/AddProductModel.php';
-    require_once 'models/EditproductModel.php';
-=======
-    require_once 'models/CateModel.php';
-    require_once 'models/OderModel.php';
->>>>>>> dc37fac53d8084025cf6b82e6d9314837f256439
+    require_once 'models/EditproductModel.php'; 
 
     
     if(isset($_GET['page'])) {
