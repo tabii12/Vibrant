@@ -14,7 +14,7 @@ body {
 }
 .title_container h1{
     color: #004C59;
-    font-size: 35px;
+    font-size: 30px;
 }
 .title_container a{
     width: 150px;
@@ -59,7 +59,7 @@ tbody td {
 tbody tr:hover {
     background-color: #f9f9f9;
 }
-
+td
 img {
     width: 60px;
     height: 60px;

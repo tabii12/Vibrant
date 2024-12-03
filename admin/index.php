@@ -8,6 +8,8 @@
     require_once 'controllers/EditAdminController.php';
     require_once "controllers/UserController.php";
     require_once 'controllers/CommentController.php';
+    require_once 'controllers/KhachHangController.php';
+    require_once 'controllers/AddProductController.php';
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -16,6 +18,8 @@
     require_once 'models/AddAdminModels.php';
     require_once 'models/ProductModel.php';
     require_once 'models/CommentModel.php';
+    require_once 'models/KhachHangModel.php';
+    require_once 'models/AddProductModel.php';
 
     
     if(isset($_GET['page'])) {
@@ -44,6 +48,14 @@
             case 'comment':
                 $admin = new CommentController();
                 $admin->Comment();
+                break;
+            case 'customer':
+                $admin = new CustomerController();
+                $admin->Customer();
+                break;
+            case 'addproduct':
+                $admin = new AddProductController();
+                $admin->AddProduct();
                 break;
             default:
                 echo "Trang không tồn tại!";

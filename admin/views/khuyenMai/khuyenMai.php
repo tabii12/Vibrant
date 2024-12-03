@@ -25,9 +25,10 @@
         
       </form>
     </div>
-
+    <div class="title_container">
+    <h1>KHUYẾN MÃI</h1>
+    </div>
     <div class="container">
-        <h2 class="mainTitle">Quản lý khuyến mãi</h2>
 
         <button id="addKhuyenMai">Thêm khuyến mãi</button>
 

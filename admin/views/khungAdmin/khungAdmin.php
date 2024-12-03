@@ -11,7 +11,7 @@
  <body>
 <div class="sidebar">
         <div class="logo">
-            <img src="views/khungAdmin/image/logo.png" alt="Logo">
+            <img style="width:200px;" src="views/khungAdmin/image/logo.png" alt="Logo">
         </div>
         
         <div class="menu">
