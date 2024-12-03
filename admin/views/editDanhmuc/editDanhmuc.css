@@ -1,0 +1,130 @@
+
+body {
+    width: 1440px;
+    margin: 0 auto;
+ }
+ .container_{
+     margin-top: 100px;
+     margin-left: 150px;
+  }
+  
+ 
+ .edit-container {
+     font-family: 'Nunito Sans', sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     padding: 20px;
+ }
+ 
+ 
+ .edit-box {
+     background: #ffffff;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     padding: 30px;
+     width: 1100px;
+     height: 500px;
+     text-align: center;
+     margin: 0 auto;
+    
+ }
+ .edit-box label{
+     margin-left: 350px;
+     width: 400px;
+ }
+ 
+ .title {
+     margin-left: 155px;
+     font-family: 'Nunito Sans', sans-serif;
+ }
+ 
+ .title h1 {
+     font-size: 24px;
+     color: #2c3e50;
+     margin-bottom: 20px;
+ }
+ 
+ 
+ .edit-photo {
+     margin: 0 auto; 
+     display: block;
+ 
+ }
+ 
+ .edit-photo img {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     border: 2px solid #e0e0e0;
+ }
+ 
+ /* ẩn nút của input:file */
+ .change-photo::-webkit-file-upload-button {
+     visibility: hidden;
+ }
+ 
+ .change-photo {
+     margin: 10px;
+     font-size: 14px;
+     color: #007bff;
+     text-decoration: none;
+ }
+ 
+ .change-photo:hover {
+     color: #0056b3;
+ }
+ 
+ 
+ label {
+     display: block;
+     text-align: left;
+     font-size: 16px;
+     color: #34495e;
+     margin-bottom: 5px;
+ }
+ 
+ .edit-box input[type="text"] {
+     width: 400px;
+     padding: 10px;
+     border: 1px solid #dfe6e9;
+     border-radius: 5px;
+     margin-bottom: 20px;
+     font-size: 16px;
+     color: #2d3436;
+     box-sizing: border-box;
+ }
+ 
+ .edit-buttons {
+     display: flex;
+     gap: 10px;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ 
+ button {
+     max-width: 200px;
+     flex: 1;
+     padding: 10px;
+     font-size: 16px;
+     border-radius: 5px;
+     color: #ffffff;
+ }
+ 
+ button.save {
+     background-color: #00695c; 
+ }
+ 
+ button.save:hover {
+     background-color: #004d40;
+ }
+ 
+ button.cancel {
+     background-color: #d84315; 
+ }
+ 
+ button.cancel:hover {
+     background-color: #bf360c; 
+ }

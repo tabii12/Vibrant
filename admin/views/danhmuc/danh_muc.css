@@ -4,6 +4,10 @@
     box-sizing: border-box;
   
   }
+a{
+    text-decoration: none;
+    color:white;
+}
 
 body {
 width: 100%;
@@ -14,7 +18,7 @@ overflow-x: hidden; /* Ngăn cuộn ngang */
 .container-category{
     width: 1000px;
     margin-top: 100px;
-    margin-left: 150px;
+    margin-left: 270px;
 }
 .form-table-category{
     width: 100%;

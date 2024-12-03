@@ -21,8 +21,8 @@ $data_cate = $data['cate'];
                         <td>'.$cate['ten_danh_muc'].'</td>
                         
                         <td>
-                            <button class="btn-edit"> Chỉnh sửa</button>
-                            <button class="btn-remove"><a href="index.php?page=cate&id_danh_muc='.$cate['id'].'">Xóa</a></button>
+                            <button class="btn-edit"><a href="index.php?page=editcate&id_danh_muc='.$cate['id'].'"> Chỉnh sửa</a></button>
+                            <button class="btn-remove"><a href="index.php?page=cate&id='.$cate['id'].'">Xóa</a></button>
                         </td>
                     </tr>';
                 }
