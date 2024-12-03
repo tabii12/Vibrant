@@ -155,7 +155,7 @@ $data_comment = $data['comment'];
 
         <!-- Related Products Section -->
         <div class="related-products">
-            <h3>Sản Phẩm Đã Xem</h3>
+            <h3>Có thể bạn sẽ thích</h3>
             <div class="product-grid">
             <?php
                 foreach($data_BCTT as $BCTT) 

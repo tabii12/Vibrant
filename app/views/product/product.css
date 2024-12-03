@@ -230,8 +230,7 @@
   .product-love {
     max-width: 1290px;
     width: 100%;
-    display: flex
-;
+    display: flex;
     flex-wrap: nowrap;
     gap: 40px;
     overflow-x: auto;
@@ -461,8 +460,13 @@
 
   .love-product h2{
     display: flex;
-    gap: 20px;
+    gap: 10px;
   }
+.love-product h2 .section-title{
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Lobster", sans-serif;
+}
 
   .product-love a{
     text-decoration: none;
