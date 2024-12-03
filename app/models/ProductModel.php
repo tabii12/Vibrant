@@ -238,6 +238,10 @@
             return $this->db->getAll($sql);
         }
         
-        
-        
+        public function getKM(){
+            $sql = "
+                SELECT * FROM khuyenmai
+            ";
+            return $this->db->getAll($sql);
+        }
     }

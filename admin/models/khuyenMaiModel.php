@@ -12,15 +12,11 @@
         }
 
         public function insertKhuyenMai($data) {
-            // Kiểm tra xem dữ liệu có được nhận đúng không
-            // print_r($data); 
-            // exit; // Dừng chương trình để xem dữ liệu
-            
             $sql_check_redemCode = "SELECT COUNT(*) FROM khuyenmai WHERE ma_nhap = ?";
             $result_redemCode = $this->db->query($sql_check_redemCode, [$data['ma_nhap']])->fetchColumn();
         
             if ($result_redemCode > 0) {
-                return false; // Tài khoản đã tồn tại
+                return false; 
             }
         
             $sql = "INSERT INTO khuyenmai (ma_nhap, phan_tram_giam, ngay_bat_dau, ngay_ket_thuc) 
@@ -33,7 +29,7 @@
                 $data['ngay_ket_thuc']
             ];
         
-            return $this->db->insert($sql, $params); // Kiểm tra nếu insert thành công
+            return $this->db->insert($sql, $params); 
         }
         
         public function deleteKhuyenMai($id) {
