@@ -80,6 +80,24 @@
             ";
             return $this->db->getAll($sql);
         }
+        public function getProduct1AnhTheoDanhMucbrand($danh_muc, $thuong_hieu){
+            $sql = "
+                SELECT sp.id, sp.ten_san_pham, sp.mo_ta, sp.gia, sp.so_luong, si.url, dm.ten_danh_muc, th.ten_thuong_hieu
+                FROM sanpham sp
+                JOIN (
+                    SELECT id_san_pham, MIN(id) AS min_id
+                    FROM sanpham_img
+                    GROUP BY id_san_pham
+                ) si_min ON sp.id = si_min.id_san_pham
+                JOIN sanpham_img si ON si.id = si_min.min_id
+                JOIN danhmuc dm ON dm.id = sp.id_danh_muc
+                JOIN thuonghieu th ON th.id = sp.id_thuong_hieu
+                WHERE dm.id like $danh_muc AND th.id like $thuong_hieu
+                ORDER BY sp.gia ASC;
+
+            ";
+            return $this->db->getAll($sql);
+        }
 
         public function get1Product1Anh($id){
             $sql = "
