@@ -10,6 +10,8 @@
     require_once 'controllers/CommentController.php';
     require_once 'controllers/AddcateController.php';
     require_once 'controllers/OderlistController.php';
+    require_once 'controllers/OderDetailController.php';
+
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -19,7 +21,7 @@
     require_once 'models/ProductModel.php';
     require_once 'models/CommentModel.php';
     require_once 'models/CateModel.php';
-    require_once 'models/OderlistModel.php';
+    require_once 'models/OderModel.php';
 
     
     if(isset($_GET['page'])) {
@@ -56,6 +58,10 @@
             case 'oder':
                 $Oder = new OderController();
                 $Oder->Oder();
+                break;
+            case 'oderdetail':
+                $oderdeil = new OderdetailController();
+                $oderdeil->Oder_detail();
                 break;
 
             default:

@@ -1,6 +1,6 @@
 <?php
 
-class OderListModel{
+class OderModel{
     public $db;
 
     public function __construct() {

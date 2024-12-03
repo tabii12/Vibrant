@@ -4,7 +4,7 @@
         private $data;
     
         public function __construct() {
-            $this->Oder = new OderListModel();
+            $this->Oder = new OderModel();
         }
     
         public function renderView($data) {
@@ -12,13 +12,12 @@
         }
     
         public function Oder_detail() {
-            if(isset($id_don_hang)){
-                $id_dong_hang = $_GET['id_don_hang'];
-           
-            $this->data['Oder_Infor'] = $this->Oder->getOderDetail($id_dong_hang);  
             
-            $this->renderView($this->data); }
+            $id_dong_hang = $_GET['id_don_hang'];
+            $this->data['Oder_Infor'] = $this->Oder->getOderDetail($id_dong_hang);  
            
+            $this->renderView($this->data); 
+        
         }
     }
     
