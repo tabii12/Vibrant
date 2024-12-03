@@ -4,7 +4,7 @@
         private $data;
     
         public function __construct() {
-            $this->Oder = new OderListModel();
+            $this->Oder = new OderModel();
         }
     
         public function renderView($data) {
