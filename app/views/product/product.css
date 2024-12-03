@@ -107,6 +107,7 @@
     accent-color: #0A5B5B;
   }
   
+  
   /* Size Grid */
   .size-grid {
     display: grid;
@@ -456,7 +457,7 @@
     .products-grid {
       grid-template-columns: 1fr;
     }
-  }/*# sourceMappingURL=product.css.map */     
+  }
 
   .love-product h2{
     display: flex;
@@ -472,9 +473,14 @@
     text-decoration: none;
   }
 
-  #filter{
+  #filter {
     color: #004C59;
     background-color: white;
     border: none;
     cursor: pointer;
-  }
+    transition: color 0.3s ease; /* Optional: adds a smooth color transition */
+}
+
+#filter:active {
+    color: #F15E2D; /* Changes text color when clicked/active */
+}
