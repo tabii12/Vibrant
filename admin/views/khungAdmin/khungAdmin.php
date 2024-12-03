@@ -35,8 +35,8 @@
                 <span>Tin nhắn</span>
             </a>
             
-            <a href="index.php?page=" class="menu-item">
-                <span>Bình luận</span>
+            <a href="index.php?page=khuyenMai" class="menu-item">
+                <span>Khuyễn mãi</span>
             </a>
             
             <a href="index.php?page=" class="menu-item">
@@ -64,12 +64,12 @@
 
         <div class="user-menu">
             <div class="notification">
-                <img src="views/khungAdmin/image/notification.png" alt="">
+                <img style="width: 40px; height: 40px;" src="views/khungAdmin/image/notification.png" alt="">
                 <span class="notification-badge">2</span>
             </div>
 
             <div class="language-selector">
-                <img src="views/khungAdmin/image/vietnam.png" alt="Vietnamese flag">
+                <img style="width: 60px; height: 40px;" src="views/khungAdmin/image/vietnam.png" alt="Vietnamese flag">
                 <span>Việt Nam</span>
             </div>
 
