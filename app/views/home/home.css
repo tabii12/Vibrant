@@ -285,7 +285,7 @@
 
 .new-products .product-item img {
     width: 150px;
-    height: 150px;
+    height: 100%;
     max-height: 200px;
     object-fit: cover;
 }
@@ -298,6 +298,7 @@
 }
 .new-products .product-item .img{
     background-color:#f6f6f6;
+    height: 150px;
 }
 
   .pagination {

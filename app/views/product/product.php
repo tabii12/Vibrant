@@ -17,15 +17,15 @@
                     <h2 class="filter-title">Chọn mức giá</h2>
                     <form action="index.php?page=product&danh_muc=<?php echo $danh_muc ?>" method="post">
                         <label class="price-option">
-                            <input type="submit" name="filter1" value="Giá  1 - 2 triệu" id="filter">
+                            <input type="submit" name="filter1" value="Giá  1 - 2 triệu" id="filter" >
                             <!-- <span>1 - 2 triệu</span> -->
                         </label>
                         <label class="price-option">
-                            <input type="submit" name="filter2" value="Giá  2 - 3 triệu" id="filter">
+                            <input type="submit" name="filter2" value="Giá  2 - 3 triệu" id="filter" >
                             <!-- <span>2 - 3 triệu</span> -->
                         </label>
                         <label class="price-option">
-                            <input type="submit" name="filter3" value="Giá trên 3 triệu" id="filter">
+                            <input type="submit" name="filter3" value="Giá trên 3 triệu" id="filter" >
                             <!-- <span>Giá trên 3 triệu</span> -->
                         </label>
                     </form>
@@ -41,7 +41,8 @@
                             foreach ($data['brands'] as $brand){
                                 echo '
                                     <label class="brand-option">
-                                        <input type="submit" name="brand'.$brand['id'].'" value="'.$brand['ten_thuong_hieu'].'" id="filter">
+                                        <input type="submit" name="brand'.$brand['id'].'" value="'.$brand['ten_thuong_hieu'].'" id="filter" 
+        >
                                     </label>
                                 ';
                             }
@@ -54,7 +55,10 @@
     
                 <div class="divider"></div>
     
-                <!-- Size Filter -->
+             <img src="../public\image\image 180.png" alt="" style="
+    margin-top: 50px;
+    width: 220px;
+">
                 
             </div>
         </aside>
@@ -100,13 +104,7 @@
             </div>
             
             <div class="pagination">
-                <div class="page-item">←</div>
-                <div class="page-item active">1</div>
-                <div class="page-item">2</div>
-                <div class="page-item">3</div>
-                <div class="page-item">4</div>
-                <div class="page-item">5</div>
-                <div class="page-item">→</div>
+             
             </div>
         </main>
     </div>
