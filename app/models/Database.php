@@ -3,7 +3,7 @@ class DataBase {
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $dbname = "vibrant";
+    private $dbname = "test";
     private $conn;
     private $stmt;
     private $result;

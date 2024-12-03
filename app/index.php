@@ -3,11 +3,13 @@
     session_start();
     require_once 'controllers/HomeController.php';
     require_once 'controllers/Product_detail_controller.php';
+    require_once 'controllers/thanh_toan_controller.php';
 
     require_once 'models/Database.php';
     require_once 'models/ProductModel.php';
     require_once 'models/UserModel.php';
     require_once 'models/detailModel.php';
+    require_once 'models/thanh_toan_model.php';
     require_once 'views/header/header.php';
 
     if (!isset($_SESSION['cart'])) {
@@ -41,6 +43,11 @@
             case 'cart':
                 $home = new HomeController();
                 $home->cartPage();
+                break;
+            case 'thanhtoan':
+                $donhang = new ThanhToanController();
+                $donhang->donhang();  
+                        
                 break;
             default:
                 $home = new HomeController();
