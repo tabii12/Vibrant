@@ -1,0 +1,170 @@
+body{
+    width: 1440px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.oder-container{
+    margin-left: 200px;
+    margin-top: 100px;
+}
+.title {
+    margin-left:  25px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.title h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.filter-container {
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.filter {
+    width: 700px;
+    display: flex;
+    border: solid 1px black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-icon {
+    padding: 10px;
+    width: 45px;
+    border-right: solid black 1px;
+}
+
+.filter-text {
+    padding: 10px;
+    width: 60px;
+    border-right: solid black 1px;
+}
+
+.filter-day, .filter-category, .filter-status {
+    position: relative;
+    padding: 10px;
+    width: 120px;
+    border-right: solid black 1px;
+    cursor: pointer;
+}
+
+.filter-reload {
+    padding: 10px;
+    width: 120px;
+    cursor: pointer;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid black;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.table-container {
+    padding: 10px;
+    width: 1100px;
+    margin: 20px;
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+thead th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.edit-btn i{
+    color: #6b6b6b;
+}
+
+.delete-btn i{
+    color: #dc3545;
+}
+.table-status-success{
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    width: 120px;
+    height: 25px;
+    background-color: #CCF0EB;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700; 
+    color: #00B69B;
+}
+
+.table-status-shipping{
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    width: 120px;
+    height: 25px;
+    background-color: #E0D4FC;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700; 
+    color: #6226EF;
+}
+.table-status-fail{
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    width: 140px;
+    height: 25px;
+    background-color: #FCD7D4;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700; 
+    color: #EF3826;
+}

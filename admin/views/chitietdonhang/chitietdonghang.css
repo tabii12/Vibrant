@@ -1,0 +1,110 @@
+body{
+    width: 1440px;
+    margin: 0 auto;
+}
+.oder-container{
+    margin-left: 200px;
+    margin-top: 100px;
+}
+.title {
+   
+    margin-left:  25px;
+   
+}
+.infor-container{
+    width: 500px;
+    display: flex;
+    border: solid 1px black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.infor-text{
+    font-family: 'Nunito Sans', sans-serif;
+    border-right: solid 1px black;
+    padding: 10px;
+}
+.infor-text-2{
+    padding: 10px;
+}
+.title h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.table-container {
+    padding: 10px;
+    width: 1100px;
+    margin: 20px;
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+thead th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.edit-btn i{
+    color: #6b6b6b;
+}
+
+.delete-btn i{
+    color: #dc3545;
+}
+.table-status-success{
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    width: 130px;
+    height: 25px;
+    background-color: #CCF0EB;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700; 
+    color: #00B69B;
+}
+
+.table-status-shipping{
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    width: 130px;
+    height: 25px;
+    background-color: #E0D4FC;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700; 
+    color: #6226EF;
+}
+.table-status-fail{
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    width: 130px;
+    height: 25px;
+    background-color: #FCD7D4;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700; 
+    color: #EF3826;
+}

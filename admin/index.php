@@ -1,13 +1,14 @@
 <?php
     ob_start();
     session_start();
-    require_once 'views/khungAdmin/khungAdmin.php'; 
+    // require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
     require_once 'controllers/EditAdminController.php';
     require_once "controllers/UserController.php";
     require_once 'controllers/CommentController.php';
+    require_once 'controllers/AddcateController.php';
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -16,6 +17,7 @@
     require_once 'models/AddAdminModels.php';
     require_once 'models/ProductModel.php';
     require_once 'models/CommentModel.php';
+    require_once 'models/CateModel.php';
 
     
     if(isset($_GET['page'])) {
@@ -44,6 +46,10 @@
             case 'comment':
                 $admin = new CommentController();
                 $admin->Comment();
+                break;
+            case 'addcate':
+                $addcate = new cateController();
+                $addcate->addCate();
                 break;
             default:
                 echo "Trang không tồn tại!";
