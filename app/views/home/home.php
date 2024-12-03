@@ -65,11 +65,20 @@ $data_product = $data['product'];
     </div>
     <div class="products">
         <div class="product-item">
-            <div class="img">
-            <img src="..\public\image\ADIDAS\MAN\ADIDAS_CLASSIC_1.png" alt="Thời Trang Nam">
+            <?php 
+                foreach($data['productNewGN'] as $giay){
+                    echo '
+                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <div class="img">
+                        <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
+                        </a>
+                    ';
+                }            
+            ?>
+            
         </div>
             <p>GIÀY NAM</p>
-        </div>
+    </div>
         <div class="product-item">
             <div class="img">
                 <img src="..\public\image\ADIDAS\MAN\ADIDAS_Gazelle_BLUE_1.png" alt="Thời Trang Nam">
