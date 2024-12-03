@@ -1,33 +1,29 @@
 <?php
 require_once 'models/DataBase.php';
 
-class AddProductModel{
+class AddProductModel {
     private $db;
 
-    public function __construct(){
+    public function __construct() {
         $this->db = new DataBase();
     }
 
-    public function addProduct($name, $category, $price, $quantity, $sale_price, $description, $image1, $image2, $image3, $image4){
-        $sql = "
-            INSERT INTO sanpham (ten_san_pham, id_danh_muc, gia, so_luong, gia_sale, mo_ta, image1, image2, image3, image4)
-            VALUES (:ten_san_pham, :id_danh_muc, :gia, :so_luong, :gia_sale, :mo_ta, :image1, :image2, :image3, :image4)
-        ";
-        
-        $params = [
-            ':ten_san_pham' => $name,
-            ':id_danh_muc' => $category,
-            ':gia' => $price,
-            ':quantity' => $quantity,
-            ':gia_sale' => $sale_price,
-            ':mo_ta' => $description,
-            ':image1' => $image1,
-            ':image2' => $image2,                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-            ':image3' => $image3,
-            ':image4' => $image4,
-        ];
-        
-        return $this->db->execute($sql, $params);
+    public function getCate() {
+        $sql = "SELECT * FROM danhmuc";
+        return $this->db->getAll($sql);
+    }
+
+    public function addProduct($name, $category, $price, $quantity, $sale_price, $description, $images) {
+        // Lưu sản phẩm vào bảng `sanpham`
+        $sql = "INSERT INTO sanpham (ten_san_pham, id_danh_muc, gia, so_luong, gia_sale, mo_ta) 
+                VALUES (?, ?, ?, ?, ?, ?)";
+        $params = [$name, $category, $price, $quantity, $sale_price, $description];
+        $productId = $this->db->insert($sql, $params);
+
+        // Lưu ảnh vào bảng `sanpham_img`
+        foreach ($images as $image) {
+            $sql = "INSERT INTO sanpham_img (id_sanpham, image_path) VALUES (?, ?)";
+            $this->db->query($sql, [$productId, $image]);
+        }
     }
 }
-?>

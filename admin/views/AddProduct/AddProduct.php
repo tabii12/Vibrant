@@ -1,67 +1,56 @@
-<link rel="stylesheet" href="views/Addproduct/AddProduct.css">
+<?php
+$data_cate = $data['cate'];
+?>
+<link rel="stylesheet" href="views/AddProduct/AddProduct.css">
 <body>
-<div class="title_container">
-    <h1>THÊM SẢN PHẨM</h1>
+    <div class="title_container">
+        <h1>THÊM SẢN PHẨM</h1>
     </div>
-    <div class="form-container">        
-        <form class="form-content" method="POST" enctype="multipart/form-data">
+    <div class="form-container">
+        <form class="form-content" method="POST" enctype="multipart/form-data" action="index.php?page=addproduct">
+            <!-- Các trường nhập -->
             <section class="left">
                 <div class="form-group">
                     <label>Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="name" placeholder="Nhập tên sản phẩm">
+                    <input type="text" class="form-control" name="ten_san_pham" placeholder="Nhập tên sản phẩm">
                 </div>
-
                 <div class="form-group">
-                    <label>Danh mục</label>
-                    <input type="text" class="form-control" name="category" placeholder="Chọn danh mục">
+                    <label for="id_danh_muc">Danh mục</label>
+                    <select id="id_danh_muc" name="id_danh_muc">
+                        <?php foreach ($data_cate as $cate): ?>
+                            <option value="<?= $cate['id'] ?>"><?= $cate['ten_danh_muc'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
-
                 <div class="row">
                     <div class="col">
                         <label>Giá</label>
-                        <input type="text" class="form-control" name="price" placeholder="Giá sản phẩm">
+                        <input type="text" class="form-control" name="gia" placeholder="Giá sản phẩm">
                     </div>
                     <div class="col">
                         <label>Số lượng</label>
-                        <input type="number" class="form-control" name="quantity" placeholder="Số lượng sản phẩm" value="1">
+                        <input type="number" class="form-control" name="so_luong" placeholder="Số lượng sản phẩm" value="1">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label>Giá khuyến mại (nếu có)</label>
-                    <input type="text" class="form-control" name="sale_price" placeholder="Giá sản phẩm khuyến mại">
+                    <label>Giá khuyến mại</label>
+                    <input type="text" class="form-control" name="gia_sale" placeholder="Giá khuyến mại">
                 </div>
             </section>
-            
+            <!-- Upload ảnh -->
             <section class="right">
                 <div class="form-group">
                     <label>Mô tả sản phẩm</label>
-                    <textarea class="form-control" name="description" placeholder="Nhập mô tả sản phẩm"></textarea>
+                    <textarea class="form-control" name="mo_ta" placeholder="Mô tả sản phẩm"></textarea>
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label>Góc Nhìn Chính</label>
-                        <input type="file" class="form-control" name="image1">
+                <?php for ($i = 1; $i <= 4; $i++): ?>
+                    <div class="form-group">
+                        <label>Hình ảnh <?= $i ?></label>
+                        <input type="file" class="form-control" name="image<?= $i ?>">
                     </div>
-                    <div class="col">
-                        <label>Góc Nhìn 2</label>
-                        <input type="file" class="form-control" name="image2">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label>Góc Nhìn 3</label>
-                        <input type="file" class="form-control" name="image3">
-                    </div>
-                    <div class="col">
-                        <label>Góc Nhìn 4</label>
-                        <input type="file" class="form-control" name="image4">
-                    </div>
-                </div>
+                <?php endfor; ?>
             </section>
-
+            <!-- Nút -->
             <div class="button-group">
                 <button type="submit" class="btn btn-save">Lưu</button>
                 <button type="button" class="btn btn-cancel">Hủy</button>
