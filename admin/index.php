@@ -8,6 +8,11 @@
     require_once 'controllers/EditAdminController.php';
     require_once "controllers/UserController.php";
     require_once 'controllers/CommentController.php';
+    require_once 'controllers/AddcateController.php';
+    require_once 'controllers/OderlistController.php';
+    require_once 'controllers/OderDetailController.php';
+    require_once 'controllers/cateController.php';
+
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -16,6 +21,8 @@
     require_once 'models/AddAdminModels.php';
     require_once 'models/ProductModel.php';
     require_once 'models/CommentModel.php';
+    require_once 'models/CateModel.php';
+    require_once 'models/OderModel.php';
 
     
     if(isset($_GET['page'])) {
@@ -45,6 +52,23 @@
                 $admin = new CommentController();
                 $admin->Comment();
                 break;
+            case 'cate' :
+                $cate = new cateController();
+                $cate->Cate();
+                break;
+            case 'addcate':
+                $addcate = new addcateController();
+                $addcate->addCate();
+                break;
+            case 'oder':
+                $Oder = new OderController();
+                $Oder->Oder();
+                break;
+            case 'oderdetail':
+                $oderdeil = new OderdetailController();
+                $oderdeil->Oder_detail();
+                break;
+
             default:
                 echo "Trang không tồn tại!";
                 break;
