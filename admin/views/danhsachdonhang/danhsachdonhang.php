@@ -56,7 +56,7 @@ $data_Infor = $data['Oder'];
                     foreach ($data_Infor as $infor) {
                         echo '
                             <tr>
-                                <td>'.$infor['id'].'</td> <!-- Nếu là mảng -->
+                                <td><a href="index.php?page=oderdetail&id_don_hang='.$infor['id'].'">'.$infor['id'].'</a></td> <!-- Nếu là mảng -->
                                 <td>'.$infor['nguoi_nhan'].'</td>
                                 <td>'.$infor['dia_chi'].'</td>
                                 <td>'.$infor['ngay_dat_hang'].'</td> ';
