@@ -14,7 +14,7 @@
                     <th>Tên sản phẩm</th>
                     <th>Danh mục</th>
                     <th>Giá</th>
-                    <th>Số lượng</th>
+                    <th>Số lượng</th> 
                     <th>Hành động</th>
                 </tr>
             </thead>
@@ -30,7 +30,9 @@
                             <td>'.$product['gia'].'₫</td>
                             <td>'.$product['so_luong'].'</td>
                             <td>
+                                <a href="?page=editproduct&id='.$product['id'].'">
                                 <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                </a>
                                 <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
                             </td>
                         </tr>

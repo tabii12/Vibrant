@@ -1,7 +1,7 @@
 <?php
     ob_start();
     session_start();
-    require_once 'views/khungAdmin/khungAdmin.php'; 
+    // require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
@@ -10,6 +10,7 @@
     require_once 'controllers/CommentController.php';
     require_once 'controllers/KhachHangController.php';
     require_once 'controllers/AddProductController.php';
+    require_once 'controllers/EditProductController.php';
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -20,6 +21,7 @@
     require_once 'models/CommentModel.php';
     require_once 'models/KhachHangModel.php';
     require_once 'models/AddProductModel.php';
+    require_once 'models/EditproductModel.php';
 
     
     if(isset($_GET['page'])) {
@@ -56,6 +58,10 @@
             case 'addproduct':
                 $admin = new AddProductController();
                 $admin->AddProduct();
+                break;
+            case 'editproduct':
+                $admin = new EditProductController();
+                $admin->EditProduct();
                 break;
             default:
                 echo "Trang không tồn tại!";
