@@ -15,49 +15,93 @@ class AddProductController {
 
     public function addProduct() {
         $this->data['cate'] = $this->addproduct->getCate();
+        $this->data['brand'] = $this->addproduct->getBrand();
         $this->renderAddProduct($this->data);
     
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Lấy dữ liệu từ form
-            $name = $_POST['ten_san_pham'];
-            $category = $_POST['id_danh_muc'];
-            $price = $_POST['gia'];
-            $quantity = $_POST['so_luong'];
-            $sale_price = $_POST['gia_sale'];
-            $description = $_POST['mo_ta'];
-    
-            // Upload ảnh
-            $images = [];
-            for ($i = 1; $i <= 4; $i++) {
-                if (isset($_FILES["image$i"]) && $_FILES["image$i"]['error'] === UPLOAD_ERR_OK) {
-                    $images[] = $this->uploadImage($_FILES["image$i"]);
-                }
-            }
-    
-            // Gọi model để thêm sản phẩm và hình ảnh
-            $this->addproduct->addProduct($name, $category, $price, $quantity, $sale_price, $description, $images);
-    
-            // Chuyển hướng hoặc hiển thị thông báo thành công
-            header('Location:index.php?page=product');
-            exit();
-        }
-    }
+            $data = [];
+            $data['name'] = $_POST['ten_san_pham'];
+            $data['category'] = $_POST['id_danh_muc'];
+            $data['brand'] = $_POST['id_thuong_hieu'];
+            $data['price'] = $_POST['gia'];
+            $data['quantity'] = $_POST['so_luong'];
+            $data['sale_price'] = $_POST['gia_sale'];
+            $data['description'] = $_POST['mo_ta'];
+            $files = $_FILES['images'];
+            $error_message = '';
+            $error_image_message = '';
 
-    private function uploadImage($file) {
-        // Kiểm tra xem file có hợp lệ không
-        if (isset($file['name']) && $file['error'] === UPLOAD_ERR_OK) {
-            $target_dir = "../public/image/";
-            $target_file = $target_dir . basename($file["name"]);
-            
-            // Di chuyển file tới thư mục đích
-            if (move_uploaded_file($file["tmp_name"], $target_file)) {
-                return $target_file; // Trả về đường dẫn file đã upload
+            $category = '';
+            $brand = '';
+
+            if($data['category'] == 1){
+                $category = 'MAN';
+            }elseif($data['category'] == 2){
+                $category = 'WOMEN';
+            }elseif($data['category'] == 3){
+                $category = 'SPORT';
+            }else{
+                $category = 'SPECIAL';
             }
+
+            if($data['brand'] == 1){
+                $brand = 'NIKE';
+            }elseif($data['brand'] == 2){
+                $brand = 'ADIDAS';
+            }elseif($data['brand'] == 3){
+                $brand = 'CONVERES';
+            }else{
+                $brand = 'PUMA';
+            }
+
+            if(count($files['name']) != 4){
+                $error_image_message = 'Chỉ được thên 4 ảnh!';
+                exit;
+            }
+
+            $id_sp = $this->addproduct->addProduct($data);
+
+            if($id_sp){
+                for($i = 0; $i < 4; $i++){
+                    // Tạo đường dẫn URL cho từng ảnh trong vòng lặp
+                    $url = $brand.'/'.$category.'/'.$files['name'][$i];
+                    $result = $this->addproduct->addImages($id_sp, $url);
+                    
+                    if($result){
+                        $allowedTypes = ['jpg', 'png'];
+                        
+                        // Sử dụng vòng lặp duyệt qua từng file
+                        if($files['error'][$i] != 0){
+                            $error_message = "Có lỗi xảy ra với file: " . $files['name'][$i] . "<br>";
+                        }
+                
+                        $fileName = basename($files['name'][$i]);
+                        $targetFile = '../public/image/'.$url;  // Đảm bảo rằng URL đúng cho mỗi ảnh
+                        $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                        $fileTmpName = $files['tmp_name'][$i];
+                
+                        // Kiểm tra loại file
+                        if (!in_array($fileType, $allowedTypes)) {
+                            $error_message = "File không hợp lệ: " . $fileName . "<br>";
+                        }
+                
+                        // Di chuyển file
+                        if (move_uploaded_file($fileTmpName, $targetFile)) {
+                            // Có thể thêm logic nếu cần, ví dụ: ghi vào log, thông báo thành công...
+                        } else {
+                            $error_message = "Lỗi khi di chuyển file '$fileName'.<br>";
+                        }
+                    } else {
+                        $error_message = 'Có lỗi xảy ra khi thêm ảnh!';
+                    }
+                }
+                
+                header('Location: index.php?page=product');
+            }else{
+                $error_message = 'có lỗi xảy ra khi thêm sản phẩm!';
+            }
+            
+            
         }
-        return null; // Trả về null nếu không upload được
     }
-  
-    
-    
-    
 }
