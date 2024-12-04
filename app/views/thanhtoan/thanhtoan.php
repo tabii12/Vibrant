@@ -37,7 +37,7 @@
                     </div>
                     <br>
                     <select name="payment_method" required>
-                        <option value="Thanh toán trực tiếp">Thanh toán trực tiếp</option>
+                        <option value="Thanh toán trực tuyến">Thanh toán trực tuyến</option>
                         <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
                     </select>
                     <div class="form-container">
@@ -54,7 +54,7 @@
                     $midtotal = 0;
 
                     foreach($_SESSION['cart'] as $product){
-                        $midtotal += $product['gia'];
+                        $midtotal += $product['gia'] * $product['quantity'];
                     }
 
                     $total = $midtotal + 100000;

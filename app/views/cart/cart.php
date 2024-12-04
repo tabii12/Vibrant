@@ -31,7 +31,7 @@
                                 <h3>'.$product['ten_san_pham'].'</h3>
                                 <p>SIZE 41</p>
                                 <p class="price">'.number_format($product['gia'], 0, '', ',').'đ</p>
-                                
+                                <p>Số lượng: <span>'.$product['quantity'].'</span></p>
                                 <form action="index.php?page=cart" method="post">
                                     <input type="hidden" name="product_id" value="'.$product['id'].'"></input>
                                     <button type="submit" class="delete-item" name="delProduct" ><i class="fa-regular fa-trash-can"></i></butotn>
@@ -69,7 +69,7 @@
         <?php 
             $sum = 0;
             foreach($_SESSION['cart'] as $product){
-                $sum += $product['gia'];
+                $sum += $product['gia'] * $product['quantity'];
             }
             echo '
                 <div class="cart-summary">
