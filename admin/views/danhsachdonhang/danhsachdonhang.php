@@ -1,7 +1,7 @@
 <?php 
 $data_Infor = $data['Oder'];
 ?>
-</div>
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="views\danhsachdonhang\Danh_Sach_Don_Hang.css">
@@ -57,9 +57,9 @@ $data_Infor = $data['Oder'];
                         echo '
                             <tr>
                                 <td><a href="index.php?page=oderdetail&id_don_hang='.$infor['id'].'">'.$infor['id'].'</a></td> <!-- Nếu là mảng -->
-                                <td>'.$infor['nguoi_nhan'].'</td>
-                                <td>'.$infor['dia_chi'].'</td>
-                                <td>'.$infor['ngay_dat_hang'].'</td> ';
+                                <td><a href="index.php?page=oderdetail&id_don_hang='.$infor['id'].'">'.$infor['nguoi_nhan'].'</a></td>
+                                <td><a href="index.php?page=oderdetail&id_don_hang='.$infor['id'].'">'.$infor['dia_chi'].'</a></td>
+                                <td><a href="index.php?page=oderdetail&id_don_hang='.$infor['id'].'">'.$infor['ngay_dat_hang'].'</a></td> ';
                         if($infor['trang_thai'] == 'đã thanh toán'){
                             echo'<td><div class="table-status-success">'.$infor['trang_thai'].'</div></td>
                                   </tr>';

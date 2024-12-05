@@ -1,7 +1,7 @@
 <?php
     ob_start();
     session_start();
-    // require_once 'views/khungAdmin/khungAdmin.php'; 
+    require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
@@ -100,7 +100,9 @@
                 echo "Trang không tồn tại!";
         }
     } else {
-        echo "Trang chủ";
+            $admin = new UserController();
+            $admin->ADmin();
+
     }
     
 

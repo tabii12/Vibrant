@@ -15,11 +15,8 @@
         </div>
         
         <div class="menu">
-            <a href="index.php?page=" class="menu-item">
-                <span>Bảng điều khiển</span>
-            </a>
             
-            <a href="index.php?page=" class="menu-item">
+            <a href="index.php?page=cate" class="menu-item">
                 <span>Danh mục</span>
             </a>
             
@@ -27,19 +24,19 @@
                 <span>Sản phẩm</span>
             </a>
 
-            <a href="index.php?page=" class="menu-item">
+            <a href="index.php?page=oder" class="menu-item">
                 <span>Danh sách oder</span>
             </a>
             
-            <a href="index.php?page=" class="menu-item">
-                <span>Tin nhắn</span>
+            <a href="index.php?page=comment" class="menu-item">
+                <span>Bình Luận</span>
             </a>
             
             <a href="index.php?page=khuyenMai" class="menu-item">
                 <span>Khuyễn mãi</span>
             </a>
             
-            <a href="index.php?page=user" class="menu-item">
+            <a href="index.php?page=customer" class="menu-item">
                 <span>Khách hàng</span>
             </a>
 
