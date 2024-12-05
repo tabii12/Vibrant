@@ -96,13 +96,13 @@
             case 'logout':
                 header('location: ./app/index.php?page=');
             default:
-                $admin = new CustomerController();
-                $admin->Customer();
-                break;
+                $admin = new UserController();
+                $admin->ADmin();
+            
         }
     } else {
-            $admin = new CustomerController();
-            $admin->Customer();
+            $admin = new UserController();
+            $admin->ADmin();
 
     }
     
