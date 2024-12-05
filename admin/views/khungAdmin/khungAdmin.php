@@ -39,7 +39,7 @@
                 <span>Khuyễn mãi</span>
             </a>
             
-            <a href="index.php?page=" class="menu-item">
+            <a href="index.php?page=user" class="menu-item">
                 <span>Khách hàng</span>
             </a>
 

@@ -32,7 +32,7 @@
     require_once 'models/editcateModel.php';
     
    
-
+    require_once 'views/khungAdmin/khungAdmin.php';
     
     if(isset($_GET['page'])) {
         $page = $_GET['page'];
@@ -93,7 +93,9 @@
                 $editcate = new editcateController();
                 $editcate->editCate();
                 break;
-
+            case 'logout':
+                require_once 'views/logout.php';
+                break;
             default:
                 echo "Trang không tồn tại!";
         }
