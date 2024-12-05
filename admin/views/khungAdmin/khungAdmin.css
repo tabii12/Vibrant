@@ -50,14 +50,6 @@
             background-color: #fff3e0;
             color: #F15E2C;
         }
-
-        .menu-item.active {
-            border-radius: 10px;
-            width: 200px;
-            background-color: #F15E2C;
-            color: white;
-        }
-
         .menu-item i {
             margin-right: 10px;
             width: 20px;

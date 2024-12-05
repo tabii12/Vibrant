@@ -33,11 +33,13 @@
 
             <div class="search-icons">
                 <div class="search-box">
-                    <input type="text" placeholder="Tìm Kiếm" aria-label="Tìm kiếm sản phẩm">
-                    <button><i class="fa fa-search"></i></button>
+                    <form action="index.php" method="GET">
+                        <input type="text" name="search" placeholder="Tìm Kiếm" aria-label="Tìm kiếm sản phẩm">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
-              
             </div>
+
             <div class="icons" style="display: flex;">
                 <a href="index.php?page=cart" aria-label="Giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a>
 

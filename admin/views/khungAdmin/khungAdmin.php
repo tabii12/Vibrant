@@ -33,7 +33,7 @@
             </a>
             
             <a href="index.php?page=khuyenMai" class="menu-item">
-                <span>Khuyễn mãi</span>
+                <span>Khuyến mãi</span>
             </a>
             
             <a href="index.php?page=customer" class="menu-item">
