@@ -28,7 +28,7 @@
                     sanpham.id_danh_muc = danhmuc.id
                 WHERE 
                     sanpham_img.url LIKE '%_1.png' ";
-            return $this->db->getAll(sql: $sql);
+            return $this->db->getAll( $sql);
         }
 
         public function getProduct1Anh(){

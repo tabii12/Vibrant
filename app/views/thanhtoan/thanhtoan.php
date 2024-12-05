@@ -71,6 +71,12 @@
                         <span>Phí vận chuyển</span>
                         <span>100,000đ</span>
                     </div>
+                    <?php if (!empty($discount)): ?>
+                        <div class="row">
+                            <span>Mã giảm giá:</span>
+                            <span><?php echo $discount ?>%</span>
+                        </div>
+                    <?php endif; ?>
                     <hr>
                     <div class="row total">
                         <span>Tổng cộng</span>
