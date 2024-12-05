@@ -1,7 +1,7 @@
 <?php
     ob_start();
     session_start();
-    // require_once 'views/khungAdmin/khungAdmin.php'; 
+    require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
@@ -93,13 +93,17 @@
                 $editcate = new editcateController();
                 $editcate->editCate();
                 break;
-
+            case 'logout':
+                header('location: ./app/index.php?page=');
             default:
-                echo "Trang không tồn tại!";
+                $admin = new CustomerController();
+                $admin->Customer();
                 break;
         }
     } else {
-        echo "Trang chủ";
+            $admin = new CustomerController();
+            $admin->Customer();
+
     }
     
 

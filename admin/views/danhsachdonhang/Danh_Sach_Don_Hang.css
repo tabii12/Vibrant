@@ -3,7 +3,7 @@
 }
 body{
     width: 1440px;
-    margin: 0 auto;
+   
 }
 
 a{
@@ -12,11 +12,11 @@ a{
 }
 
 .oder-container{
-    margin-left: 200px;
+    margin-left: 250px;
     margin-top: 100px;
+    
 }
 .title {
-    margin-left:  25px;
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -38,8 +38,7 @@ a{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .filter-icon {
@@ -100,14 +99,14 @@ a{
 }
 .table-container {
     padding: 10px;
-    width: 1100px;
+    width: 1400px;
     margin: 20px;
     overflow-x: auto;
 }
 
 
 table {
-    width: 100%;
+    width: 85%;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -167,7 +166,7 @@ tbody tr:hover {
     text-align: center;
     padding: 5px;
     width: 160px;
-    height: 25px;
+    height: 35px;
     background-color: #FCD7D4;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700; 
