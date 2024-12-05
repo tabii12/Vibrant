@@ -216,9 +216,8 @@
 
 
                 if (isset($_SESSION['cart'][$product_id])) {
-                    // Nếu tồn tại, tăng số lượng
+                    $_SESSION['cart'][$product_id]['quantity'] += 1;
                 } else {
-                    // Nếu chưa, thêm sản phẩm mới
                     $_SESSION['cart'][$product_id] = [
                         'id' => $product_id,
                         'ten_san_pham' => $product_name,
@@ -238,6 +237,27 @@
 
         public function checkoutPage(){
             $this->data['products'] = $this->product->getProduct1Anh();
+            if(isset($_POST['buyNow'])){
+                $product_id = $_POST['product_id'];
+                $this->data['product'] = $this->product->get1Product1Anh($product_id);
+
+                $product_name = $this->data['product']['ten_san_pham'];
+                $product_price = $this->data['product']['gia'];
+                $product_url = $this->data['product']['url'];
+
+
+                if (isset($_SESSION['cart'][$product_id])) {
+                    $_SESSION['cart'][$product_id]['quantity'] += 1;
+                } else {
+                    $_SESSION['cart'][$product_id] = [
+                        'id' => $product_id,
+                        'ten_san_pham' => $product_name,
+                        'gia' => $product_price,
+                        'url' => $product_url,
+                        'quantity' => 1
+                    ];
+                }
+            }
             if(isset($_SESSION['cart']) && isset($_SESSION['user'])){
                 if(isset($_POST['km'])){
                     $makm = $_POST['ma_nhap'];
@@ -278,14 +298,18 @@
 
                         unset($_SESSION['cart']);
 
-                        echo '<script>alert("Đơn hàng đã được tạo thành công!");</script>';
                         header('Location: index.php?page=home');
+                        echo '<script>alert("Đơn hàng đã được tạo thành công!");</script>';
                     } else {
                         echo '<script>alert("Đã xảy ra lỗi khi tạo đơn hàng!");</script>';
                     }
                 }
 
-                require_once 'views/thanhtoan/thanhtoan.php';
             }
+            if(!isset($_SESSION['user'])){
+                header('Location: index.php?page=login');
+                echo 'Vui đăng nhập trước khi thanh toán!';
+            }
+            require_once 'views/thanhtoan/thanhtoan.php';
         }
     }

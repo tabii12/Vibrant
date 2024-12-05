@@ -1,6 +1,9 @@
 
 <link rel="stylesheet" href="views/thanhtoan/thanh_toan.css">
-<div class="container-1">
+<div class="container-1" style="
+    margin-bottom: 100px;
+    margin-top: 120px;
+">
         <div class="menu-nav">
             <ul>
             <li><a href="#">Trang chủ ></a></li>
@@ -37,7 +40,7 @@
                     </div>
                     <br>
                     <select name="payment_method" required>
-                        <option value="Thanh toán trực tiếp">Thanh toán trực tiếp</option>
+                        <option value="Thanh toán trực tuyến">Thanh toán trực tuyến</option>
                         <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
                     </select>
                     <div class="form-container">
@@ -54,7 +57,7 @@
                     $midtotal = 0;
 
                     foreach($_SESSION['cart'] as $product){
-                        $midtotal += $product['gia'];
+                        $midtotal += $product['gia'] * $product['quantity'];
                     }
 
                     $total = $midtotal + 100000;
@@ -71,6 +74,12 @@
                         <span>Phí vận chuyển</span>
                         <span>100,000đ</span>
                     </div>
+                    <?php if (!empty($discount)): ?>
+                        <div class="row">
+                            <span>Mã giảm giá:</span>
+                            <span><?php echo $discount ?>%</span>
+                        </div>
+                    <?php endif; ?>
                     <hr>
                     <div class="row total">
                         <span>Tổng cộng</span>
@@ -101,6 +110,3 @@
         </div>
     </form>
 </div>
-<pre>
-    <?php print_r($_SESSION['cart']) ?>
-</pre>

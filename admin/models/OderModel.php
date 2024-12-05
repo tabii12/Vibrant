@@ -21,7 +21,28 @@ class OderModel{
 
    public function getOderDetail($id_don_hang){
     // $sql ="SELECT * FROM product";
-        $sql ="SELECT * FROM ct_donhang WHERE id_don_hang = $id_don_hang" ;
+        $sql ="SELECT 
+                ct_donhang.*, 
+                sanpham.ten_san_pham,
+                sanpham.id_danh_muc, 
+                danhmuc.ten_danh_muc,
+                donhang.*
+            FROM 
+                ct_donhang 
+            JOIN 
+                sanpham 
+            ON 
+                ct_donhang.id_san_pham = sanpham.id 
+            JOIN 
+                danhmuc 
+            ON 
+                sanpham.id_danh_muc = danhmuc.id
+            JOIN 
+            donhang
+            ON
+             ct_donhang.id_don_hang =donhang.id
+            WHERE 
+                ct_donhang.id_don_hang = $id_don_hang;";
     return $this->db->getAll($sql);
     }
 

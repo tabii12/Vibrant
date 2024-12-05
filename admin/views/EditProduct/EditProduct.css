@@ -14,7 +14,7 @@ body {
     height: 100px;
     display: flex;
     align-items: center;
-    margin: 80px 0px 0px 250px;
+    margin: 80px 0px 0px 280px;
 
 }
 .title_container h1{
@@ -23,7 +23,7 @@ body {
 }
 .form-container {
     max-width: 1240px;
-    margin: 10px 0px 0px 250px;
+    margin: 10px 0px 0px 280px;
     background: white;
 
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);

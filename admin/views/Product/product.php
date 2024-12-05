@@ -7,41 +7,92 @@
     <a href="index.php?page=addproduct">Thêm Sản Phẩm +</a>
     </div>
     <div class="table-container">
-        <table>
-            <thead>
+    <?php
+
+    $items_per_page = 10;
+    $current_page = isset($_GET['trang']) ? $_GET['trang'] : 1;
+    $total_items = count($data['product_info']);
+    $total_pages = ceil($total_items / $items_per_page);
+
+    $start = ($current_page - 1) * $items_per_page;
+    $end = $start + $items_per_page;
+    if($end > $total_items) $end = $total_items;
+    ?>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Danh mục</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            for($i = $start; $i < $end; $i++) {
+                $product = $data['product_info'][$i];
+                echo '
                 <tr>
-                    <th>Ảnh</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Danh mục</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th> 
-                    <th>Hành động</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                <?php
-                    foreach($data['product_info'] as $product){
-                        echo '
-                        <tr>
-                            <td><img src="../public/image/'.$product['url'].'" alt="'.$product['ten_san_pham'].'"></td>
-                            <td>'.$product['ten_san_pham'].'</td>
-                            <td>Thời trang nữ</td>
-                            <td>'.$product['gia'].'₫</td>
-                            <td>'.$product['so_luong'].'</td>
-                            <td>
-                                <a href="?page=editproduct&id='.$product['id'].'">
-                                <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                </a>
-                                <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        ';
-                    }
-                ?>
-            </tbody>
-        </table>
+                    <td><img src="../public/image/'.$product['url'].'" alt="'.$product['ten_san_pham'].'"></td>
+                    <td>'.$product['ten_san_pham'].'</td>
+                    <td>Thời trang nữ</td>
+                    <td>'.$product['gia'].'₫</td>
+                    <td>'.$product['so_luong'].'</td>
+                    <td>
+                        <a href="?page=editproduct&id='.$product['id'].'">
+                            <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </a>
+                        <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>';
+            }
+            ?>
+        </tbody>
+    </table>
+    <div class="pagination">
+        <?php
+        // Hàm tạo URL với tham số phân trang
+        function getPageUrl($page) {
+            $params = $_GET;
+            $params['trang'] = $page;
+            return '?' . http_build_query($params);
+        }
+
+        // Hiển thị nút Previous
+        if($current_page > 1) {
+            echo '<a href="'.getPageUrl($current_page-1).'" class="page-link">Trước</a>';
+        }
+
+        // Số trang muốn hiển thị trước và sau trang hiện tại
+        $range = 2;
+        
+        // Hiển thị các số trang
+        for($i = 1; $i <= $total_pages; $i++) {
+            // Luôn hiển thị trang đầu, trang cuối, và các trang xung quanh trang hiện tại
+            if($i == 1 || $i == $total_pages || 
+               ($i >= $current_page - $range && $i <= $current_page + $range)) {
+                if($i == $current_page) {
+                    echo '<span class="page-link active">'.$i.'</span>';
+                } else {
+                    echo '<a href="'.getPageUrl($i).'" class="page-link">'.$i.'</a>';
+                }
+            }
+            // Thêm dấu ... nếu có khoảng cách
+            elseif($i == 2 || $i == $total_pages - 1) {
+                echo '<span class="page-dots">...</span>';
+            }
+        }
+
+        // Hiển thị nút Next
+        if($current_page < $total_pages) {
+            echo '<a href="'.getPageUrl($current_page+1).'" class="page-link">Sau</a>';
+        }
+        ?>
     </div>
+</div>
 </body>
 </html>
 <pre>

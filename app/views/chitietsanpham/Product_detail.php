@@ -76,7 +76,7 @@ $data_comment = $data['comment'];
                 <!-- Form cho nút "Mua Ngay" -->
                 <form action="index.php?page=checkout" method="POST" style="display:inline;">
                     <input type="hidden" name="product_id" value="<?php echo $data_infor[0]['id']; ?>">
-                    <button type="submit" name="submit" class="btn btn-buy">Mua Ngay</button>
+                    <button type="submit" name="buyNow" class="btn btn-buy">Mua Ngay</button>
                 </form>
             </div>
             

@@ -5,5 +5,5 @@ if (isset($_SESSION['user'])) {
     session_destroy(); // Hủy toàn bộ session
 }
 
-header("Location: index.php?page=login");
+header("Location: ../index.php?page=login");
 exit();

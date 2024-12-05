@@ -1,7 +1,7 @@
 <?php
     ob_start();
     session_start();
-    // require_once 'views/khungAdmin/khungAdmin.php'; 
+    require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
@@ -22,7 +22,12 @@
     require_once 'models/KhachHangModel.php';
     require_once 'models/AddProductModel.php';
     require_once 'models/EditproductModel.php'; 
-
+    require_once 'models/OderModel.php';
+    require_once 'models/CateModel.php';
+    require_once 'models/editcateModel.php';
+    
+   
+    require_once 'views/khungAdmin/khungAdmin.php';
     
     if(isset($_GET['page'])) {
         $page = $_GET['page'];
@@ -83,13 +88,16 @@
                 $editcate = new editcateController();
                 $editcate->editCate();
                 break;
-
+            case 'logout':
+                require_once 'views/logout.php';
+                break;
             default:
                 echo "Trang không tồn tại!";
-                break;
         }
     } else {
-        echo "Trang chủ";
+            $admin = new UserController();
+            $admin->ADmin();
+
     }
     
 
