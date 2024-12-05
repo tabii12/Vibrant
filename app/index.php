@@ -3,12 +3,19 @@
     session_start();
     require_once 'controllers/HomeController.php';
     require_once 'controllers/Product_detail_controller.php';
+    require_once 'controllers/userInfoController.php';
+    require_once 'controllers/editUserInfoController.php';
+    require_once 'controllers/editPwUserController.php';
 
     require_once 'models/Database.php';
     require_once 'models/ProductModel.php';
     require_once 'models/UserModel.php';
     require_once 'models/detailModel.php';
     require_once 'models/CheckoutModel.php';
+    require_once 'models/userInfoModel.php';
+    require_once 'models/editUserInfoModel.php';
+    require_once 'models/editPwUserModel.php';
+    
     require_once 'views/header/header.php';
 
     if (!isset($_SESSION['cart'])) {
@@ -46,6 +53,18 @@
             case 'checkout':
                 $home = new HomeController();
                 $home->checkoutPage();
+                break;
+            case 'userInfo':
+                $home = new userInfoController();
+                $home->userInfo();
+                break;
+            case 'edituserinfo':
+                $home = new editUserInfoController();
+                $home->editUserInfo();
+                break;
+            case 'editpwuser':
+                $home = new editPwUserController();
+                $home->editPwUser();
                 break;
             default:
                 $home = new HomeController();

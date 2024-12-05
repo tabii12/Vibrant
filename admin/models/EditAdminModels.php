@@ -15,19 +15,15 @@ class EditAdminModels {
     }
 
     public function updateAdmin($id, $name, $email, $phone, $position, $gender, $username, $oldPassword, $newPassword) {
-        // Lấy mật khẩu từ cơ sở dữ liệu
         $sql = "SELECT mat_khau FROM nguoidung WHERE id = :id"; 
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
     
-        // So sánh mật khẩu cũ nhập vào với mật khẩu trong cơ sở dữ liệu
-        if ($admin && $oldPassword === $admin['mat_khau']) { // So sánh thẳng mật khẩu
-            // Nếu có mật khẩu mới, thay thế mật khẩu cũ
+        if ($admin && $oldPassword === $admin['mat_khau']) {
             $newPassword = $newPassword ? $newPassword : $oldPassword;
     
-            // Cập nhật thông tin admin
             $updateSql = "UPDATE nguoidung SET 
                             ten_nguoi_dung = :name, 
                             email = :email, 
@@ -48,7 +44,6 @@ class EditAdminModels {
             $updateStmt->bindParam(':id', $id, PDO::PARAM_INT);
             return $updateStmt->execute();
         } else {
-            // Nếu mật khẩu cũ không đúng, trả về false
             return false;
         }
     }

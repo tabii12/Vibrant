@@ -77,6 +77,7 @@
                 } else {
                     // Đăng nhập thành công
                     $_SESSION['user'] = $login_result;
+                    echo 'hi';
                 
                     if ($login_result['role'] == "admin") {
                         header('Location: ../admin/index.php');
