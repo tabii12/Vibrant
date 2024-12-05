@@ -11,14 +11,6 @@
     require_once 'controllers/KhachHangController.php';
     require_once 'controllers/AddProductController.php';
     require_once 'controllers/EditProductController.php';
-<<<<<<< HEAD
-=======
-    require_once 'controllers/OderlistController.php';
-    require_once 'controllers/OderDetailController.php';
-    require_once 'controllers/cateController.php';
-    require_once 'controllers/AddcateController.php';
-    require_once 'controllers/editcateController.php';
->>>>>>> 5aef770d89710c4a33698bbbf95e3c2902c60cd7
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';
@@ -30,14 +22,6 @@
     require_once 'models/KhachHangModel.php';
     require_once 'models/AddProductModel.php';
     require_once 'models/EditproductModel.php'; 
-<<<<<<< HEAD
-=======
-    require_once 'models/OderModel.php';
-    require_once 'models/CateModel.php';
-    require_once 'models/editcateModel.php';
-    
-   
->>>>>>> 5aef770d89710c4a33698bbbf95e3c2902c60cd7
 
     
     if(isset($_GET['page'])) {
@@ -73,14 +57,12 @@
                 break;
             case 'addproduct':
                 $admin = new AddProductController();
-                $admin->addProduct();
+                $admin->AddProduct();
                 break;
             case 'editproduct':
                 $admin = new EditProductController();
                 $admin->EditProduct();
                 break;
-<<<<<<< HEAD
-=======
             case 'oder':
                 $oder = new OderController();
                 $oder->Oder();
@@ -102,7 +84,6 @@
                 $editcate->editCate();
                 break;
 
->>>>>>> 5aef770d89710c4a33698bbbf95e3c2902c60cd7
             default:
                 echo "Trang không tồn tại!";
                 break;
