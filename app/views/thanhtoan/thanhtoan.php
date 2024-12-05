@@ -1,6 +1,9 @@
 
 <link rel="stylesheet" href="views/thanhtoan/thanh_toan.css">
-<div class="container-1">
+<div class="container-1" style="
+    margin-bottom: 100px;
+    margin-top: 120px;
+">
         <div class="menu-nav">
             <ul>
             <li><a href="#">Trang chủ ></a></li>

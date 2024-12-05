@@ -81,7 +81,7 @@
                         <p>Tổng giá: <span>'.number_format($sum + '100000', 0, '', ',').'đ</span></p>
                     </div>
                     <a href="index.php?page=checkout&checkout=ok"><button class="checkout-btn" >Thanh Toán</button></a>
-                    <a href="index.php?page=home"><button class="continue-btn">Tiếp tục mua hàng</button></a>
+                    <a href="index.php?page=product"><button class="continue-btn">Tiếp tục mua hàng</button></a>
                 </div>
             ';
         ?>
