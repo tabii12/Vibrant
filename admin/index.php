@@ -1,7 +1,7 @@
 <?php
     ob_start();
     session_start();
-    require_once 'views/khungAdmin/khungAdmin.php'; 
+    // require_once 'views/khungAdmin/khungAdmin.php'; 
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
@@ -73,7 +73,7 @@
                 break;
             case 'addproduct':
                 $admin = new AddProductController();
-                $admin->AddProduct();
+                $admin->addProduct();
                 break;
             case 'editproduct':
                 $admin = new EditProductController();
