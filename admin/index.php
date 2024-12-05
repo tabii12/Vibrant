@@ -96,7 +96,6 @@
 
             default:
                 echo "Trang không tồn tại!";
-                break;
         }
     } else {
         echo "Trang chủ";
