@@ -15,13 +15,14 @@ class cateModel {
    
     public function addcate($data_cate) {
         if (empty($data_cate['ten_danh_muc'])) {
-            echo "Tên danh mục không được để trống!";
+            echo "<script>alert('Tên danh mục không được để trống!');</script>";
             return false;
-        }
+        } else {
         $sql = "INSERT INTO danhmuc (ten_danh_muc) VALUES (?)";
         $params = [$data_cate['ten_danh_muc']];
 
         return $this->db->insert($sql, $params);
+        }
     }
 
     public function deletecate($cateid) {

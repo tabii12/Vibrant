@@ -261,6 +261,6 @@ $data_comment = $data['comment'];
 </body>
 </html>
 <?php 
-print_r($_SESSION['user'])
+
 
 ?>
