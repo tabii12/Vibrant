@@ -64,7 +64,6 @@
         <main class="products-section">
             <div class="sort-bar">
                 <select class="sort-select" id="sortSelect">
-                    <option value="default">Thứ tự mặc định</option>
                     <option value="lowToHigh">Giá thấp đến cao</option>
                     <option value="highToLow">Giá cao đến thấp</option>
                 </select>
