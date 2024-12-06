@@ -1,10 +1,6 @@
 <?php
     ob_start();
     session_start();
-<<<<<<< HEAD
-=======
-
->>>>>>> 25c8b99050cee51dcd455916fca4e6abaaf79ba8
     require_once 'controllers/AdminController.php';
     require_once 'controllers/ProductController.php';
     require_once 'controllers/AddAdminController.php';
