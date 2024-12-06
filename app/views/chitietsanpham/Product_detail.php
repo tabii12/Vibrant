@@ -135,17 +135,17 @@ $data_comment = $data['comment'];
             <?php 
 
                 if (isset($_SESSION['user'])) { 
-                    $tenNguoiDung = $_SESSION['user']['ten_nguoi_dung'];
+                    $tenNguoiDung = $_SESSION['user']['ten_dang_nhap'];
                    echo '
                     <h4>'.$tenNguoiDung.':</h4>
                     <div class="comment">
                     <form method="post" action="">
-                        <select class="custom-rating"" id="rating" name="rating">
-                                <option" value="5" name="rating">★★★★★</option>
-                                <option" value="4" name="rating">★★★★</option>
-                                <option" value="3" name="rating">★★★</option>
-                                <option" value="2" name="rating">★★</option>
-                                <option" value="1" name="rating">★</option>
+                        <select class="custom-rating" id="rating" name="rating">
+                                <option value="5" name="rating">★★★★★</option>
+                                <option value="4" name="rating">★★★★</option>
+                                <option value="3" name="rating">★★★</option>
+                                <option value="2" name="rating">★★</option>
+                                <option value="1" name="rating">★</option>
                         </select>
                         <input type="text" name="noi_dung" placeholder="Nhập bình luận của bạn ở đây...">
                         <button type="submit" name="gui_bl">Gửi bình luận</button>
@@ -158,6 +158,7 @@ $data_comment = $data['comment'];
 
 
                 foreach($data_comment as $comment) {
+
                     if ($comment['rating'] == 5) {
                         $stars = '★★★★★';
                     } elseif ($comment['rating'] == 4) {
@@ -174,7 +175,7 @@ $data_comment = $data['comment'];
                     echo '
                     <div class="review-item">
                         <div class="review-header">
-                        <h5>'.$comment['ten_nguoi_dung'].'</h5>
+                        <h5>'.$comment['ten_dang_nhap'].'</h5>
                         <div class ="rating">
                         <h5>'.$stars.'</h5>
                         </div>
@@ -260,6 +261,6 @@ $data_comment = $data['comment'];
 </body>
 </html>
 <?php 
-// print_r($data_infor) ;
+print_r($_SESSION['user'])
 
 ?>

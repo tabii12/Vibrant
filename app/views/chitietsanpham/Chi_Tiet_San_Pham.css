@@ -417,3 +417,16 @@ color: #f15e2c;
 
     color: #FFD700;
 }
+
+.custom-rating {
+    border: 0px;
+    color: #FFD700;
+    font-size: 20px;
+    margin: 10px 0px;
+    background-color: transparent; /* Nếu muốn nền trong suốt */
+    appearance: none; /* Ẩn mũi tên mặc định trên một số trình duyệt */
+}
+
+.custom-rating option {
+    color: #FFD700;
+}

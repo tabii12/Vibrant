@@ -31,7 +31,7 @@ class DetailModel{
 
        public function GetComment($id_san_pham){
         $sql ="SELECT 
-                    nguoidung.ten_nguoi_dung,
+                    nguoidung.ten_dang_nhap,
                     binhluan.noi_dung,
                     binhluan.rating,
                     binhluan.ngay_binh_luan
