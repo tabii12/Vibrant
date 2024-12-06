@@ -4,7 +4,7 @@ $data_product = $data['product'];
 <link rel="stylesheet" href="views/home/home.css">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 <section class="banner" >
-        <img src="views/home/home_img/banner.png" alt="">
+       <a href="index.php?page=product"> <img src="views/home/home_img/bannernew.png" alt=""></a>
     </section>
     <section class="service">
         <div class="info-box">
