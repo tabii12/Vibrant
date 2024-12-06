@@ -26,6 +26,14 @@
             " ;
             return $this->db->getAll($sql);
         }
+        public function deleteComment($id) {
+            $sql = "DELETE FROM binhluan WHERE id = ?";
+            $param = [
+                $id
+            ];
+            return $this->db->delete($sql, $param);
+        }
+         
     }
 
 ?>

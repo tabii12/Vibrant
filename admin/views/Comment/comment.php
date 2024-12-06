@@ -23,40 +23,51 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                    foreach($data['comment_info'] as $comment){
-                        echo'
-                            <tr>
-                                <td>'.$comment['comment_id'].'</td>
-                                <td>'.$comment['user_name'].'</td>
-                                <td>'.$comment['comment_date'].'</td>
-                                <td>'.$comment['comment_content'].'</td>
-                                <td>
-                                    <span class="stars">';
-                                        $rating = $comment['rating'];
-                                        for ($i = 1; $i <= 5; $i++) {
-                                            if ($i <= $rating) {
-                                                echo "★";
-                                            } else {
-                                                echo "☆"; 
-                                            }
-                                        }
-                                        echo'
-                                    </span>
-                                </td>
-                                <td>
-                                    <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
-                                    <button class="reply-btn">Phản hồi</button>
+    <?php
+        foreach($data['comment_info'] as $comment){
+            $comment_id = $comment['comment_id'];
+            echo'
+                <tr>
+                    <td>'.$comment['comment_id'].'</td>
+                    <td>'.$comment['user_name'].'</td>
+                    <td>'.$comment['comment_date'].'</td>
+                    <td>'.$comment['comment_content'].'</td>
+                    <td>
+                        <span class="stars">';
+                            $rating = $comment['rating'];
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $rating) {
+                                    echo "★";
+                                } else {
+                                    echo "☆"; 
+                                }
+                            }
+                            echo'
+                        </span>
+                    </td>
+                    <td>
+                        <form action="index.php?page=comment" method="POST">
+                            <input type="hidden" name="id" value="'.$comment['comment_id'].'">
+                            
+                            <button class="delete-btn" name="submit">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </form>
 
-                                </td>
-                            </tr>
-                        ';
-                    }
-                ?>
-            </tbody>
+
+                    </td>
+                </tr>   
+            ';
+        }
+    ?>
+</tbody>
+
         </table>
     </div>
 </body>
 <pre>
     <?php #print_r($data['comment_info']) ?>
 </pre>
+
+
+

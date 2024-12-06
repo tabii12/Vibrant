@@ -73,6 +73,11 @@ class DataBase {
         return $this->conn->lastInsertId();
     }
 
+    public function delete($sql, $param) {
+        $this->query($sql, $param);  
+    }
+    
+
     public function getConnection() {
         return $this->conn;
     }
