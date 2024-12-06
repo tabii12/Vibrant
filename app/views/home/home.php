@@ -68,7 +68,7 @@ $data_product = $data['product'];
             <?php 
                 foreach($data['productNewGN'] as $giay){
                     echo '
-                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <a href="index.php?page=product&danh_muc=1">
                         <div class="img">
                         <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
                         </div>
@@ -82,7 +82,7 @@ $data_product = $data['product'];
         <?php 
                 foreach($data['productNewGNw'] as $giay){
                     echo '
-                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <a href="index.php?page=product&danh_muc=2">
                         <div class="img">
                         <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
                         </div>
@@ -96,7 +96,7 @@ $data_product = $data['product'];
         <?php 
                 foreach($data['productNewTT'] as $giay){
                     echo '
-                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <a href="index.php?page=product&danh_muc=3">
                         <div class="img">
                         <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
                         </div>
@@ -111,7 +111,7 @@ $data_product = $data['product'];
 
                 foreach($data['productNewDB'] as $giay){
                     echo '
-                        <a href="index.php?page=detail&id_san_pham='.$giay['id'].'">
+                        <a href="index.php?page=product&danh_muc=4">
                         <div class="img">
                         <img src="../public/image/'.$giay['url'].'" alt="Thời Trang Nam">
                         </div>

@@ -1,13 +1,15 @@
 <?php
-
+$cartKeys = array_keys($_SESSION['cart']);
+$maxIndex = end($cartKeys); 
+$productId = htmlspecialchars($_SESSION['cart'][$maxIndex]['id']);
 
 ?>
 <link rel="stylesheet" href="views/cart/cart.css">
 <section class="website">
     <ul>
-      <li><a href="#">Trang Chủ ></a></li>
-      <li><a href="#">Chi Tiết Sản Phẩm ></a></li>
-      <li><a class="in_page" href="cart.html">Giỏ Hàng</a></li>
+    <li><a href="index.php">Trang chủ ></a></li>
+            <li><a href="index.php?page=detail&id_san_pham=<?php echo $productId ?>">Chi tiết sản phẩm ></a></li>
+            <li><a href="#">Giỏ Hàng</a></li>
     </ul>
   </section>
 <div class="cart-container">
@@ -125,7 +127,7 @@
 </section>
   <?php
     echo "<pre>";
-    // print_r($_SESSION['cart']);
+    print_r($_SESSION['cart']);
     echo "</pre>";
     
     ?>

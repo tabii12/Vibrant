@@ -6,7 +6,14 @@ $data_comment = $data['comment'];
 ?>
 
 <link rel="stylesheet" href="views/chitietsanpham/Chi_Tiet_San_Pham.css">
+<div class="website">
+            <ul>
+            <li><a href="index.php">Trang chủ ></a></li>
+            <li>Chi tiết sản phẩm</li>
+            </ul>
+        </div>
 <div class="detail-container">
+
         
             <?php 
             echo'
@@ -133,8 +140,15 @@ $data_comment = $data['comment'];
                     <h4>'.$tenNguoiDung.':</h4>
                     <div class="comment">
                     <form method="post" action="">
+                        <select class="custom-rating"" id="rating" name="rating">
+                                <option" value="5" name="rating">★★★★★</option>
+                                <option" value="4" name="rating">★★★★</option>
+                                <option" value="3" name="rating">★★★</option>
+                                <option" value="2" name="rating">★★</option>
+                                <option" value="1" name="rating">★</option>
+                        </select>
                         <input type="text" name="noi_dung" placeholder="Nhập bình luận của bạn ở đây...">
-                        <button type="submit">Gửi bình luận</button>
+                        <button type="submit" name="gui_bl">Gửi bình luận</button>
                     </form>
                     </div>
                    ';
@@ -144,10 +158,26 @@ $data_comment = $data['comment'];
 
 
                 foreach($data_comment as $comment) {
+                    if ($comment['rating'] == 5) {
+                        $stars = '★★★★★';
+                    } elseif ($comment['rating'] == 4) {
+                        $stars = '★★★★☆';
+                    } elseif ($comment['rating'] == 3) {
+                        $stars = '★★★☆☆';
+                    } elseif ($comment['rating'] == 2) {
+                        $stars = '★★☆☆☆';
+                    } elseif ($comment['rating'] == 1) {
+                        $stars = '★☆☆☆☆';
+                    }
+
+
                     echo '
                     <div class="review-item">
                         <div class="review-header">
                         <h5>'.$comment['ten_nguoi_dung'].'</h5>
+                        <div class ="rating">
+                        <h5>'.$stars.'</h5>
+                        </div>
                         <div class="review-date">'.$comment['ngay_binh_luan'].'</div>
                         </div>
                         <div class="review-text">

@@ -60,13 +60,13 @@ class DetailModel{
         return $this->product->getAll($sql); 
        }
 
-       public function addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung, $ngay_binh_luan) {
+       public function addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung, $ngay_binh_luan,$rating) {
         if (empty($id_san_pham) || empty($id_nguoi_dung) || empty($noi_dung)) {
             return false;
         }
 
-        $sql = "INSERT INTO binhluan (id_san_pham, id_nguoi_dung, noi_dung, ngay_binh_luan) VALUES (?, ?, ?, ?)";
-        $params = [$id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan];
+        $sql = "INSERT INTO binhluan (id_san_pham, id_nguoi_dung, noi_dung, ngay_binh_luan, rating) VALUES (?, ?, ?, ?, ?)";
+        $params = [$id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan,$rating];
 
         return $this->product->insert($sql, $params);
     }

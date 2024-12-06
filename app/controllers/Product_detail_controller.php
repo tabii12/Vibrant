@@ -36,6 +36,7 @@
             // Xử lý bình luận
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $noi_dung = $_POST['noi_dung'] ?? '';
+                $rating = $_POST['rating'] ?? '';
                 $ngay_binh_luan = date("Y-m-d");
                 if (empty($noi_dung)) {
                     echo "Nội dung bình luận không được để trống!";
@@ -45,7 +46,7 @@
                 $id_nguoi_dung = $_SESSION['user']['id'] ?? null;
                 // Thêm bình luận
 
-                $result = $this->detail->addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan);
+                $result = $this->detail->addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan,$rating);
                 
                 header('location: index.php?page=detail&id_san_pham='.$id_san_pham.'');
             }
