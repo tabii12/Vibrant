@@ -7,15 +7,15 @@
         }
     
         public function register($data) {
-            // Kiểm tra tên đăng nhập đã tồn tại trong cơ sở dữ liệu
+           
             $sql_check_username = "SELECT COUNT(*) FROM nguoidung WHERE ten_dang_nhap = ?";
             $result_username = $this->db->query($sql_check_username, [$data['ten_dang_nhap']])->fetchColumn();
         
             if ($result_username > 0) {
-                return false; // Tài khoản đã tồn tại
+                return false;
             }
         
-            // Kiểm tra email đã tồn tại
+           
             $sql_check_email = "SELECT COUNT(*) FROM nguoidung WHERE email = ?";
             $result_email = $this->db->query($sql_check_email, [$data['email']])->fetchColumn();
         
@@ -23,7 +23,7 @@
                 return false;
             }
         
-            // Kiểm tra số điện thoại đã tồn tại
+            
             $sql_check_sdt = "SELECT COUNT(*) FROM nguoidung WHERE sdt = ?";
             $result_sdt = $this->db->query($sql_check_sdt, [$data['sdt']])->fetchColumn();
         

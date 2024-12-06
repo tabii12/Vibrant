@@ -11,6 +11,11 @@
     require_once 'controllers/KhachHangController.php';
     require_once 'controllers/AddProductController.php';
     require_once 'controllers/EditProductController.php';
+    require_once 'controllers/cateController.php';
+    require_once 'controllers/AddcateController.php';
+    require_once 'controllers/editcateController.php';
+    require_once 'controllers/OderlistController.php';
+    require_once 'controllers/OderDetailController.php';
 
     require_once 'models/Database.php';
     require_once 'models/khuyenMaiModel.php';

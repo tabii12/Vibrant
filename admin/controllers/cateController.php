@@ -6,11 +6,10 @@
         private $data = [];
     
         public function __construct() {
-            // Giả sử KhuyenMaiModel là lớp xử lý database
             $this->cate = new cateModel();
         }
     
-        // Phương thức hiển thị view thêm danh mục
+
         public function renderView($data) {
             require_once('views/danhmuc/danh_muc.php');
         }

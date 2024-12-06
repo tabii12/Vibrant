@@ -33,7 +33,8 @@ class DetailModel{
         $sql ="SELECT 
                     nguoidung.ten_nguoi_dung,
                     binhluan.noi_dung,
-                    binhluan.rating
+                    binhluan.rating,
+                    binhluan.ngay_binh_luan
                 FROM 
                     nguoidung
                 JOIN 
@@ -58,6 +59,17 @@ class DetailModel{
             LIMIT 4;";
         return $this->product->getAll($sql); 
        }
+
+       public function addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung, $ngay_binh_luan) {
+        if (empty($id_san_pham) || empty($id_nguoi_dung) || empty($noi_dung)) {
+            return false;
+        }
+
+        $sql = "INSERT INTO binhluan (id_san_pham, id_nguoi_dung, noi_dung, ngay_binh_luan) VALUES (?, ?, ?, ?)";
+        $params = [$id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan];
+
+        return $this->product->insert($sql, $params);
+    }
 
 
     }
