@@ -6,11 +6,17 @@
             $this->db = new Database();
         }
 
-        public function geteditPwUser($user_id){
+        public function updatePw($data, $id){
             $sql = "
-            SELECT * FROM nguoidung WHERE id = ?
+            UPDATE nguoidung
+            SET mat_khau = ?
+            WHERE id = ?
             ";
-            return $this->db->getAll($sql, [$user_id]);
+            $param = [
+                $data['np'],
+                $id
+            ];
+            $this->db->insert($sql, $param);
         }
     }
 ?>

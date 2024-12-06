@@ -6,19 +6,32 @@
         public function __construct(){
             $this->editPwUser = new editPwUserModel();
         }
-        public function RendereditPwUser($data){
-            require_once('views/editPwUser/editPwUser.php');
-        }
         public function editPwUser(){
             if (!isset($_SESSION['user'])) {
                 header('Location: index.php?page=login');
                 exit();
             }
+            require_once 'views/editPwUser/editPwUser.php';
 
-            $user_id = $_SESSION['user']['id'];
+            if(isset($_POST['submit'])){
+                $data = [];
+                $data['cp'] = $_POST['cp'];
+                $data['np'] = $_POST['np'];
+                $data['cnp'] = $_POST['cnp'];
 
-            $this->data['user_info'] = $this->editPwUser->geteditPwUser($user_id);
-            $this->RendereditPwUser($this->data);
+                $id = $_SESSION['user']['id'];
+                
+                if($data['cp'] === $_SESSION['user']['mat_khau']){
+                    if($data['np'] === $data['cnp']){
+                        $this->editPwUser->updatePw($data, $id);
+                        header('Location: index.php?page=userInfo');
+                    }else{
+                        echo "Mật khẩu mới không khớp!";
+                    }
+                }else{
+                    echo "Sai mật khẩu!";
+                }
+            }
         }
 
     }

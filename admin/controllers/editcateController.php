@@ -24,11 +24,11 @@ class editcateController {
             return;
         }
 
-        // Lấy dữ liệu danh mục từ cơ sở dữ liệu
+        
         $this->data['danh_muc'] = $this->cate->getcate($id);
         $this->renderView($this->data);
 
-        // Xử lý form khi người dùng submit
+       
         if (isset($_POST['ten_danh_muc']) && !empty($_POST['ten_danh_muc'])) {
             $ten_danh_muc = $_POST['ten_danh_muc']; // Lấy giá trị từ form và xử lý
 

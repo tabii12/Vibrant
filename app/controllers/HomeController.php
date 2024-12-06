@@ -313,4 +313,5 @@
             }
             require_once 'views/thanhtoan/thanhtoan.php';
         }
+
     }

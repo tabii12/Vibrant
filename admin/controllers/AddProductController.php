@@ -63,31 +63,26 @@ class AddProductController {
 
             if($id_sp){
                 for($i = 0; $i < 4; $i++){
-                    // Tạo đường dẫn URL cho từng ảnh trong vòng lặp
                     $url = $brand.'/'.$category.'/'.$files['name'][$i];
                     $result = $this->addproduct->addImages($id_sp, $url);
                     
                     if($result){
                         $allowedTypes = ['jpg', 'png'];
                         
-                        // Sử dụng vòng lặp duyệt qua từng file
                         if($files['error'][$i] != 0){
                             $error_message = "Có lỗi xảy ra với file: " . $files['name'][$i] . "<br>";
                         }
                 
                         $fileName = basename($files['name'][$i]);
-                        $targetFile = '../public/image/'.$url;  // Đảm bảo rằng URL đúng cho mỗi ảnh
+                        $targetFile = '../public/image/'.$url;  
                         $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
                         $fileTmpName = $files['tmp_name'][$i];
                 
-                        // Kiểm tra loại file
                         if (!in_array($fileType, $allowedTypes)) {
                             $error_message = "File không hợp lệ: " . $fileName . "<br>";
                         }
                 
-                        // Di chuyển file
                         if (move_uploaded_file($fileTmpName, $targetFile)) {
-                            // Có thể thêm logic nếu cần, ví dụ: ghi vào log, thông báo thành công...
                         } else {
                             $error_message = "Lỗi khi di chuyển file '$fileName'.<br>";
                         }

@@ -16,19 +16,19 @@
   </section>
   <div class="change-password-container">
     <h1>Đổi Mật Khẩu</h1>
-    <form class="change-password-form">
+    <form action="index.php?page=editpwuser" method="POST" class="change-password-form">
       <div class="form-group">
         <label for="current-password">Mật Khẩu Hiện Tại</label>
-        <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required>
+        <input name="cp" type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required>
       </div>
       <div class="form-group">
         <label for="new-password">Mật Khẩu Mới</label>
-        <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required>
+        <input name="np" type="password" id="new-password" placeholder="Nhập mật khẩu mới" required>
       </div>
       <div class="form-group">
         <label for="confirm-password">Nhập Lại Mật Khẩu Mới</label>
-        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới" required>
+        <input name="cnp" type="password" id="confirm-password" placeholder="Nhập lại mật khẩu mới" required>
       </div>
-      <button type="submit">Đổi Mật Khẩu</button>
+      <button name="submit" type="submit">Đổi Mật Khẩu</button>
     </form>
   </div>

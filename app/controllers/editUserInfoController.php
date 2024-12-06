@@ -19,6 +19,19 @@
 
             $this->data['user_info'] = $this->editUserInfo->geteditUserInfo($user_id);
             $this->RendereditUserInfo($this->data);
+
+            if(isset($_POST['submit'])){
+                $data = [];
+                $data['id'] = $_SESSION['user']['id'];
+                $data['ten_nguoi_dung'] = $_POST['name'];
+                $data['email'] = $_POST['email'];
+                $data['sdt'] = $_POST['sdt'];
+                $data['gioi_tinh'] = $_POST['gender'];
+                $data['ngay_sinh'] = $_POST['birth_date'];
+
+                $this->editUserInfo->updateUserInfo($data);
+                header('Location: index.php?page=userInfo');
+            }
         }
 
     }

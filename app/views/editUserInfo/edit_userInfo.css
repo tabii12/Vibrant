@@ -69,7 +69,6 @@
 }
 .container_ .dob-select select {
     width: 200px;
-    background-color: #D9D9D9;
 }
 .container_ .submit-btn {
     margin-top: 50px;
@@ -192,4 +191,8 @@
         text-align: center;
     }
     
+}
+
+#birth_date{
+    width: 600px;
 }

@@ -339,3 +339,51 @@ height: 105%;
     font-size: 14px;
     color: #666;
 }
+.comment {
+    display: flex;
+    justify-content: center; /* Canh giữa */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; /* Giới hạn chiều rộng tối đa */
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+}
+
+.comment form {
+    width: 100%;
+}
+
+.comment input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px; /* Khoảng cách giữa input và button */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Bo góc */
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+.comment input[type="text"]:focus {
+    border-color: #007bff; /* Màu viền khi input được focus */
+
+}
+
+.comment button[type="submit"] {
+    padding: 5px;
+    border: none;
+    background-color: #007bff; /* Màu nền của button */
+    color: white; /* Màu chữ */
+    font-size: 14px;
+    border-radius: 4px; /* Bo góc */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.comment button[type="submit"]:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+.comment button[type="submit"]:active {
+    background-color: #004085; /* Màu nền khi click */
+}

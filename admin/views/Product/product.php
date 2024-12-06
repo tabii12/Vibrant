@@ -45,7 +45,9 @@
                         <a href="?page=editproduct&id='.$product['id'].'">
                             <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                         </a>
+                         <a href="index.php?page=product&id='.$product['id'].'">
                         <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </a>
                     </td>
                 </tr>';
             }
