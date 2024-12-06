@@ -86,75 +86,69 @@
   .icons a:hover {
     color: #F15E2C;
   }
-  .mobile-menu-btn {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 5px;
-  }
-  .mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 1001;
-  }
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 80px; 
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-  .mobile-menu.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .mobile-menu ul li {
-    border-bottom: 1px solid #eaeaea;
-  }
-  .mobile-menu ul li a {
-    display: block;
-    padding: 15px 20px;
-    color:  #004C59;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
  
+.mobile-menu-btn {
+  display: none; /* Ẩn nút mặc định */
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  z-index: 1001;
+}
+
+
+#myLinks {
+  display: none; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+
+#myLinks.active {
+  display: block; /* Hiển thị menu */
+}
+
+#myLinks li {
+  border-bottom: 1px solid #eaeaea;
+}
+
+#myLinks li a {
+  display: block;
+  padding: 15px 20px;
+  color: #004C59;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#myLinks li a:hover {
+  background-color: #f4f4f4;
+}
+
   #scrollTopBtn {
-    display: none; /* Ẩn nút khi mới vào trang */
-    position: fixed; /* Cố định vị trí khi cuộn */
-    bottom: 20px; /* Cách đáy 20px */
-    right: 20px; /* Cách phải 20px */
-    padding: 10px 15px; /* Kích thước nút */
-    background-color:  #004C59; /* Màu nền */
-    color: #fff; /* Màu chữ */
-    border: none; /* Xóa viền */
-    border-radius: 5px; /* Bo tròn góc */
-    cursor: pointer; /* Thay đổi con trỏ khi hover */
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    padding: 10px 15px; 
+    background-color:  #004C59; 
+    color: #fff;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
     font-size: 16px;
     z-index: 1000; 
   }
 
-/* Responsive Styles */
-
-/* Tablet Styles (768px - 1024px) */
 @media screen and (max-width: 1024px) {
     .container {
         padding: 0 15px;

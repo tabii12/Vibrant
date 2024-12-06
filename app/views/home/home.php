@@ -124,7 +124,7 @@ $data_product = $data['product'];
 </section>
 
 <section class="love-product">
-<h2><div class="section-title" style="color: #004C59;">Sản phẩm  </div> <div class="section-title" style="color: #F15E2C;" >Giảm giá </div></h2>
+<h2><div class="section-title" style="color: #004C59;">Có thể  </div> <div class="section-title" style="color: #F15E2C;" >bạn sẽ thích </div></h2>
     <div class="product-love">
     <?php
                foreach ($data['BCTT'] as $BCTT) {

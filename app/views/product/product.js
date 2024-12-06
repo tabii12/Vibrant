@@ -1,15 +1,15 @@
-const PRODUCTS_PER_PAGE = 12;
+const ppp = 12;
 
 const productCards = document.querySelectorAll('.product-card');
 const pagination = document.querySelector('.pagination');
 
-const totalPages = Math.ceil(productCards.length / PRODUCTS_PER_PAGE);
+const totalPages = Math.ceil(productCards.length / ppp);
 
 let currentPage = 1;
 
 function displayPage(page) {
-    const startIndex = (page - 1) * PRODUCTS_PER_PAGE;
-    const endIndex = startIndex + PRODUCTS_PER_PAGE;
+    const startIndex = (page - 1) * ppp;
+    const endIndex = startIndex + ppp;
 
     productCards.forEach((card, index) => {
         if (index >= startIndex && index < endIndex) {
@@ -18,9 +18,9 @@ function displayPage(page) {
             card.style.display = 'none';
         }
     });
-    setupPagination();
+    phantrang();
 }
-function setupPagination() {
+function phantrang() {
     pagination.innerHTML = '';
 
 
@@ -50,23 +50,17 @@ function setupPagination() {
 displayPage(currentPage);
 
 
-    document.getElementById('sortSelect').addEventListener('change', function() {
-        var productsGrid = document.getElementById('productsGrid');
-        var products = Array.from(productsGrid.getElementsByClassName('product-card'));
-        var sortBy = this.value;
+document.getElementById('sortSelect').addEventListener('change', function() {
+    const products = Array.from(document.getElementsByClassName('product-card'));
+    const sortBy = this.value;
 
-        products.sort(function(a, b) {
-            if (sortBy === 'lowToHigh') {
-                return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
-            }
-            if (sortBy === 'highToLow') {
-                return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
-            }
-          
-            return 0; 
-        });
-        products.forEach(function(product) {
-            productsGrid.appendChild(product);
-        });
+    products.sort((a, b) => {
+        const priceA = parseInt(a.getAttribute('data-price'));
+        const priceB = parseInt(b.getAttribute('data-price'));
+        return sortBy === 'lowToHigh' ? priceA - priceB : priceB - priceA;
     });
+
+    products.forEach(product => document.getElementById('productsGrid').appendChild(product));
+});
+
 
