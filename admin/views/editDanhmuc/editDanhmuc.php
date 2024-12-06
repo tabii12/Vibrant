@@ -16,7 +16,7 @@ $data_cate = $data['danh_muc']; // Sử dụng đúng key để truy xuất dữ
                 <input type="text" id="name-category" name="ten_danh_muc" placeholder="<?php echo $data_cate[0]['ten_danh_muc']?>" value="<?php echo $data_cate[0]['ten_danh_muc']; ?>">
                 <div class="edit-buttons">
                     <button type="submit" class="save">Lưu</button>
-                    <button type="button" class="cancel">Hủy</button>
+                    <button type="button" class="cancel"><a href="Index.php?page=cate">Hủy</a></button>
                 </div>
             </div>
         </div>

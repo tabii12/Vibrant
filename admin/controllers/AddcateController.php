@@ -24,8 +24,8 @@ class addcateController {
 
             // Kiểm tra tên danh mục
             if (empty($data_cate['ten_danh_muc'])) {
-                echo "Tên danh mục không được để trống.";
-                return;
+                echo "<script>alert('Tên danh mục không được để trống!');</script>";
+                header("Location: index.php?page=addcate");
             }
 
             // Gọi phương thức addcate trong model để thêm dữ liệu

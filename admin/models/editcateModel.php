@@ -17,6 +17,8 @@ class editcateModel {
     
     public function updateCate($id, $ten_danh_muc) {
         if (!is_numeric($id) || empty($ten_danh_muc)) {
+           
+            echo "<script>alert('Tên danh mục không được để trống!');</script>";
             return false;
         }
         
