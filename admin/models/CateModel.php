@@ -26,10 +26,9 @@ class cateModel {
     }
 
     public function deletecate($cateid) {
-        $sql = "DELETE FROM danhmuc WHERE id = ?";
-        $params = [$cateid];
     
-        return $this->db->query($sql, $params);
+    $sql = "DELETE FROM danhmuc WHERE id = ?";
+    return $this->db->query($sql, [$cateid]);
     }
 
 }
