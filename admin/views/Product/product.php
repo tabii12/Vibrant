@@ -56,7 +56,6 @@
     </table>
     <div class="pagination">
         <?php
-        // Hàm tạo URL với tham số phân trang
         function getPageUrl($page) {
             $params = $_GET;
             $params['trang'] = $page;

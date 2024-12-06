@@ -13,9 +13,9 @@ $data_infor = $data['Admin_infor'];
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Họ Tên <i class="fa-solid fa-filter filter"></i></th>
+                    <th>Họ Tên </th>
                     <th>Chức vụ </th>
-                    <th>E-Mail <i class="fa-solid fa-filter filter"></i></th>
+                    <th>E-Mail </th>
                     <th>SDT</th>
                     <th>Hành động</th>
                 </tr>

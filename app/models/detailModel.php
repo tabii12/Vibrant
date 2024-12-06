@@ -31,7 +31,7 @@ class DetailModel{
 
        public function GetComment($id_san_pham){
         $sql ="SELECT 
-                    nguoidung.ten_nguoi_dung,
+                    nguoidung.ten_dang_nhap,
                     binhluan.noi_dung,
                     binhluan.rating,
                     binhluan.ngay_binh_luan
@@ -60,13 +60,13 @@ class DetailModel{
         return $this->product->getAll($sql); 
        }
 
-       public function addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung, $ngay_binh_luan) {
+       public function addBinhLuan($id_san_pham, $id_nguoi_dung, $noi_dung, $ngay_binh_luan,$rating) {
         if (empty($id_san_pham) || empty($id_nguoi_dung) || empty($noi_dung)) {
             return false;
         }
 
-        $sql = "INSERT INTO binhluan (id_san_pham, id_nguoi_dung, noi_dung, ngay_binh_luan) VALUES (?, ?, ?, ?)";
-        $params = [$id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan];
+        $sql = "INSERT INTO binhluan (id_san_pham, id_nguoi_dung, noi_dung, ngay_binh_luan, rating) VALUES (?, ?, ?, ?, ?)";
+        $params = [$id_san_pham, $id_nguoi_dung, $noi_dung,$ngay_binh_luan,$rating];
 
         return $this->product->insert($sql, $params);
     }

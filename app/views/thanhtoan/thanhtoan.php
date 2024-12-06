@@ -1,4 +1,8 @@
-
+<?php 
+ $cartKeys = array_keys($_SESSION['cart']);
+ $maxIndex = end($cartKeys); 
+ $productId = htmlspecialchars($_SESSION['cart'][$maxIndex]['id']);
+?>
 <link rel="stylesheet" href="views/thanhtoan/thanh_toan.css">
 <div class="container-1" style="
     margin-bottom: 100px;
@@ -6,9 +10,9 @@
 ">
         <div class="menu-nav">
             <ul>
-            <li><a href="#">Trang chủ ></a></li>
-            <li><a href="#">Chi tiết sản phẩm ></a></li>
-            <li><a href="#">Giỏ Hàng ></a></li>
+            <li><a href="index.php">Trang chủ ></a></li>
+            <li><a href="index.php?page=detail&id_san_pham=<?php echo $productId ?>">Chi tiết sản phẩm ></a></li>
+            <li><a href="index.php?page=cart">Giỏ Hàng ></a></li>
             <li><a href="#">Thanh Toán</a></li>
             </ul>
         </div>
@@ -110,3 +114,6 @@
         </div>
     </form>
 </div>
+<?php 
+print_r($_SESSION['cart']); 
+?>

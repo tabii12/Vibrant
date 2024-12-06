@@ -23,6 +23,7 @@ class ProductModel {
     }
 
     public function deleteProductImages($productId) {
+        
         $sql = "SELECT url FROM sanpham_img WHERE id_san_pham = ?";
         $images = $this->db->getAll($sql, [$productId]);
     

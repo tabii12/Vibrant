@@ -7,10 +7,8 @@
     </div>
     <div class="comments-container">
         <ul class="tabs">
-            <li class="active">Tất cả bình luận</li>
+            <li>Tất cả bình luận</li>
             <li>Bình luận mới nhất</li>
-            <li>Bình luận chưa phản hồi</li>
-            <li>Bình luận đã phản hồi</li>
         </ul>
         <table class="comments-table">
             <thead>
