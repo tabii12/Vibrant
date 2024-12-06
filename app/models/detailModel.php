@@ -7,7 +7,6 @@ class DetailModel{
         }
 
         public function getURL($id_san_pham){
-            // $sql ="SELECT * FROM product";
             $sql ="SELECT url FROM sanpham_img WHERE id_san_pham = $id_san_pham  " ;
         return $this->product->getAll($sql);   
        } 

@@ -1,8 +1,8 @@
 <?php
 
 if (isset($_SESSION['user'])) {
-    unset($_SESSION['user']); // Xóa session 'user'
-    session_destroy(); // Hủy toàn bộ session
+    unset($_SESSION['user']);
+    session_destroy(); 
 }
 
 header("Location: index.php?page=login");

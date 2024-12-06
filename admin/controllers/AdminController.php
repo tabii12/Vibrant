@@ -14,7 +14,6 @@
         public function khuyenMaiPage() {
             $this->data['khuyenMai'] = $this->khuyenMai->getKhuyenMai();
         
-            // Xử lý khi form thêm mới được gửi
             if (isset($_POST['submit'])) {
                 $data = [];
                 $data['ma_nhap'] = $_POST['promoCode'];
@@ -27,7 +26,6 @@
                 exit();
             }
         
-            // Xử lý khi nút "Xóa" được nhấn
             if (isset($_POST['delete_submit'])) {
                 $deleteId = $_POST['delete_id'];
                 $this->khuyenMai->deleteKhuyenMai($deleteId);

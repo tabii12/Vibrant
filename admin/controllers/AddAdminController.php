@@ -15,7 +15,6 @@ class AddAdminController {
     public function Add() {
         if (isset($_POST['submit'])) {
             if (isset($_POST['ten_nguoi_dung'], $_POST['email'], $_POST['phone'], $_POST['position'], $_POST['gender'], $_POST['username'], $_POST['password'], $_POST['again_password'])) {
-                // Lấy dữ liệu từ form
                 $ten_nguoi_dung = $_POST['ten_nguoi_dung'];
                 $email = $_POST['email'];
                 $phone = $_POST['phone'];
@@ -25,12 +24,10 @@ class AddAdminController {
                 $password = $_POST['password'];
                 $againPassword = $_POST['again_password'];
     
-                // Kiểm tra nếu mật khẩu và nhập lại mật khẩu khớp nhau
                 if ($password !== $againPassword) {
                     echo "<script>alert('Mật khẩu nhập lại không khớp!'); window.location.href='?page=add';</script>";
                     return;
                 }
-                 // Gọi phương thức addAdmin từ AddAdminModels 
                  $result = $this->add->addAdmin($ten_nguoi_dung, $email, $phone, $position, $gender, $username, $password);
 
                 if ($result) {

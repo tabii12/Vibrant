@@ -1,4 +1,3 @@
-<!-- Sidebar -->
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -52,7 +51,6 @@
         </div>
     </div>
 
-    <!-- Header -->
     <div class="header">
         <div class="search-box">
             <img style="width: 20px; height: 20px;" src="views/khungAdmin/image/search.png" alt="">

@@ -28,13 +28,10 @@
             " ;
             $prd = $this->db->getConnection()->prepare($sql);
     
-            // Liên kết tham số :id với giá trị ID
             $prd->bindParam(':id', $id, PDO::PARAM_INT);
             
-            // Thực thi truy vấn
             $prd->execute();
             
-            // Lấy kết quả từ truy vấn
             return $prd->fetchAll(PDO::FETCH_ASSOC);
         }
     }

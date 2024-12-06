@@ -8,7 +8,6 @@ class OderModel{
     }
 
     public function getOder(){
-        // $sql ="SELECT * FROM product";
         $sql ="SELECT 
                     donhang.*, 
                     nguoidung.ten_nguoi_dung
@@ -20,7 +19,6 @@ class OderModel{
    } 
 
    public function getOderDetail($id_don_hang){
-    // $sql ="SELECT * FROM product";
         $sql ="SELECT 
                 ct_donhang.*, 
                 sanpham.ten_san_pham,

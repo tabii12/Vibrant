@@ -21,7 +21,6 @@
                 $this->product->deleteProductImages($id);
                 $this->product->deleteProductById($id);
         
-                // Sau khi xóa xong, điều hướng về trang danh sách sản phẩm
                 header('Location: index.php?page=product');
                 exit();
             }

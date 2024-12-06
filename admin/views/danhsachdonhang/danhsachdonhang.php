@@ -10,36 +10,7 @@ $data_Infor = $data['Oder'];
             <h1>Danh Sách Oder</h1>
             </div>
         <div class="table-container">
-            <div class="filter-container">
-                <div class="filter">
-                    <div class="filter-icon"><i class="fa-sharp fa-solid fa-filter"></i></div>
-                    <div class="filter-text">Lọc</div>
-                    <div class="filter-day dropdown">
-                        Ngày <i class="fa-solid fa-chevron-down"></i>
-
-                    </div>
-                    <div class="filter-category dropdown">
-                        Danh Mục <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Giày Nam</a></li>
-                            <li><a href="#">Giày Nữ</a></li>
-                            <li><a href="#">Giày Thể Thao</a></li>
-                            <li><a href="#">Giày Đặc Biệt</a></li>
-                        </ul>
-                    </div>
-                    <div class="filter-status dropdown">
-                        Trạng thái <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Giao Thành công</a></li>
-                            <li><a href="#">Đang Giao</a></li>
-                            <li><a href="#">Giao Thất Bại</a></li>
-                        </ul>
-                    </div>
-                    <div class="filter-reload">
-                        <i class="fa-solid fa-rotate-right"></i> Làm lại
-                    </div>
-                </div>
-            </div>
+            
             <table>
                 <thead>
                     <tr>

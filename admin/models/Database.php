@@ -48,14 +48,12 @@ class DataBase {
             
             $this->stmt->execute();
             
-            // Trả về một bản ghi duy nhất dưới dạng mảng kết hợp
             return $this->stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
         }
     }
 
-    // Phương thức thực hiện câu lệnh INSERT và trả về ID của bản ghi mới
     public function insert($sql, $param) {
         $this->query($sql, $param);
         return $this->conn->lastInsertId();

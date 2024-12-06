@@ -31,7 +31,6 @@
                 return false;
             }
         
-            // Thêm người dùng vào cơ sở dữ liệu
             $sql = "INSERT INTO nguoidung (ten_dang_nhap, email, sdt, mat_khau, role) 
                     VALUES (?, ?, ?, ?, 'customer')";
         
@@ -49,7 +48,7 @@
         public function getUserByUsername($ten_dang_nhap) {
             $sql = "SELECT * FROM nguoidung WHERE ten_dang_nhap = ?";
             $params = [$ten_dang_nhap];
-            return $this->db->getOne($sql, $params); // Trả về một dòng dữ liệu của người dùng
+            return $this->db->getOne($sql, $params); 
         }
         
     }

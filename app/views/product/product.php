@@ -12,7 +12,6 @@
     <div class="main-content">
         <aside class="sidebar">
             <div class="filters">
-                <!-- Price Filter -->
                 <div class="filter-section">
                     <h2 class="filter-title">Chọn mức giá</h2>
                     <form action="index.php?page=product&danh_muc=<?php echo $danh_muc ?>" method="post">
@@ -33,7 +32,6 @@
     
                 <div class="divider"></div>
     
-                <!-- Brand Filter -->
                 <div class="filter-section">
                     <h2 class="filter-title">Brand</h2>
                     <form action="index.php?page=product&danh_muc=<?php echo $danh_muc ?>" method="post">
@@ -114,7 +112,6 @@
     <div class="product-love">
     <?php
                foreach ($data['BCTT'] as $BCTT) {
-                // Định dạng giá
                 $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
                 echo '
                 <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">

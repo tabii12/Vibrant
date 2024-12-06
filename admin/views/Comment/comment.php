@@ -7,8 +7,7 @@
     </div>
     <div class="comments-container">
         <ul class="tabs">
-            <li>Tất cả bình luận</li>
-            <li>Bình luận mới nhất</li>
+            <li class="active">Tất cả bình luận</li>
         </ul>
         <table class="comments-table">
             <thead>

@@ -18,7 +18,6 @@ class AddProductModel {
     }
 
     public function addProduct($data) {
-        // Lưu sản phẩm vào bảng `sanpham`
         $sql = "
             INSERT INTO sanpham (ten_san_pham, id_danh_muc, id_thuong_hieu, gia, so_luong, gia_sale, mo_ta) 
             VALUES (?, ?, ?, ?, ?, ?, ?)

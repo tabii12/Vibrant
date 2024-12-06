@@ -24,12 +24,11 @@ $data_product = $data['product'];
      <h2><div class="section-title" style="color: #004C59;">Bộ sưu tập </div> <div class="section-title" style="color: #F15E2C;" >mới ra mắt</div></h2>
     
      <div class="product-new">
-        <!-- Product 1 -->
          <?php 
           $count = 0;
           foreach ($data['productDB'] as $product) {
-              if ($count >= 4) break; // Dừng vòng lặp sau 4 phần tử
-              $formatted_price = number_format($product['gia'], 0, ',', '.'); // Định dạng giá
+              if ($count >= 4) break; 
+              $formatted_price = number_format($product['gia'], 0, ',', '.');
               echo '
                <a href="index.php?page=detail&id_san_pham='.$product['id'].'">
               <div class="new">
@@ -129,7 +128,6 @@ $data_product = $data['product'];
     <div class="product-love">
     <?php
                foreach ($data['BCTT'] as $BCTT) {
-                // Định dạng giá
                 $formatted_price = number_format($BCTT['gia'], 0, ',', '.'); 
                 echo '
                 <a href="index.php?page=detail&id_san_pham='.$BCTT['id'].'">

@@ -45,11 +45,9 @@
 
                 <?php 
                     if (isset($_SESSION['user'])) { 
-                        // Nếu người dùng đã đăng nhập
                         echo '<a href="index.php?page=userInfo" aria-label="Tài khoản người dùng"><i class="fa-regular fa-user"></i></a>';
                         echo '<a href="index.php?page=logout" aria-label="Đăng xuất"><i class="fa-solid fa-right-from-bracket"></i></a>';
                     } else {
-                        // Nếu người dùng chưa đăng nhập
                         echo '<a href="index.php?page=register" aria-label="Tài khoản người dùng"><i class="fa-solid fa-right-to-bracket"></i></a>';
                     }
                 

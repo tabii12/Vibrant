@@ -9,7 +9,6 @@ $data_brand = $data['brand'];
     </div>
     <div class="form-container">
         <form class="form-content" method="POST" enctype="multipart/form-data" action="index.php?page=addproduct">
-            <!-- Các trường nhập -->
             <section class="left">
                 <div class="form-group">
                     <label>Tên sản phẩm</label>

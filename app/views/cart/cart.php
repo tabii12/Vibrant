@@ -20,7 +20,6 @@ $productId = htmlspecialchars($_SESSION['cart'][$maxIndex]['id']);
     </div>
 
     
-    <!-- Sản phẩm -->
     <div class="cart-content">
         <div class="cart-products">
         <?php 
@@ -67,7 +66,6 @@ $productId = htmlspecialchars($_SESSION['cart'][$maxIndex]['id']);
         
 
     
-      <!-- Tổng giá -->
         <?php 
             $sum = 0;
             foreach($_SESSION['cart'] as $product){

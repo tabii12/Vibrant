@@ -1,5 +1,5 @@
 <?php 
-$data_cate = $data['danh_muc']; // Sử dụng đúng key để truy xuất dữ liệu
+$data_cate = $data['danh_muc'];
 ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">

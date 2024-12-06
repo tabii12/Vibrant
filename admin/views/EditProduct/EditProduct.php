@@ -1,9 +1,7 @@
 <?php 
      $editproduct_info = $data['editproduct_info']; 
-     // Lấy thông tin sản phẩm cơ bản từ phần tử đầu tiên
      $product_info = $editproduct_info[0];
 
-     // Lấy danh sách URL ảnh
      $image_urls = array_column($editproduct_info, 'url'); 
 ?>
 <link rel="stylesheet" href="views/EditProduct/EditProduct.css">

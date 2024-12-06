@@ -71,13 +71,11 @@ $data_comment = $data['comment'];
             ?>
 
             <div class="action-buttons">
-                <!-- Form cho nút "Thêm Vào Giỏ Hàng" -->
                 <form action="index.php?page=cart" method="POST" style="display:inline;">
                     <input type="hidden" name="product_id" value="<?php echo $data_infor[0]['id']; ?>">
                     <button type="submit" name="submit" class="btn btn-cart">Thêm Vào Giỏ Hàng</button>
                 </form>
 
-                <!-- Form cho nút "Mua Ngay" -->
                 <form action="index.php?page=checkout" method="POST" style="display:inline;">
                     <input type="hidden" name="product_id" value="<?php echo $data_infor[0]['id']; ?>">
                     <button type="submit" name="buyNow" class="btn btn-buy">Mua Ngay</button>
@@ -88,7 +86,6 @@ $data_comment = $data['comment'];
         
     </div>
     <div class="container1">
-        <!-- Ratings Section -->
         <div class="ratings-section">
             <h3>Đánh Giá và Nhận Xét</h3>
             <div class="ratings-header">
@@ -130,7 +127,6 @@ $data_comment = $data['comment'];
                 </div>
             </div>
 
-            <!-- Reviews Section -->
             <div class="reviews-section">
             <?php 
 
@@ -191,7 +187,6 @@ $data_comment = $data['comment'];
             </div>
         </div>
 
-        <!-- Related Products Section -->
         <div class="related-products">
             <h3>Có thể bạn sẽ thích</h3>
             <div class="product-grid">
@@ -214,22 +209,17 @@ $data_comment = $data['comment'];
     </div>
 
     <script>
-        // Handle thumbnail clicks
         const thumbnails = document.querySelectorAll('.thumbnail');
         const mainImage = document.querySelector('.main-image');
 
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', function() {
-                // Remove active class from all thumbnails
                 thumbnails.forEach(t => t.classList.remove('active'));
-                // Add active class to clicked thumbnail
                 this.classList.add('active');
-                // Update main image (in real implementation, would use actual image URLs)
                 mainImage.src = this.src.replace('70/70', '600/400');
             });
         });
 
-        // Handle size selection
         const sizeBoxes = document.querySelectorAll('.size-box');
         sizeBoxes.forEach(box => {
             box.addEventListener('click', function() {
@@ -238,7 +228,6 @@ $data_comment = $data['comment'];
             });
         });
 
-        // Handle slider buttons
         let currentImageIndex = 0;
         const images = document.querySelectorAll('.thumbnail');
         

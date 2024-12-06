@@ -62,17 +62,13 @@
             return '?' . http_build_query($params);
         }
 
-        // Hiển thị nút Previous
         if($current_page > 1) {
             echo '<a href="'.getPageUrl($current_page-1).'" class="page-link">Trước</a>';
         }
 
-        // Số trang muốn hiển thị trước và sau trang hiện tại
         $range = 2;
         
-        // Hiển thị các số trang
         for($i = 1; $i <= $total_pages; $i++) {
-            // Luôn hiển thị trang đầu, trang cuối, và các trang xung quanh trang hiện tại
             if($i == 1 || $i == $total_pages || 
                ($i >= $current_page - $range && $i <= $current_page + $range)) {
                 if($i == $current_page) {
@@ -81,13 +77,11 @@
                     echo '<a href="'.getPageUrl($i).'" class="page-link">'.$i.'</a>';
                 }
             }
-            // Thêm dấu ... nếu có khoảng cách
             elseif($i == 2 || $i == $total_pages - 1) {
                 echo '<span class="page-dots">...</span>';
             }
         }
 
-        // Hiển thị nút Next
         if($current_page < $total_pages) {
             echo '<a href="'.getPageUrl($current_page+1).'" class="page-link">Sau</a>';
         }
