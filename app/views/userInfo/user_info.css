@@ -27,13 +27,11 @@ body {
 .container_ {
   display: flex;
   justify-content: center;
-  align-items: start;
   padding: 20px;
   width: 1440px;
   height: 350px;
   margin: 50px auto 50px;
   padding-left: 50px;
-  align-items: center;
 }
 
 .customer-info {
@@ -75,7 +73,7 @@ body {
 }
 
 .order-history {
-  flex-grow: 1;
+  width: 800px;
 }
 
 .order-history h2 {
@@ -292,4 +290,24 @@ body {
   .no-orders i {
     font-size: 80px;
   }
+}
+
+.customer-info p{
+  display: flex;
+  gap: 10px;
+}
+
+.order-history{
+  display: flex;
+  flex-direction: column;
+}
+
+.order-table th{
+  font-size: 20px;
+  height: 50px;
+}
+
+.order-table td{
+  text-align: center;
+  height: 50px;
 }
