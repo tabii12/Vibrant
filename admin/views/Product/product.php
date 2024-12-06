@@ -40,7 +40,7 @@
                     <td>'.$product['ten_san_pham'].'</td>
                     <td>Thời trang nữ</td>
                     <td>'.$product['gia'].'₫</td>
-                    <td>'.$product['so_luong'].'</td>
+                    <td>'.$product['so_luong'].'</td>   
                     <td>
                         <a href="?page=editproduct&id='.$product['id'].'">
                             <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
