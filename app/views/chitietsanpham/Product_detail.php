@@ -158,13 +158,13 @@ $data_comment = $data['comment'];
                     if ($comment['rating'] == 5) {
                         $stars = '★★★★★';
                     } elseif ($comment['rating'] == 4) {
-                        $stars = '★★★★☆';
+                        $stars = '★★★★';
                     } elseif ($comment['rating'] == 3) {
-                        $stars = '★★★☆☆';
+                        $stars = '★★★';
                     } elseif ($comment['rating'] == 2) {
-                        $stars = '★★☆☆☆';
+                        $stars = '★★';
                     } elseif ($comment['rating'] == 1) {
-                        $stars = '★☆☆☆☆';
+                        $stars = '★';
                     }
 
 
