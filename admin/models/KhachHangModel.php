@@ -15,6 +15,11 @@
         return $this->db->getAll($sql);
 
         }
+
+        public function deleteCustomer($id_khach_hang) {
+            $sql = "DELETE FROM nguoidung WHERE id = ?";
+            return $this->db->query($sql, [$id_khach_hang]);
+        }
     }
 
 ?>
