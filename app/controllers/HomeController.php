@@ -235,17 +235,14 @@
             }
             $this->renderPage($this->data, "cart");
         }
-
         public function checkoutPage(){
             $this->data['products'] = $this->product->getProduct1Anh();
             if(isset($_POST['buyNow'])){
                 $product_id = $_POST['product_id'];
                 $this->data['product'] = $this->product->get1Product1Anh($product_id);
-
                 $product_name = $this->data['product']['ten_san_pham'];
                 $product_price = $this->data['product']['gia'];
                 $product_url = $this->data['product']['url'];
-
 
                 if (isset($_SESSION['cart'][$product_id])) {
                     $_SESSION['cart'][$product_id]['quantity'] += 1;
@@ -278,40 +275,50 @@
                     }                  
                 }
 
-                if(isset($_POST['submit'])){
+                if (isset($_POST['submit'])) {
                     $data = [];
                     $data['phuong_thuc_thanh_toan'] = $_POST['payment_method'];
                     $data['nguoi_nhan'] = $_POST['ten_nguoi_nhan'];
                     $data['dia_chi'] = $_POST['dia_chi'];
                     $data['sdt'] = $_POST['sdt'];
                     $data['tong_gia'] = $_POST['tong_gia'];
+                
                     if (empty($_POST['id_khuyen_mai'])) {
                         $data['id_khuyen_mai'] = NULL;
                     } else {
                         $data['id_khuyen_mai'] = $_POST['id_khuyen_mai'];
                     }
-
+                
                     $oderId = $this->checkout->createOrder($data);
-
+                
                     if ($oderId) {
                         $products = $_SESSION['cart'];
                         $this->checkout->addOrderDetails($oderId, $products);
-
+                
+                    
                         unset($_SESSION['cart']);
-
-                        header('Location: index.php?page=home');
-                        echo '<script>alert("Đơn hàng đã được tạo thành công!");</script>';
+                
+                       
+                        echo '<script>
+                            alert("Đơn hàng đã được thanh toán thành công!");
+                            window.location.href = "index.php?page=home";
+                        </script>';
+                        exit; 
                     } else {
+                 
                         echo '<script>alert("Đã xảy ra lỗi khi tạo đơn hàng!");</script>';
                     }
                 }
-
+                
+        
+                if (!isset($_SESSION['user'])) {
+                    header('Location: index.php?page=login');
+                    echo '<script>alert("Vui lòng đăng nhập trước khi thanh toán!");</script>';
+                    exit;
+                }
+                
+               
+                require_once 'views/thanhtoan/thanhtoan.php';
             }
-            if(!isset($_SESSION['user'])){
-                header('Location: index.php?page=login');
-                echo 'Vui đăng nhập trước khi thanh toán!';
-            }
-            require_once 'views/thanhtoan/thanhtoan.php';
         }
-
     }
