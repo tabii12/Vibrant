@@ -25,10 +25,7 @@ $data_comment = $data['comment'];
     <h1>'.$data_infor[0]['ten_san_pham'].'</h1>
     <span class="category">'.$data_infor[0]['ten_danh_muc'].'</span></br>
     <br>
-    <span class="price">'.number_format($data_infor[0]['gia'], 0, ',', '.').'₫</span>
-
-
-            '
+    <span class="price">'.number_format($data_infor[0]['gia'], 0, ',', '.').'₫</span>'
             ;
 
             
@@ -129,19 +126,29 @@ $data_comment = $data['comment'];
             <!-- Reviews Section -->
             <div class="reviews-section">
             <?php 
+
+                if (isset($_SESSION['user'])) { 
+                    $tenNguoiDung = $_SESSION['user']['ten_nguoi_dung'];
+                   echo '
+                    <h4>'.$tenNguoiDung.':</h4>
+                    <div class="comment">
+                    <form method="post" action="">
+                        <input type="text" name="noi_dung" placeholder="Nhập bình luận của bạn ở đây...">
+                        <button type="submit">Gửi bình luận</button>
+                    </form>
+                    </div>
+                   ';
+                } else {
+                    echo '<h4>hãy đăng nhập để bình luận</h4>';
+                }
+
+
                 foreach($data_comment as $comment) {
                     echo '
                     <div class="review-item">
                         <div class="review-header">
-                        '.$comment['ten_nguoi_dung'];
-
-                    // Proper usage of the if statement
-                    if ($comment['rating'] >= 1 && $comment['rating'] <= 5) {   
-                        echo '<div class="review-stars">' . str_repeat('★', $comment['rating']) . '</div>';
-                    }
-
-                    echo '
-                            <div class="review-date">2 tháng trước</div>
+                        <h5>'.$comment['ten_nguoi_dung'].'</h5>
+                        <div class="review-date">'.$comment['ngay_binh_luan'].'</div>
                         </div>
                         <div class="review-text">
                         '.$comment['noi_dung'].'
