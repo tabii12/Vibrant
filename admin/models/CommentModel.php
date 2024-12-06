@@ -12,7 +12,7 @@
             $sql ="
                 SELECT 
                     b.id AS comment_id,
-                    u.ten_nguoi_dung AS user_name,
+                    u.ten_dang_nhap AS user_name,
                     b.ngay_binh_luan AS comment_date,
                     b.noi_dung AS comment_content,
                     b.rating AS rating
